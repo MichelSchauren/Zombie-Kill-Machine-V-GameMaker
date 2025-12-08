@@ -30,7 +30,7 @@
   "origin":0,
   "parent":{
     "name":"Player",
-    "path":"folders/Sprites/Player.yy",
+    "path":"folders/Sprites/Personagens/Player.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,17 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_Player",
+  "%Name":"obj_TextoCredits",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_Player",
+  "name":"obj_TextoCredits",
   "overriddenProperties":[],
   "parent":{
-    "name":"Personagens",
-    "path":"folders/Objetos/Personagens.yy",
+    "name":"Interface",
+    "path":"folders/Objetos/Interface.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Player_parado",
-    "path":"sprites/spr_Player_parado/spr_Player_parado.yy",
+    "name":"spr_TextoCredits",
+    "path":"sprites/spr_TextoCredits/spr_TextoCredits.yy",
   },
   "spriteMaskId":null,
   "visible":true,
