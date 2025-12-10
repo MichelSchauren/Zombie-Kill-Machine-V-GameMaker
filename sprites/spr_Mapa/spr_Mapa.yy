@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"spr_Mapa",
   "bboxMode":0,
-  "bbox_bottom":1874,
+  "bbox_bottom":2279,
   "bbox_left":0,
-  "bbox_right":1874,
+  "bbox_right":2279,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":1875,
+  "height":2280,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"ceabb663-a2b6-4eb9-95ad-51b4ed9d561b","blendMode":0,"displayName":"default","isLocked":false,"name":"ceabb663-a2b6-4eb9-95ad-51b4ed9d561b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Mapa",
-    "path":"folders/Sprites/Mapa.yy",
+    "name":"Mapas",
+    "path":"folders/Sprites/Mapas.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":1875,
+  "width":2280,
 }

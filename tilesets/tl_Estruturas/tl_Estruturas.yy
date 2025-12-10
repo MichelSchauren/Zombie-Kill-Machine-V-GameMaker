@@ -54,8 +54,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"spr_TileEstruturas",
-    "path":"sprites/spr_TileEstruturas/spr_TileEstruturas.yy",
+    "name":"spr_Tile_estruturas",
+    "path":"sprites/spr_Tile_estruturas/spr_Tile_estruturas.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{

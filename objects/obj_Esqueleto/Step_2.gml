@@ -1,0 +1,1 @@
+move_and_collide(movx*vel, movy*vel, obj_Colisores);
