@@ -29,7 +29,7 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":false,
+  "solid":true,
   "spriteId":{
     "name":"spr_Colisor_32",
     "path":"sprites/spr_Colisor_32/spr_Colisor_32.yy",

@@ -26,8 +26,8 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":false,
+  "solid":true,
   "spriteId":null,
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

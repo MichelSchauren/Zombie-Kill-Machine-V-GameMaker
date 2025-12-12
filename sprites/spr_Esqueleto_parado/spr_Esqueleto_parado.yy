@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"Esqueleto",
-    "path":"folders/Sprites/Personagens/Esqueleto.yy",
+    "path":"folders/Sprites/Personagens/Inimigos/Esqueleto.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

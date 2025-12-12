@@ -1,9 +1,11 @@
-VEL_CORRENDO = 2.2;
-VEL_ATIRANDO = 1.4;
-
+vida = global.Player_VIDA_TOTAL;
+morto = false;
 movx = 0;
 movy = 0;
-vel = VEL_CORRENDO;
+vel = global.Player_VEL_CORRENDO;
+
+pode_atirar = true;
+tpf = fps/global.Tiro_TPS
 
 inputs = {
 	up: vk_up,
