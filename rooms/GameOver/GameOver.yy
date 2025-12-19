@@ -19,8 +19,8 @@
   ],
   "name":"GameOver",
   "parent":{
-    "name":"Primeiro Jogo",
-    "path":"Primeiro Jogo.yyp",
+    "name":"Rooms",
+    "path":"folders/Rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

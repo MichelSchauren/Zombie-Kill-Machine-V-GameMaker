@@ -1,4 +1,4 @@
-y -= .2;
+y -= .4;
 if (y < -sprite_height) {
 	y = room_height;
 }

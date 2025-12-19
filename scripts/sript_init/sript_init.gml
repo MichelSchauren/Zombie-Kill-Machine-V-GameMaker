@@ -10,8 +10,8 @@ global.Player_VIDA_TOTAL = 100;
 global.Player_VEL_CORRENDO = 2.2;
 global.Player_VEL_ATIRANDO = 1.4;
 // tiro
-global.Tiro_VEL = 8;
-global.Tiro_TPS = 2; // Tiros por segundo
+global.Tiro_VEL = 10;
+global.Tiro_TPS = 3; // Tiros por segundo
 global.Tiro_DANO = 8;
 // esqueleto
 global.Esqueleto_VIDA_TOTAL = 50;

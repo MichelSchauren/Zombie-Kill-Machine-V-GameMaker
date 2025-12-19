@@ -5,7 +5,7 @@ movy = 0;
 vel = global.Player_VEL_CORRENDO;
 
 pode_atirar = true;
-tpf = fps/global.Tiro_TPS
+tpf = game_get_speed(gamespeed_fps) / global.Tiro_TPS;
 
 inputs = {
 	up: vk_up,

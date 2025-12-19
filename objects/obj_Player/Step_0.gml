@@ -51,12 +51,15 @@ else {
 
 	// Atirar
 	if (mouse_press and pode_atirar) {
+		var _tiro = noone;
 		if image_xscale < 0 {
-			var _tiro = instance_create_layer(x-28, y+9, "Tiros", obj_Tiro);
+			_tiro = instance_create_layer(x-28, y+9, "Tiros", obj_Tiro);
 			_tiro.direction = point_direction(x-28, y+9, mouse_x, mouse_y);
 		} else {
-			var _tiro = instance_create_layer(x+28, y+9, "Tiros", obj_Tiro);
+			_tiro = instance_create_layer(x+28, y+9, "Tiros", obj_Tiro);
 			_tiro.direction = point_direction(x+28, y+9, mouse_x, mouse_y);
 		}
+		alarm[0] = tpf;
+		pode_atirar = false;
 	}
 }
