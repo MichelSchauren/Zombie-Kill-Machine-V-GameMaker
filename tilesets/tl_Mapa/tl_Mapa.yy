@@ -27,8 +27,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"spr_TileMapa",
-    "path":"sprites/spr_TileMapa/spr_TileMapa.yy",
+    "name":"spr_Tile_mapa",
+    "path":"sprites/spr_Tile_mapa/spr_Tile_mapa.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
@@ -37,11 +37,11 @@
   },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,
-  "tileHeight":290,
-  "tilehsep":40,
-  "tilevsep":40,
-  "tileWidth":290,
-  "tilexoff":12,
-  "tileyoff":10,
+  "tileHeight":285,
+  "tilehsep":45,
+  "tilevsep":45,
+  "tileWidth":285,
+  "tilexoff":15,
+  "tileyoff":12,
   "tile_count":70,
 }
