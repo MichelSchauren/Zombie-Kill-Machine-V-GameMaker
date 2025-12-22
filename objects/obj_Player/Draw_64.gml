@@ -1,3 +1,4 @@
+// Desenhar VIDA
 var larg_vida = 640*(vida / global.Player_VIDA_TOTAL);
 
 // fundo

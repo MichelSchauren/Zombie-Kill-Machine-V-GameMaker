@@ -12,7 +12,6 @@
     {"name":"inst_7175C85C1","path":"rooms/auto_tiling_room/auto_tiling_room.yy",},
     {"name":"inst_263A9E6D1","path":"rooms/auto_tiling_room/auto_tiling_room.yy",},
     {"name":"inst_30A75130_1","path":"rooms/auto_tiling_room/auto_tiling_room.yy",},
-    {"name":"inst_7A30EBC3_1","path":"rooms/auto_tiling_room/auto_tiling_room.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -25,7 +24,6 @@
       ],"layers":[],"name":"Colisoes_objs","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Personagens","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_29C4DF43_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_29C4DF43_1","objectId":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1632.0,"y":1344.0,},
-        {"$GMRInstance":"v4","%Name":"inst_7A30EBC3_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7A30EBC3_1","objectId":{"name":"obj_Player_nome","path":"objects/obj_Player_nome/obj_Player_nome.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1632.0,"y":1280.0,},
       ],"layers":[],"name":"Personagens","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Colisoes","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Colisoes","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":97,"SerialiseWidth":97,"TileCompressedData":[-9409,-2147483648,],"TileDataFormat":1,},"tilesetId":null,"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRTileLayer":"","%Name":"Estruturas","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Estruturas","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":95,"SerialiseWidth":95,"TileCompressedData":[-9025,-2147483648,],"TileDataFormat":1,},"tilesetId":{"name":"tl_Estruturas","path":"tilesets/tl_Estruturas/tl_Estruturas.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},

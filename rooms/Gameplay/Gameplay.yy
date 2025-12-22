@@ -36,7 +36,6 @@
     {"name":"inst_5F270D55","path":"rooms/Gameplay/Gameplay.yy",},
     {"name":"inst_2EF180F4","path":"rooms/Gameplay/Gameplay.yy",},
     {"name":"inst_63906604","path":"rooms/Gameplay/Gameplay.yy",},
-    {"name":"inst_1887EA49","path":"rooms/Gameplay/Gameplay.yy",},
     {"name":"inst_2D3761B0","path":"rooms/Gameplay/Gameplay.yy",},
     {"name":"inst_F6C1948","path":"rooms/Gameplay/Gameplay.yy",},
     {"name":"inst_6AED40FD","path":"rooms/Gameplay/Gameplay.yy",},
@@ -45,7 +44,6 @@
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Astratos","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v4","%Name":"inst_1887EA49","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1887EA49","objectId":{"name":"obj_Player_nome","path":"objects/obj_Player_nome/obj_Player_nome.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1568.0,"y":1408.0,},
         {"$GMRInstance":"v4","%Name":"inst_2D3761B0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2D3761B0","objectId":{"name":"obj_Voltar_menu","path":"objects/obj_Voltar_menu/obj_Voltar_menu.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-96.0,"y":-32.0,},
         {"$GMRInstance":"v4","%Name":"inst_F6C1948","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_F6C1948","objectId":{"name":"obj_Spaw_esqueleto","path":"objects/obj_Spaw_esqueleto/obj_Spaw_esqueleto.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":2144.0,},
         {"$GMRInstance":"v4","%Name":"inst_6AED40FD","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6AED40FD","objectId":{"name":"obj_Spaw_esqueleto","path":"objects/obj_Spaw_esqueleto/obj_Spaw_esqueleto.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1856.0,"y":2208.0,},

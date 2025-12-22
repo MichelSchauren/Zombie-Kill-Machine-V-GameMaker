@@ -41,6 +41,26 @@ else {
 		}
 	}
 
+	// Atirar
+	if (mouse_press and pode_atirar) {
+		alarm[0] = tpf;
+		pode_atirar = false;
+		
+		var _x;
+		if (image_xscale < 0) _x = x-28;
+		else _x = x+28;
+		
+		// Criar tiro
+		if (room == Multiplayer) {
+			// Avisar server de que um novo tiro foi criado
+			
+		} else {
+			var _tiro = noone;
+			_tiro = instance_create_layer(_x, y+9, "Tiros", obj_Tiro);
+			_tiro.direction = point_direction(_x, y+9, mouse_x, mouse_y);
+		}
+	}
+	
 	// Morrer
 	if (vida == 0) {
 		morto = true;
@@ -48,18 +68,13 @@ else {
 		vel = 0
 		alarm[1] = 150; // // Ir para a tela de gameover depois de 150 frames
 	}
-
-	// Atirar
-	if (mouse_press and pode_atirar) {
-		var _tiro = noone;
-		if image_xscale < 0 {
-			_tiro = instance_create_layer(x-28, y+9, "Tiros", obj_Tiro);
-			_tiro.direction = point_direction(x-28, y+9, mouse_x, mouse_y);
-		} else {
-			_tiro = instance_create_layer(x+28, y+9, "Tiros", obj_Tiro);
-			_tiro.direction = point_direction(x+28, y+9, mouse_x, mouse_y);
-		}
-		alarm[0] = tpf;
-		pode_atirar = false;
+	
+	// Mover caso não colida com o objeto colisor
+	move_and_collide(movx*vel, movy*vel, obj_Colisores);
+	
+	// Se estiver no modo online
+	if (room == Multiplayer) {
+		// Dizer ao servidor o estado atual do player
+		// x, y, sprite, image_index.
 	}
 }

@@ -15,5 +15,18 @@ global.Tiro_TPS = 3; // Tiros por segundo
 global.Tiro_DANO = 8;
 // esqueleto
 global.Esqueleto_VIDA_TOTAL = 50;
-global.Esqueleto_VEL = 1;
+global.Esqueleto_VEL = 1.8;
 global.Esqueleto_DANO = 19;
+
+// multiplayer
+global.porta_tcp = 64193;
+global.porta_udp = 64194;
+global.conect_server_ip = noone;
+
+
+
+// Isso faz o código interpretar as 2 teclas da mesma forma 
+keyboard_set_map(ord("W"), vk_up);
+keyboard_set_map(ord("A"), vk_left);
+keyboard_set_map(ord("S"), vk_down);
+keyboard_set_map(ord("D"), vk_right);
