@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"font_gabriola",
+  "%Name":"font_Gabriola",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":36,
@@ -117,7 +117,7 @@
   "last":0,
   "lineHeight":45,
   "maintainGms1Font":false,
-  "name":"font_gabriola",
+  "name":"font_Gabriola",
   "parent":{
     "name":"Fontes",
     "path":"folders/Fontes.yy",
@@ -130,7 +130,7 @@
   "regenerateBitmap":false,
   "resourceType":"GMFont",
   "resourceVersion":"2.0",
-  "sampleText":"abcdef ABCDEF\n0123456789 .,<>\"'&!?\nthe quick brown fox jumps over the lazy dog\nTHE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\nDefault character: ▯ (9647)",
+  "sampleText":"abcdef ABCDEF\n0123456789 .,<>\"'&!?\nthe quick brown fox jumps over the lazy dog\nTHE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\nDefault character: ▯ (9647)\r\nàéíóúüãõñçÇªº°{}[]()\r\n@#$%*+-/=:;",
   "sdfSpread":8,
   "size":20.0,
   "styleName":"Regular",

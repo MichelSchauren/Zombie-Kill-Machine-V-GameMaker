@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"sript_init",
   "parent":{
-    "name":"Primeiro Jogo",
-    "path":"Primeiro Jogo.yyp",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

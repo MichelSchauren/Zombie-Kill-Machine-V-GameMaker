@@ -5,21 +5,38 @@ var dist_player = point_distance(x, y, obj_Player.x, obj_Player.y);
 switch (estado) {
     case ESTADOS.PERSEGUINDO:
         sprite_index = spr_Esqueleto_andando; // Mudar sprite para andando
-		speed = global.Esqueleto_VEL; // Voltar a velocidade normal
 
         // Se estiver perto o suficiente, mudar para o estado de ataque
         if (dist_player <= alcance) {
             estado = ESTADOS.ATACANDO;
         } else {
-            // Perseguir o jogador desviando de obstáculos (obj_Colisores)
-            // mp_potential_step é ótimo para desviar de paredes sólidas em jogos top-down/2D abertos
-            mp_potential_step(obj_Player.x, obj_Player.y, speed, false);
+            // instance_nearest(); [anotação]
+			// Mudar mask para detectar colisão nos pés
+			var mask_original = mask_index;
+			mask_index = spr_Esqueleto_mask_pes;
+			// Perseguir o jogador desviando de obstáculos (obj_Colisores)
+			mp_potential_step(obj_Player.x, obj_Player.y, vel, false);
+			
+			// Virar a sprite na direção do movimento (opcional, para refletir horizontalmente)
+			var _direcao = point_direction(xprevious, yprevious, x, y);
+			if ( _direcao > 90 && _direcao < 270) {
+		        image_xscale = -1; // Vira para a esquerda
+		    } else {
+		        image_xscale = 1; // Vira para a direita
+		    }
+			
+			// Se após o movimento ele colidiu com a parede, volta para a posição anterior
+			if (place_meeting(x, y, obj_Colisores)) {
+				x = xprevious;
+				y = yprevious;
+			}
+			
+			mask_index = mask_original;
         }
         break;
 
     case ESTADOS.ATACANDO:
         sprite_index = spr_Esqueleto_atacando; // Mudar sprite para atacando
-        speed = 0; // Parar de se mover durante o ataque
 
         // Se o ataque for possível (sem cooldown), dar dano
         if (pode_atacar) {
@@ -39,15 +56,6 @@ switch (estado) {
 		if (image_index >= image_number -1) {
 			image_speed = 0
 		}
-}
-
-// Virar a sprite na direção do movimento (opcional, para refletir horizontalmente)
-if (speed > 0) {
-    if (point_direction(x, y, x + hspeed, y + vspeed) > 90 && point_direction(x, y, x + hspeed, y + vspeed) < 270) {
-        image_xscale = -1; // Vira para a esquerda
-    } else {
-        image_xscale = 1; // Vira para a direita
-    }
 }
 
 // Matar esqueleto
