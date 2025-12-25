@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"spr_Sala",
   "bboxMode":0,
-  "bbox_bottom":31,
+  "bbox_bottom":37,
   "bbox_left":0,
-  "bbox_right":255,
+  "bbox_right":325,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":32,
+  "height":38,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"423c73bd-679d-407b-9001-651a1d2603c3","blendMode":0,"displayName":"default","isLocked":false,"name":"423c73bd-679d-407b-9001-651a1d2603c3","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":256,
+  "width":326,
 }

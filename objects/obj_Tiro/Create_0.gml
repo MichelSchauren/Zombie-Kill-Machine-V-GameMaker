@@ -1,0 +1,1 @@
+pvp = room == Multiplayer and global.server_pvp;

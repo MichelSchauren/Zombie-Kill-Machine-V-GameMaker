@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"f_network_send_all",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"f_network_send_all",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

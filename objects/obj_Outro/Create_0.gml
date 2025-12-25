@@ -4,6 +4,7 @@ morto = false;
 movx = 0;
 movy = 0;
 vel = global.Player_VEL_CORRENDO;
+image_speed = 0;
 
 pode_atirar = true;
 tpf = game_get_speed(gamespeed_fps) / global.Tiro_TPS;
