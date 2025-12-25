@@ -1,19 +1,13 @@
 // Variaveis
-nome = "Sala1";
-max_players = 10;
-pvp = false;
-
-// Eventos
-enum Server_events {
-	criar_instancia,
-	
-}
+nome = global.server_nome;
+max_players = global.server_jogadores;
 
 // buffer usado para trocar dados com os clientes
 server_buffer = buffer_create(1024, buffer_fixed, 1);
-// Um Dicionário/map que terá os dados dos clientes conectados ao server
-clients_map = ds_map_create(); // socket_id: [socket, instancia, nome]
-
+buff_ping = buffer_create(32, buffer_fixed, 1); // buffer do ping
+// Uma Struct que terá os dados dos clientes conectados ao server
+players_struct = {}; // {socket_client: [nome, x, y, vida, sprite, image_index], ...}
+socket_list = ds_list_create(); // Só pra iterar
 
 // Criar servidor principal (TCP)
 server_tcp = network_create_server(network_socket_tcp, global.porta_tcp, max_players);

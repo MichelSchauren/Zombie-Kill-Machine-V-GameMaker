@@ -1,1 +1,1 @@
-mensagens = [];
+mensagens = ds_list_create();

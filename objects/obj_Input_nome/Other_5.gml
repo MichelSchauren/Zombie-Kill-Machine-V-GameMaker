@@ -1,0 +1,1 @@
+if (global.Player_name == "") global.Player_name = folder;

@@ -21,9 +21,6 @@
     {"name":"inst_69418A4C1","path":"rooms/Multiplayer/Multiplayer.yy",},
     {"name":"inst_6E1C1E5E1","path":"rooms/Multiplayer/Multiplayer.yy",},
     {"name":"inst_6388FB0F1","path":"rooms/Multiplayer/Multiplayer.yy",},
-    {"name":"inst_400252D8_1","path":"rooms/Multiplayer/Multiplayer.yy",},
-    {"name":"inst_40815D1D1","path":"rooms/Multiplayer/Multiplayer.yy",},
-    {"name":"inst_1EE0135E1","path":"rooms/Multiplayer/Multiplayer.yy",},
     {"name":"inst_22A6232C1","path":"rooms/Multiplayer/Multiplayer.yy",},
     {"name":"inst_4C1C446_1","path":"rooms/Multiplayer/Multiplayer.yy",},
     {"name":"inst_69A15713_1","path":"rooms/Multiplayer/Multiplayer.yy",},
@@ -36,14 +33,12 @@
     {"name":"inst_5F270D55_1","path":"rooms/Multiplayer/Multiplayer.yy",},
     {"name":"inst_2EF180F4_1","path":"rooms/Multiplayer/Multiplayer.yy",},
     {"name":"inst_2D3761B0_1","path":"rooms/Multiplayer/Multiplayer.yy",},
-    {"name":"inst_451F6371","path":"rooms/Multiplayer/Multiplayer.yy",},
     {"name":"inst_533487A7","path":"rooms/Multiplayer/Multiplayer.yy",},
   ],
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Astratos","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_2D3761B0_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2D3761B0_1","objectId":{"name":"obj_Voltar_menu","path":"objects/obj_Voltar_menu/obj_Voltar_menu.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-96.0,"y":-32.0,},
-        {"$GMRInstance":"v4","%Name":"inst_451F6371","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_451F6371","objectId":{"name":"obj_Esqueleto","path":"objects/obj_Esqueleto/obj_Esqueleto.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1152.0,"y":1248.0,},
         {"$GMRInstance":"v4","%Name":"inst_533487A7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_533487A7","objectId":{"name":"obj_Chat","path":"objects/obj_Chat/obj_Chat.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-96.0,"y":0.0,},
       ],"layers":[],"name":"Astratos","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Colisoes","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
@@ -77,9 +72,6 @@
     {"$GMRInstanceLayer":"","%Name":"Tiros","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Tiros","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Personagens","depth":400,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_29C4DF43_2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_29C4DF43_2","objectId":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1568.0,"y":1456.0,},
-        {"$GMRInstance":"v4","%Name":"inst_400252D8_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_400252D8_1","objectId":{"name":"obj_Colisor_32","path":"objects/obj_Colisor_32/obj_Colisor_32.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":1.5,"x":1936.0,"y":1760.0,},
-        {"$GMRInstance":"v4","%Name":"inst_40815D1D1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_40815D1D1","objectId":{"name":"obj_Colisor_32","path":"objects/obj_Colisor_32/obj_Colisor_32.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.5,"x":2176.0,"y":1872.0,},
-        {"$GMRInstance":"v4","%Name":"inst_1EE0135E1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1EE0135E1","objectId":{"name":"obj_Colisor_32","path":"objects/obj_Colisor_32/obj_Colisor_32.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.5,"x":2128.0,"y":1952.0,},
       ],"layers":[],"name":"Personagens","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Mapa","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Mapa","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"spr_Mapa","path":"sprites/spr_Mapa/spr_Mapa.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],

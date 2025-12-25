@@ -1,10 +1,11 @@
 if (morto) {
 	if (image_index >= image_number -1) {
-		image_speed = 0
+		image_speed = 0;
+		image_index = image_number-1;
 	}
 }
 else {
-	var _up, _left, _down, _right;
+	var _up, _left, _down, _right, _buffer;
 
 	// Inputs
 	_up = keyboard_check(inputs.up);
@@ -53,6 +54,13 @@ else {
 		// Criar tiro
 		if (room == Multiplayer) {
 			// Avisar server de que um novo tiro foi criado
+			_buffer = obj_Client_tcp.client_buffer;
+			buffer_seek(_buffer, buffer_seek_start, 0);
+			buffer_write(_buffer, buffer_u8, Events_client_server.tiro_player);
+			buffer_write(_buffer, buffer_u16, _x);
+			buffer_write(_buffer, buffer_u16, y+9);
+			buffer_write(_buffer, buffer_u16, point_direction(_x, y+9, mouse_x, mouse_y));
+			network_send_packet(obj_Client_tcp.socket_tcp, _buffer, buffer_tell(_buffer));
 			
 		} else {
 			var _tiro = noone;
@@ -65,16 +73,12 @@ else {
 	if (vida == 0) {
 		morto = true;
 		sprite_index = spr_Player_morrendo;
-		vel = 0
 		alarm[1] = 150; // // Ir para a tela de gameover depois de 150 frames
 	}
 	
 	// Mover caso não colida com o objeto colisor
+	var _mask_original = mask_index;
+	mask_index = spr_Player_mask_pes;
 	move_and_collide(movx*vel, movy*vel, obj_Colisores);
-	
-	// Se estiver no modo online
-	if (room == Multiplayer) {
-		// Dizer ao servidor o estado atual do player
-		// x, y, sprite, image_index.
-	}
+	mask_index = _mask_original;
 }

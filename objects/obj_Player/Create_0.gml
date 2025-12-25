@@ -14,15 +14,16 @@ inputs = {
 	right: vk_right
 }
 
-// Posição aleatória no multiplayer
+// cliente envia infos sobre seu player para o servidor (nome, x, y)
 if (room == Multiplayer) {
+	// Posição aleatória no multiplayer
 	x = int64(random_range(1250, 1800));
 	y = int64(random_range(1450, 1540));
 	
-	// Criar instancia do player no servidor
+	// Enviar dados
 	var _buffer = obj_Client_tcp.client_buffer;
 	buffer_seek(_buffer, buffer_seek_start, 0); // Ir para início do buffer
-	buffer_write(_buffer, buffer_u8, Server_events.criar_instancia);
+	buffer_write(_buffer, buffer_u8, Events_client_server.dados_player);
 	buffer_write(_buffer, buffer_string, global.Player_name); // Meu Nome
 	buffer_write(_buffer, buffer_u16, x); // Cordenada X do player
 	buffer_write(_buffer, buffer_u16, y); // Cordenada Y do player
