@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_Colisor_32",
+  "%Name":"obj_Colisor_24",
   "eventList":[],
   "managed":true,
-  "name":"obj_Colisor_32",
+  "name":"obj_Colisor_24",
   "overriddenProperties":[],
   "parent":{
     "name":"Colisores",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":true,
   "spriteId":{
-    "name":"spr_Colisor_32",
-    "path":"sprites/spr_Colisor_32/spr_Colisor_32.yy",
+    "name":"spr_Colisor_24",
+    "path":"sprites/spr_Colisor_24/spr_Colisor_24.yy",
   },
   "spriteMaskId":null,
   "visible":false,

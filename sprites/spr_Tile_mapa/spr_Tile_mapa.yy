@@ -3,7 +3,7 @@
   "%Name":"spr_Tile_mapa",
   "bboxMode":0,
   "bbox_bottom":2291,
-  "bbox_left":330,
+  "bbox_left":4,
   "bbox_right":3281,
   "bbox_top":0,
   "collisionKind":1,

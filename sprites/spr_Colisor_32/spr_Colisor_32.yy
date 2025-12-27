@@ -1,7 +1,7 @@
 {
   "$GMSprite":"v2",
   "%Name":"spr_Colisor_32",
-  "bboxMode":0,
+  "bboxMode":1,
   "bbox_bottom":31,
   "bbox_left":0,
   "bbox_right":31,
