@@ -2,7 +2,7 @@
   "$GMSprite":"v2",
   "%Name":"spr_Player_parado",
   "bboxMode":2,
-  "bbox_bottom":79,
+  "bbox_bottom":75,
   "bbox_left":19,
   "bbox_right":58,
   "bbox_top":0,

@@ -34,9 +34,6 @@
     "name":"spr_Colisor_32",
     "path":"sprites/spr_Colisor_32/spr_Colisor_32.yy",
   },
-  "spriteMaskId":{
-    "name":"spr_Colisor_32",
-    "path":"sprites/spr_Colisor_32/spr_Colisor_32.yy",
-  },
+  "spriteMaskId":null,
   "visible":false,
 }

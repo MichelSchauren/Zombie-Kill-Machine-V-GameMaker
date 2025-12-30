@@ -8,3 +8,8 @@ draw_rectangle(x-40, y-60, x+40, y-50, false);
 // vida
 draw_set_colour(c_green);
 draw_rectangle(x-40, y-60, x-40 + larg_vida, y-50, false);
+
+// desenhar colisoes
+if (global.Mostrar_colisoes_inimigos) {
+	draw_sprite(spr_colisao, 0, x, y);
+}
