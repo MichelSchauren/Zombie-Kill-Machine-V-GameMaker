@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Eventos da Room",
-    "path":"folders/Objetos/Interface/Eventos da Room.yy",
+    "path":"folders/Objetos/Eventos da Room.yy",
   },
   "parentObjectId":null,
   "persistent":false,

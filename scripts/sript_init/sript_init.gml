@@ -1,6 +1,14 @@
 // VARIAVEIS GLOBAIS
+
 global.Player_name = "";
 global.Player_vida = 100;
+global.Inimigos_spaw_limit = 10;
+
+// modo desenvolvedor
+global.Modo_desenvolvedor = true;
+global.Spaw_inimigos = true;
+global.Mostrar_colisoes_inimigos = false;
+global.Mostrar_colisoes_player = false;
 
 
 // CONSTANTES GLOBAIS

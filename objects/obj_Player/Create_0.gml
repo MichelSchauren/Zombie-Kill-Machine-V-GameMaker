@@ -3,6 +3,7 @@ morto = false;
 movx = 0;
 movy = 0;
 vel = global.Player_VEL_CORRENDO;
+spr_colisao = spr_Player_mask_pes;
 
 pode_atirar = true;
 tpf = game_get_speed(gamespeed_fps) / global.Tiro_TPS;

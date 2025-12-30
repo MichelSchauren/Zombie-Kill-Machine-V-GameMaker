@@ -1,6 +1,6 @@
 {
   "$GMTileSet":"v1",
-  "%Name":"tl_Mapa",
+  "%Name":"tl_Chao",
   "autoTileSets":[
     {"$GMAutoTileSet":"","%Name":"chao_aredondado","closed_edge":false,"name":"chao_aredondado","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[
         18,23,21,5,1,50,16,40,3,14,60,30,25,20,10,42,17,62,67,41,8,35,36,32,19,68,63,43,28,46,45,52,44,65,7,
@@ -16,7 +16,7 @@
     "SerialiseWidth":0,
     "TileSerialiseData":[],
   },
-  "name":"tl_Mapa",
+  "name":"tl_Chao",
   "out_columns":8,
   "out_tilehborder":2,
   "out_tilevborder":2,
