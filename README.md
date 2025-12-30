@@ -1,14 +1,20 @@
 # Zombie Kill Machine V
 
-## INTRODUÇÃO
+## :page_with_curl: INTRODUÇÃO
 
-**Descrição:** Este é um jogo de sobrevivência contra zombies onde o objetivo é ficar vivo o máximo de tempo possível. Você enfrenta ondas de inimigos cada vez mais difíceis,
+
+**Descrição:**
+
+Este é um jogo de sobrevivência contra zombies onde o objetivo é ficar vivo o máximo de tempo possível. Você enfrenta ondas de inimigos cada vez mais difíceis,
 precisa gerenciar recursos e tomar decisões rápidas pra não virar comida de zombie. A ideia é simples, mas viciante: quanto mais tempo você sobrevive, mais intenso
 o jogo fica, tipo um desafio constante. Ideal pra quem curte ação, estratégia rápida e melhorar o próprio recorde a cada tentativa.
 
+
 **Engine/Plataforma:** GameMaker
 
+
 **Equipe:**
+
 > *Lead programer: Michel Nathan Schauren*
 > 
 > *Secondary programmer: Arthur Nienov*
@@ -19,7 +25,9 @@ o jogo fica, tipo um desafio constante. Ideal pra quem curte ação, estratégia
 > 
 > *Moral Suporter: Ayrton Oliveira Manhães*
 
-**Regras importantes**
+
+**Regras importantes:**
+
 Depois de receber autorização para mexer no repositório. Lembre-se de seguir essas regras para manter a ordem do projeto.
 1. Nunca comitar direto no `main`
 2. Ter o seu próprio branch (ex:`Fulano-branch`)
@@ -27,8 +35,9 @@ Depois de receber autorização para mexer no repositório. Lembre-se de seguir 
 4. Se tiver alguma ideia nova ou ache algum erro no jogo. Crie uma Issue.
 5. Qualquer dúvida fale com o proprietário ou crie uma issue. 
 
+
 ---
-## CONTROLE DE VERSIONAMENTO:
+## :hourglass_flowing_sand: CONTROLE DE VERSIONAMENTO:
 ```
 
 Formato: v0.0.0.0
@@ -40,6 +49,24 @@ v1.0.0.0 : Quase nunca acontece. Só se o jogo for refeitos ou se houver mudanç
 
 ```
 
+
+---
+## :construction_worker: MODO DESENVOLVEDOR:
+
+Para ativar o modo_desenvolvedor vá em `Scripts / script_init` e defina a variavel `global.Modo_desenvolvedor` como `true`. Com ele você pode alterar certas variaveis a fim de realizar testes.
+
+**Comandos:**
+
+1. `Ctrl + E`: Ativar/desativar o spaw de inimigos.
+2. `Ctrl + C + P`: Ativar/desativar a visualização da caixa de colisão do player.
+3. `Ctrl + C + I`: Ativar/desativar a visualização da caixa de colisão dos inimigos.
+4. `Ctrl + C + M`: Ativar/desativar a visualização das caixas de colisão do mapa.
+5. `Ctrl + F`: Aumentar o FPS.
+6. `Ctrl + Alt + F`: Diminuir o FPS.
+
+Mais comandos em breve ...
+
+---
 ## 🎮 Tutorial GitHub – Como abriar o jogo e realizar atualizações
 
 Este repositório é usado para desenvolver o jogo em equipe usando **GitHub + GameMaker**.  
@@ -179,4 +206,5 @@ Terminou sua tarefa e enviou (Push)? Hora de juntar com o projeto principal.
 4. Avise a equipe que o PR está aberto!
 
 Se não tiver entendido algo pesquise mais a fundo sobre.
+
 ---
