@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"music_Credits",
   "parent":{
-    "name":"Sons",
-    "path":"folders/Sons.yy",
+    "name":"Musicas",
+    "path":"folders/Sons/Musicas.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

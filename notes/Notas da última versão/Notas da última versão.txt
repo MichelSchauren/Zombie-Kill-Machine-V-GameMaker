@@ -1,0 +1,7 @@
+v1.2.0.0
+
+- otimizações (obj_Player, obj_Esqueleto, obj_Tiro, obj_Modo_desenvolvedor)
+- tela cheia
+- Novo inimigo (mini_boss)
+- Novos modos de controle (mobile e gamepad)
+- Novo comando (Ctrl + K) para trocar o modo de controle.
