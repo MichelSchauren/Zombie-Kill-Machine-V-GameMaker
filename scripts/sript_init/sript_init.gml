@@ -9,22 +9,37 @@ global.Modo_desenvolvedor = true;
 global.Spaw_inimigos = true;
 global.Mostrar_colisoes_inimigos = false;
 global.Mostrar_colisoes_player = false;
+global.Controller_mode = 0;
+
+#macro MOBILE (global.Controller_mode == 2)
+#macro Windows:MOBILE false;
+#macro Mobile:MOBILE true;
 
 
 // CONSTANTES GLOBAIS
 
 // player
 global.Player_VIDA_TOTAL = 100;
-global.Player_VEL_CORRENDO = 2.2;
-global.Player_VEL_ATIRANDO = 1.4;
+global.Player_VEL_CORRENDO = 3.4;
+global.Player_VEL_ATIRANDO = 2.4;
 // tiro
 global.Tiro_VEL = 10;
 global.Tiro_TPS = 3; // Tiros por segundo
 global.Tiro_DANO = 8;
 // esqueleto
+global.Esqueleto_ALCANCE_CORPO = 60;
 global.Esqueleto_VIDA_TOTAL = 50;
 global.Esqueleto_VEL = 1.8;
 global.Esqueleto_DANO = 19;
+// mini boss
+global.MiniBoss_ALCENCE_CORPO = 60;
+global.MiniBoss_ALCENCE_ATIRANDO = 360;
+global.MiniBoss_VIDA_TOTAL = 80;
+global.MiniBoss_VEL = 1.2;
+global.MiniBoss_DANO_CORPO = 20;
+global.Maxado_DANO = 25;
+global.Maxado_VEL = 8;
+
 
 // MULTIPLAYER
 global.porta_tcp = 64193;
@@ -51,10 +66,3 @@ enum Events_server_client {
 	atualizar_ping, // servidor devolve a msg ao cliente para ele calcular o ping <
 	server_desligado // o servidor avisa todos os clientes que ele foi desligado <<
 }
-
-
-// Isso faz o código interpretar as 2 teclas da mesma forma 
-keyboard_set_map(ord("W"), vk_up);
-keyboard_set_map(ord("A"), vk_left);
-keyboard_set_map(ord("S"), vk_down);
-keyboard_set_map(ord("D"), vk_right);

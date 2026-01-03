@@ -1,20 +1,24 @@
 vida = global.Player_VIDA_TOTAL;
-morto = false;
-movx = 0;
-movy = 0;
 vel = global.Player_VEL_CORRENDO;
 spr_colisao = spr_Player_mask_pes;
+mask_index = spr_colisao;
 
 pode_atirar = true;
 tpf = game_get_speed(gamespeed_fps) / global.Tiro_TPS;
+dir_tiro = 0;
 
-inputs = {
-	up: vk_up,
-	left: vk_left,
-	down: vk_down,
-	right: vk_right
+// ESTADOS
+enum PL_ESTADOS {
+	PARADO,
+	CORRENDO,
+	ATIRANDO,
+	ATIRANDO_ANDANDO,
+	MORRENDO
 }
+estado = PL_ESTADOS.PARADO;
 
+
+// MULTIPLAYER
 // cliente envia infos sobre seu player para o servidor (nome, x, y)
 if (room == Multiplayer) {
 	// Posição aleatória no multiplayer
@@ -30,3 +34,26 @@ if (room == Multiplayer) {
 	buffer_write(_buffer, buffer_u16, y); // Cordenada Y do player
 	network_send_packet(obj_Client_tcp.socket_tcp, _buffer, buffer_tell(_buffer));
 }
+
+
+// CONTROLAR PLAYER
+mov_up = false;
+mov_left = false;
+mov_down = false;
+mov_rigth = false;
+press = false;
+/*
+// PC / TECLADO
+// Isso faz o código interpretar as 2 teclas da mesma forma 
+keyboard_set_map(ord("W"), vk_up);
+keyboard_set_map(ord("A"), vk_left);
+keyboard_set_map(ord("S"), vk_down);
+keyboard_set_map(ord("D"), vk_right);
+
+// MOBILE
+if (MOBILE and global.Controller_mode == 2) {
+	virtual_key_add(120, 440, 80, 80, vk_up);
+	virtual_key_add(20, 540, 80, 80, vk_left);
+	virtual_key_add(120, 540, 80, 80, vk_down);
+	virtual_key_add(220, 540, 80, 80, vk_right);
+}*/
