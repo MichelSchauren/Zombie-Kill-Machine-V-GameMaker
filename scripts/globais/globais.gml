@@ -13,7 +13,8 @@ global.Controller_mode = 0;
 #macro Windows:MOBILE false;
 #macro Mobile:MOBILE true;
 
-// ondas
+// configurações gerais
+global.Mapa_atual = Summer_Farm;
 global.onda = 1;
 
 // player

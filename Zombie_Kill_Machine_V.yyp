@@ -1,6 +1,6 @@
 {
   "$GMProject":"v1",
-  "%Name":"Primeiro Jogo",
+  "%Name":"Zombie_Kill_Machine_V",
   "AudioGroups":[
     {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -11,6 +11,7 @@
   "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"Fontes","folderPath":"folders/Fontes.yy","name":"Fontes","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Notas","folderPath":"folders/Notas.yy","name":"Notas","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objetos","folderPath":"folders/Objetos.yy","name":"Objetos","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Abstratos","folderPath":"folders/Objetos/Abstratos.yy","name":"Abstratos","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Colisores","folderPath":"folders/Objetos/Colisores.yy","name":"Colisores","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -55,13 +56,13 @@
   "MetaData":{
     "IDEVersion":"2024.14.2.212",
   },
-  "name":"Primeiro Jogo",
+  "name":"Zombie_Kill_Machine_V",
   "resources":[
     {"id":{"name":"font_Consolas_12","path":"fonts/font_Consolas_12/font_Consolas_12.yy",},},
     {"id":{"name":"font_Consolas_8","path":"fonts/font_Consolas_8/font_Consolas_8.yy",},},
     {"id":{"name":"font_Consolas","path":"fonts/font_Consolas/font_Consolas.yy",},},
     {"id":{"name":"font_Gabriola","path":"fonts/font_Gabriola/font_Gabriola.yy",},},
-    {"id":{"name":"Notas da última versão","path":"notes/Notas da última versão/Notas da última versão.yy",},},
+    {"id":{"name":"Notas da última atualização","path":"notes/Notas da última atualização/Notas da última atualização.yy",},},
     {"id":{"name":"obj_Botao_buscar_salas","path":"objects/obj_Botao_buscar_salas/obj_Botao_buscar_salas.yy",},},
     {"id":{"name":"obj_Botao_credits","path":"objects/obj_Botao_credits/obj_Botao_credits.yy",},},
     {"id":{"name":"obj_Botao_criar_sala","path":"objects/obj_Botao_criar_sala/obj_Botao_criar_sala.yy",},},
@@ -114,7 +115,7 @@
     {"id":{"name":"Summer_Farm","path":"rooms/Summer_Farm/Summer_Farm.yy",},},
     {"id":{"name":"f_Escrever_chat","path":"scripts/f_Escrever_chat/f_Escrever_chat.yy",},},
     {"id":{"name":"f_network_send_all","path":"scripts/f_network_send_all/f_network_send_all.yy",},},
-    {"id":{"name":"sript_init","path":"scripts/sript_init/sript_init.yy",},},
+    {"id":{"name":"globais","path":"scripts/globais/globais.yy",},},
     {"id":{"name":"efect_Tiro","path":"sounds/efect_Tiro/efect_Tiro.yy",},},
     {"id":{"name":"music_Credits","path":"sounds/music_Credits/music_Credits.yy",},},
     {"id":{"name":"music_GamePlay","path":"sounds/music_GamePlay/music_GamePlay.yy",},},
