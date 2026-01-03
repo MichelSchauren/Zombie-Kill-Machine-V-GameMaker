@@ -46,7 +46,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.2.212",
+    "IDEVersion":"2024.14.2.213",
   },
   "name":"Primeiro Jogo",
   "resources":[
@@ -85,6 +85,7 @@
     {"id":{"name":"obj_Texto_credits","path":"objects/obj_Texto_credits/obj_Texto_credits.yy",},},
     {"id":{"name":"obj_Tiro","path":"objects/obj_Tiro/obj_Tiro.yy",},},
     {"id":{"name":"obj_Voltar_menu","path":"objects/obj_Voltar_menu/obj_Voltar_menu.yy",},},
+    {"id":{"name":"TransicaoObject","path":"objects/TransicaoObject/TransicaoObject.yy",},},
     {"id":{"name":"Credits","path":"rooms/Credits/Credits.yy",},},
     {"id":{"name":"GameOver","path":"rooms/GameOver/GameOver.yy",},},
     {"id":{"name":"Gameplay","path":"rooms/Gameplay/Gameplay.yy",},},
@@ -130,6 +131,7 @@
     {"id":{"name":"spr_Tile_estruturas","path":"sprites/spr_Tile_estruturas/spr_Tile_estruturas.yy",},},
     {"id":{"name":"spr_Tile_mapa","path":"sprites/spr_Tile_mapa/spr_Tile_mapa.yy",},},
     {"id":{"name":"spr_Tiro","path":"sprites/spr_Tiro/spr_Tiro.yy",},},
+    {"id":{"name":"TransicaoSprite","path":"sprites/TransicaoSprite/TransicaoSprite.yy",},},
     {"id":{"name":"tl_Chao","path":"tilesets/tl_Chao/tl_Chao.yy",},},
     {"id":{"name":"tl_Difientes","path":"tilesets/tl_Difientes/tl_Difientes.yy",},},
     {"id":{"name":"tl_Estruturas","path":"tilesets/tl_Estruturas/tl_Estruturas.yy",},},
