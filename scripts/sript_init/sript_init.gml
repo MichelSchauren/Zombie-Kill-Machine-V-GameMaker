@@ -1,8 +1,5 @@
 // VARIAVEIS GLOBAIS
 
-global.Player_name = "";
-global.Player_vida = 100;
-global.Inimigos_spaw_limit = 10;
 
 // modo desenvolvedor
 global.Modo_desenvolvedor = true;
@@ -11,26 +8,35 @@ global.Mostrar_colisoes_inimigos = false;
 global.Mostrar_colisoes_player = false;
 global.Controller_mode = 0;
 
+// mobile
 #macro MOBILE (global.Controller_mode == 2)
 #macro Windows:MOBILE false;
 #macro Mobile:MOBILE true;
 
-
-// CONSTANTES GLOBAIS
+// ondas
+global.onda = 1;
 
 // player
+global.Player_name = "";
 global.Player_VIDA_TOTAL = 100;
+global.Player_vida = global.Player_VIDA_TOTAL;
 global.Player_VEL_CORRENDO = 3.4;
 global.Player_VEL_ATIRANDO = 2.4;
+
 // tiro
 global.Tiro_VEL = 10;
 global.Tiro_TPS = 3; // Tiros por segundo
 global.Tiro_DANO = 8;
+
+// inimigos
+global.Inimigos_spaw_limit = 10;
+
 // esqueleto
 global.Esqueleto_ALCANCE_CORPO = 60;
 global.Esqueleto_VIDA_TOTAL = 50;
 global.Esqueleto_VEL = 1.8;
 global.Esqueleto_DANO = 19;
+
 // mini boss
 global.MiniBoss_ALCENCE_CORPO = 60;
 global.MiniBoss_ALCENCE_ATIRANDO = 360;
@@ -48,7 +54,7 @@ global.conect_server_ip = noone;
 global.server_nome = $"Sala{int64(random_range(10, 99))}";
 global.server_jogadores = 10;
 global.server_pvp = noone;
-// Eventos
+// Eventos multiplayer
 enum Events_client_server {
 	dados_player = 10, // cliente envia infos sobre seu player (nome, x, y) >
 	mudar_player, // sempre que o player do cliente tiver alguma alteração ele envia os dados ao servidor >

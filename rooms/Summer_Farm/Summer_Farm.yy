@@ -144,9 +144,6 @@
     {"name":"inst_3711D62B","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_5D99DCF3","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_40A787A5","path":"rooms/Summer_Farm/Summer_Farm.yy",},
-    {"name":"inst_35E12E98","path":"rooms/Summer_Farm/Summer_Farm.yy",},
-    {"name":"inst_6C23AECD","path":"rooms/Summer_Farm/Summer_Farm.yy",},
-
   ],
   "isDnd":false,
   "layers":[
@@ -159,7 +156,6 @@
         {"$GMRInstance":"v4","%Name":"inst_4ED51EA5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4ED51EA5","objectId":{"name":"obj_Spaw_esqueleto","path":"objects/obj_Spaw_esqueleto/obj_Spaw_esqueleto.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2304.0,"y":-96.0,},
         {"$GMRInstance":"v4","%Name":"inst_5D99DCF3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5D99DCF3","objectId":{"name":"obj_Spaw_esqueleto","path":"objects/obj_Spaw_esqueleto/obj_Spaw_esqueleto.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-96.0,"y":2144.0,},
         {"$GMRInstance":"v4","%Name":"inst_40A787A5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_40A787A5","objectId":{"name":"obj_Controles","path":"objects/obj_Controles/obj_Controles.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":64.0,},
-
       ],"layers":[],"name":"Abstratos","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Difientes_3","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Difientes_3","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":95,"SerialiseWidth":143,"TileCompressedData":[
           -83,-2147483648,11,306,307,308,309,310,311,312,313,314,315,316,-132,-2147483648,11,353,354,355,356,357,
