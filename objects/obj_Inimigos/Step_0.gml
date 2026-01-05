@@ -3,44 +3,15 @@ var _dist_player = point_distance(x, y, obj_Player.x, obj_Player.y);
 
 switch (estado) {
 	case INIMIGOS_ESTADOS.MORRENDO:
-		if (image_index >= image_number -1) {
-			estado = noone;
-			image_speed = 0;
-			image_index = image_number -1;
-			alarm[0] = game_get_speed(gamespeed_fps)*3; // ativar alarme 0 depois de 3 segundos
-		}
+		morrer();
 		break;
 		
 	case INIMIGOS_ESTADOS.PERSEGUINDO:
-        // Se estiver perto o suficiente, mudar para o estado de ataque
-        if (_dist_player <= alcance_corpo) {
-            chegou_player();
-        } else {
-            // instance_nearest(); [anotação]
-			// Perseguir o jogador desviando de obstáculos (obj_Colisores e obj_Inimigos)
-			mp_potential_step(obj_Player.x, obj_Player.y, vel, false);
-			
-			// Virar a sprite na direção do movimento (opcional, para refletir horizontalmente)
-			direction = point_direction(xprevious, yprevious, x, y);
-			if ( direction > 90 && direction < 270) {
-		        image_xscale = -1; // Vira para a esquerda
-		    } else {
-		        image_xscale = 1; // Vira para a direita
-		    }
-        }
+		perseguir(_dist_player);
         break;
 
     case INIMIGOS_ESTADOS.ATACANDO:
-        // Se estiver na ultima imagem da sprite
-        if (image_index = image_number -1) {
-            // Diminuir a vida do player
-            obj_Player.vida = max(obj_Player.vida - dano, 0);
-        }
-
-        // Se o player se afastar, voltar a perseguir
-        if (_dist_player > alcance_corpo) {
-            saiu_player();
-        }
+        atacar(_dist_player);
         break;
 		
 	case INIMIGOS_ESTADOS.ATIRANDO:

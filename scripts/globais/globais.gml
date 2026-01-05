@@ -2,11 +2,11 @@
 
 
 // modo desenvolvedor
-global.Modo_desenvolvedor = true;
+global.Modo_desenvolvedor = false;
 global.Spaw_inimigos = true;
 global.Mostrar_colisoes_inimigos = false;
 global.Mostrar_colisoes_player = false;
-global.Controller_mode = 0;
+global.Controller_mode = 2;
 
 // mobile
 #macro MOBILE (global.Controller_mode == 2)
@@ -36,7 +36,14 @@ global.Inimigos_spaw_limit = 10;
 global.Esqueleto_ALCANCE_CORPO = 60;
 global.Esqueleto_VIDA_TOTAL = 50;
 global.Esqueleto_VEL = 1.8;
-global.Esqueleto_DANO = 19;
+global.Esqueleto_DANO = 18;
+
+// rapido
+global.Rapido_ALCANCE_CORPO = 100;
+global.Rapido_VIDA_TOTAL = 40;
+global.Rapido_VEL = 3;
+global.Rapido_DASH_VEL = 7;
+global.Rapido_DANO = 16;
 
 // mini boss
 global.MiniBoss_ALCENCE_CORPO = 60;
