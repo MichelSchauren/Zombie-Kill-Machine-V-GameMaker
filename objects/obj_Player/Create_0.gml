@@ -42,18 +42,3 @@ mov_left = false;
 mov_down = false;
 mov_rigth = false;
 press = false;
-/*
-// PC / TECLADO
-// Isso faz o código interpretar as 2 teclas da mesma forma 
-keyboard_set_map(ord("W"), vk_up);
-keyboard_set_map(ord("A"), vk_left);
-keyboard_set_map(ord("S"), vk_down);
-keyboard_set_map(ord("D"), vk_right);
-
-// MOBILE
-if (MOBILE and global.Controller_mode == 2) {
-	virtual_key_add(120, 440, 80, 80, vk_up);
-	virtual_key_add(20, 540, 80, 80, vk_left);
-	virtual_key_add(120, 540, 80, 80, vk_down);
-	virtual_key_add(220, 540, 80, 80, vk_right);
-}*/

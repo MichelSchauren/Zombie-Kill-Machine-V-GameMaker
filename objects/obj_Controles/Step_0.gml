@@ -51,18 +51,7 @@ switch (global.Controller_mode) {
 		break;
 
 	case 2: // Mobile / touch screen
-		var _mira_press, _mira_dir;
-		if (mouse_check_button(1) and collision_point(mouse_x, mouse_y, touchpad_mira_fundo, false, false)) {
-			_mira_press = true;
-			_mira_dir = point_direction(touchpad_mira_fundo.x, touchpad_mira_fundo.y, mouse_x, mouse_y);
-		} else {
-			_mira_press = false;
-			_mira_dir = 0;
-		}
-		touchpad_mira.movendo = _mira_press;
-		touchpad_mira.direction = _mira_dir;
-	
-		switch (mobile_direction_mode) {
+		switch (global.second_control_mode) {
 			case 0: // setinhas
 				mov_up = keyboard_check(vk_up);
 				mov_left = keyboard_check(vk_left);
@@ -78,35 +67,26 @@ switch (global.Controller_mode) {
 					} else {
 						speed = 0;
 					}
-					
-					press = _mira_press;
-					if (_mira_press) dir_tiro = _mira_dir;
-					else dir_tiro = 0;		
 				}
 			
 				break;
 				
 			case 1: // touchpad
-				var _p_mov = false;
-				if (mouse_check_button(1) and collision_point(mouse_x, mouse_y, touchpad_direction_fundo, false, false)) {
-					direction = point_direction(touchpad_direction_fundo.x, touchpad_direction_fundo.y, mouse_x, mouse_y);
-					touchpad_direction.direction = direction;
-					touchpad_direction.movendo = true;
-					_p_mov = true;
-				} else {
-					touchpad_direction.movendo = false;
-				}
-				
-				with (obj_Player) {
-					direction = other.direction;
-					speed = _p_mov;
-					
-					press = _mira_press;
-					if (_mira_press) dir_tiro = _mira_dir;
-					else dir_tiro = 0;	
+				if (instance_exists(obj_Joystick_mover)) {
+					with (obj_Player) {
+						direction = obj_Joystick_mover.input_dir;
+						speed = obj_Joystick_mover.active;
+					}
 				}
 				
 				break;
+		}
+		
+		if (instance_exists(obj_Joystick_atirar)) {
+			with (obj_Player) {
+				press = obj_Joystick_atirar.active;
+				dir_tiro = obj_Joystick_atirar.input_dir;
+			}
 		}
 		
 		break;

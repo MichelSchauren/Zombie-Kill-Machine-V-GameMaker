@@ -15,8 +15,23 @@ mask_index = spr_Explosivo;
 estado = INIMIGOS_ESTADOS.PERSEGUINDO; // Estado inicial
 
 // Funções
-chegou_player = function () {
-	estado = INIMIGOS_ESTADOS.EXPLODINDO;
-	sprite_index = spr_Explosivo_explodindo; // Mudar sprite para atacando
-	image_index = 0;
+perseguir = function () {
+	// Se estiver perto o suficiente, mudar para o estado de ataque
+    if (_dist_player <= alcance_corpo) {
+        estado = INIMIGOS_ESTADOS.EXPLODINDO;
+		sprite_index = spr_Explosivo_explodindo; // Mudar sprite para atacando
+		image_index = 0;
+    } else {
+        // instance_nearest(); [anotação]
+		// Perseguir o jogador desviando de obstáculos (obj_Colisores e obj_Inimigos)
+		mp_potential_step(obj_Player.x, obj_Player.y, vel, false);
+			
+		// Virar a sprite na direção do movimento (opcional, para refletir horizontalmente)
+		direction = point_direction(xprevious, yprevious, x, y);
+		if ( direction > 90 && direction < 270) {
+		    image_xscale = -1; // Vira para a esquerda
+		} else {
+		    image_xscale = 1; // Vira para a direita
+		}
+    }
 }
