@@ -30,9 +30,11 @@ if (global.Modo_desenvolvedor) {
 	
 	// Trocar modo de controle
 	if (keyboard_check_pressed(ord("K"))) {
-		global.Controller_mode += 1;
-		if (global.Controller_mode > 2) {
-			global.Controller_mode = 0;
+		if (keyboard_check(vk_shift)) { // Modo de controle secundario
+			global.second_control_mode = ! global.second_control_mode;
+		} else {
+			global.Controller_mode += 1;
+			if (global.Controller_mode > 2) global.Controller_mode = 0;
 		}
 		
 		with (obj_Controles) {

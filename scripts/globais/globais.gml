@@ -2,16 +2,12 @@
 
 
 // modo desenvolvedor
-global.Modo_desenvolvedor = false;
+global.Modo_desenvolvedor = true;
 global.Spaw_inimigos = true;
 global.Mostrar_colisoes_inimigos = false;
 global.Mostrar_colisoes_player = false;
-global.Controller_mode = 2;
-
-// mobile
-#macro MOBILE (global.Controller_mode == 2)
-#macro Windows:MOBILE false;
-#macro Mobile:MOBILE true;
+global.Controller_mode = 0; // 0:PC; 1:GamePad; 2:Mobile;
+global.second_control_mode = 1;
 
 // configurações gerais
 global.Mapa_atual = Summer_Farm;
@@ -59,6 +55,8 @@ global.Maxado_VEL = 8;
 global.porta_tcp = 64193;
 global.porta_udp = 64194;
 global.conect_server_ip = noone;
+global.input_server_nome = noone;
+global.input_server_jogadores = noone;
 global.server_nome = $"Sala{int64(random_range(10, 99))}";
 global.server_jogadores = 10;
 global.server_pvp = noone;

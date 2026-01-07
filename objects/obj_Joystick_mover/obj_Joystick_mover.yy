@@ -1,12 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_Touchpad_direction",
+  "%Name":"obj_Joystick_mover",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_Touchpad_direction",
+  "name":"obj_Joystick_mover",
   "overriddenProperties":[],
   "parent":{
     "name":"Controles",
@@ -30,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_Touchpad_direction",
-    "path":"sprites/spr_Touchpad_direction/spr_Touchpad_direction.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

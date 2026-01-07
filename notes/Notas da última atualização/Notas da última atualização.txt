@@ -1,6 +1,11 @@
-v1.3.0.0
+v1.4.0.0
 
-- Novo inimigo (Rapido); [minor]
-- Suporte para android; [minor]
-- otimizações dos inimigos; [path]
-- mudanças nas configs (globais) do jogo [build];
+- Botão de voltar no celular age como se fosse o ESC (mobile); [minor]
+- Dar suporte multitouch (vários dedos ao mesmo tempo) (mobile); [minor]
+- Ageitar o tamanho da viewport no celular (mobile); [build]
+- Colocar um botão de voltar no Menu multiplayer; [build]
+- Mudar modo de jogo automaticamente; [path]
+- Opção para mudar o mobile_direction_mode no modo desenvolvedor; [path]
+- Limite de caracteres nas caixas de texto; [path]
+
+- Digitação de texto no celular (mobile); [minor] (bugado)
