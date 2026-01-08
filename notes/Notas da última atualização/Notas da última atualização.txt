@@ -1,9 +1,4 @@
-v1.5.0.0
+v1.5.1.0
 
-- Suporte para GamePad (controle remoto); [minor] *
-- Icones do app no mobile; [minor] *
-- Setinhas do modo mobile posicionadas corretamente; [path] *
-- Inimigos não cancelam a animação de ataque caso o player saia do alcance; [path] *
-
-- Bug na caixa de texto no mobile resolvido; [path]
-- MiniBoss maior; [path]
+- Machado do Miniboss do tamanho correto; [path] *
+- Machado do MiniBoss gruda na parede; [build] *

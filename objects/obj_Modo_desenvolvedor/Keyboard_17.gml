@@ -4,19 +4,21 @@ if (global.Modo_desenvolvedor) {
 		global.Spaw_inimigos = !global.Spaw_inimigos; 
 	}
 
-	// Mostrar caixas de colisão dos inimigos
-	if (keyboard_check_pressed(ord("C")) and keyboard_check_pressed(ord("I"))) {
-		global.Mostrar_colisoes_inimigos = !global.Mostrar_colisoes_inimigos;
-	}
+	if (keyboard_check(ord("C"))) {
+		// Mostrar caixas de colisão dos inimigos
+		if (keyboard_check_pressed(ord("I"))) {
+			global.Mostrar_colisoes_inimigos = !global.Mostrar_colisoes_inimigos;
+		}
 
-	// Mostrar caixas de colisão do player
-	if (keyboard_check_pressed(ord("C")) and keyboard_check_pressed(ord("P"))) {
-		global.Mostrar_colisoes_player = !global.Mostrar_colisoes_player;
-	}
+		// Mostrar caixas de colisão do player
+		if (keyboard_check_pressed(ord("P"))) {
+			global.Mostrar_colisoes_player = !global.Mostrar_colisoes_player;
+		}
 
-	// Mostrar caixas de colisão do mapa
-	if (keyboard_check_pressed(ord("C")) and keyboard_check_pressed(ord("M"))) {
-		obj_Colisores.visible = ! obj_Colisores.visible;
+		// Mostrar caixas de colisão do mapa
+		if (keyboard_check_pressed(ord("M"))) {
+			obj_Colisores.visible = ! obj_Colisores.visible;
+		}
 	}
 
 	// Controle do fps

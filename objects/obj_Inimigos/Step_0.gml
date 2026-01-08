@@ -21,6 +21,7 @@ switch (estado) {
             // Criar instancia do projetil
             var _projetil = instance_create_layer(_x, y, "Projeteis", projetil);
 			_projetil.direction = point_direction(_x, y, obj_Player.x, obj_Player.y);
+			_projetil.image_xscale = image_xscale;
         }
 		// Se estiver na ultima imagem da sprite
         if (image_index = image_number -1) {
