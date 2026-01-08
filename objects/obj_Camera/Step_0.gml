@@ -1,4 +1,4 @@
-if (window_get_width() != last_width || window_get_height() != last_height) {
+if ((window_get_width() != last_width or window_get_height() != last_height) and window_get_width() != 0 and window_get_height() != 0) {
 	last_width = window_get_width();
 	last_height = window_get_height();
 	
@@ -10,9 +10,7 @@ if (window_get_width() != last_width || window_get_height() != last_height) {
 	surface_resize(application_surface, _w, _h);
 	camera_set_view_border(view_camera[0], _w/2, _h/2);
 	
-	// Reposicionar os joysticks se existirem
-	if (instance_exists(obj_Controles)) {
-		obj_Controles.reposicionar_joystick(obj_Joystick_mover, _w*0.2, _h*0.8);
-		obj_Controles.reposicionar_joystick(obj_Joystick_atirar, _w*0.8, _h*0.8);
-	}
+	// Resetar os controles caso esteja no modo mobile
+	if (global.Controller_mode == 2) f_Resetar_controles();
+	
 }

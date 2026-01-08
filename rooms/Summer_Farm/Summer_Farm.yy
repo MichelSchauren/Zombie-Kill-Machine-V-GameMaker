@@ -119,7 +119,6 @@
     {"name":"inst_33B6E953","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_5C9DE594","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_79258B4A","path":"rooms/Summer_Farm/Summer_Farm.yy",},
-    {"name":"inst_359131C9","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_3ABCB76F","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_300A950C","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_7932C825","path":"rooms/Summer_Farm/Summer_Farm.yy",},
@@ -128,7 +127,6 @@
     {"name":"inst_7E80F891","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_38892639","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_7641EB40","path":"rooms/Summer_Farm/Summer_Farm.yy",},
-    {"name":"inst_6033B924","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_8059468","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_3F3A98C0","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_7A0EBFBE","path":"rooms/Summer_Farm/Summer_Farm.yy",},
@@ -142,8 +140,10 @@
     {"name":"inst_3711D62B","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_40A787A5","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_7887E66D","path":"rooms/Summer_Farm/Summer_Farm.yy",},
-    {"name":"inst_25F69CBC","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_69A063EA","path":"rooms/Summer_Farm/Summer_Farm.yy",},
+    {"name":"inst_359131C9","path":"rooms/Summer_Farm/Summer_Farm.yy",},
+    {"name":"inst_6033B924","path":"rooms/Summer_Farm/Summer_Farm.yy",},
+    {"name":"inst_25F69CBC","path":"rooms/Summer_Farm/Summer_Farm.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -663,7 +663,7 @@
       ],"layers":[],"name":"Colisores","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Projeteis","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Projeteis","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Personagens","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v4","%Name":"inst_1FFF1A72","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1FFF1A72","objectId":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2176.0,"y":1504.0,},
+        {"$GMRInstance":"v4","%Name":"inst_1FFF1A72","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1FFF1A72","objectId":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2048.0,"y":1536.0,},
       ],"layers":[],"name":"Personagens","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Estruturas_3","depth":700,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Estruturas_3","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":95,"SerialiseWidth":143,"TileCompressedData":[
           -83,-2147483648,11,306,307,308,309,310,311,312,313,314,315,316,-132,-2147483648,11,353,354,355,356,357,
