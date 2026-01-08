@@ -37,9 +37,6 @@ if (global.Modo_desenvolvedor) {
 			if (global.Controller_mode > 2) global.Controller_mode = 0;
 		}
 		
-		with (obj_Controles) {
-			instance_destroy();
-			instance_create_layer(x, y, "Abstratos", obj_Controles);
-		}
+		f_Resetar_controles();
 	}
 }

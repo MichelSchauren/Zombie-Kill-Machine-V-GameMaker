@@ -1,6 +1,6 @@
 // Configurações do Joystick
-anchor_x = min (window_get_width(), 1580)*0.2; // Posição fixa na tela (GUI)
-anchor_y = min (window_get_height(), 720)*0.8;
+anchor_x = obj_Controles.x_mobile_mover; // Posição fixa na tela (GUI)
+anchor_y = obj_Controles.y_mobile_mover;
 radius = 60;   // Raio da base
 stick_x = anchor_x;
 stick_y = anchor_y;

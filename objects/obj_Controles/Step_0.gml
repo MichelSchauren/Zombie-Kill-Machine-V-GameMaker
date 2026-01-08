@@ -15,37 +15,28 @@ switch (global.Controller_mode) {
 				speed = 0;
 			}
 			
-			// Definir a posição x do tiro de acordo com a direção do player
-			var _x_tiro;
-			if (image_xscale < 0) _x_tiro = x-28;
-			else _x_tiro = x+28;
-			
 			press = mouse_check_button(1);
 			dir_tiro = point_direction(x, y+9, mouse_x, mouse_y);
 		}
 		break;
 
 	case 1: // Game Pad / controle
-		var _gamepad = 0;
-		if (gamepad_is_connected(_gamepad)) {
-			gamepad_set_axis_deadzone(_gamepad, .2);
-			
-			mov_up = keyboard_check(vk_up);
-			mov_left = keyboard_check(vk_left);
-			mov_down = keyboard_check(vk_down);
-			mov_rigth = keyboard_check(vk_right);
+		if (gamepad_is_connected(gamepad)) {
+			mov_up = (gamepad_axis_value(gamepad, gp_axislv) < -.2);
+			mov_left = (gamepad_axis_value(gamepad, gp_axislh) < -.2);
+			mov_down = (gamepad_axis_value(gamepad, gp_axislv) > .2);
+			mov_rigth = (gamepad_axis_value(gamepad, gp_axislh) > .2);
 			var _gmovh = (mov_rigth - mov_left);
 			var _gmovv = (mov_down - mov_up)
-			// isso pode ser alterado no futuro
+			var _gp_axisrh = gamepad_axis_value(gamepad, gp_axisrh);
+			var _gp_axisrv = gamepad_axis_value(gamepad, gp_axisrv);
+
 			with (obj_Player) {
 				direction = point_direction(x, y, x + _gmovh, y + _gmovv);
-				if (_gmovh != 0 or _gmovv != 0) {
-					speed = 1;
-				} else {
-					speed = 0;
-				}
+				speed = (_gmovh != 0 or _gmovv != 0);
 				
-				// atirar?
+				press = (abs(_gp_axisrh) > 0.2 or abs(_gp_axisrv) > 0.2);
+				dir_tiro = point_direction(x, y+9, x + _gp_axisrh, y+9 + _gp_axisrv);
 			}
 		}
 		break;
@@ -62,11 +53,7 @@ switch (global.Controller_mode) {
 				
 				with (obj_Player) {
 					direction = point_direction(x, y, x + _mmovh, y + _mmovv);
-					if (_mmovh != 0 or _mmovv != 0) {
-						speed = 1;
-					} else {
-						speed = 0;
-					}
+					speed = (_mmovh != 0 or _mmovv != 0);
 				}
 			
 				break;

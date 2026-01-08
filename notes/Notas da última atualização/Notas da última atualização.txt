@@ -1,11 +1,9 @@
-v1.4.0.0
+v1.5.0.0
 
-- Botão de voltar no celular age como se fosse o ESC (mobile); [minor]
-- Dar suporte multitouch (vários dedos ao mesmo tempo) (mobile); [minor]
-- Ageitar o tamanho da viewport no celular (mobile); [build]
-- Colocar um botão de voltar no Menu multiplayer; [build]
-- Mudar modo de jogo automaticamente; [path]
-- Opção para mudar o mobile_direction_mode no modo desenvolvedor; [path]
-- Limite de caracteres nas caixas de texto; [path]
+- Suporte para GamePad (controle remoto); [minor] *
+- Icones do app no mobile; [minor] *
+- Setinhas do modo mobile posicionadas corretamente; [path] *
+- Inimigos não cancelam a animação de ataque caso o player saia do alcance; [path] *
 
-- Digitação de texto no celular (mobile); [minor] (bugado)
+- Bug na caixa de texto no mobile resolvido; [path]
+- MiniBoss maior; [path]

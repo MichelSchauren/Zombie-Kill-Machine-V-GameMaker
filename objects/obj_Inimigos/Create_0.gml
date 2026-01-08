@@ -55,15 +55,15 @@ perseguir = function (dist_player) {
 atacar = function (dist_player) {
 	// Se estiver na ultima imagem da sprite
     if (image_index = image_number -1) {
-        // Diminuir a vida do player
-        obj_Player.vida = max(obj_Player.vida - dano, 0);
-    }
-
-    // Se o player se afastar, voltar a perseguir
-    if (dist_player > alcance_corpo) {
-        estado = INIMIGOS_ESTADOS.PERSEGUINDO;
-		sprite_index = spr_andando; // Mudar sprite para andando
-		image_index = 0;
+		// Se o player já não estiver mais no alcance, voltar a perseguir
+	    if (dist_player > alcance_corpo) {
+	        estado = INIMIGOS_ESTADOS.PERSEGUINDO;
+			sprite_index = spr_andando; // Mudar sprite para andando
+			image_index = 0;
+	    } else { // se não
+			// Diminuir a vida do player
+			obj_Player.vida = max(obj_Player.vida - dano, 0);
+		}
     }
 }
 
