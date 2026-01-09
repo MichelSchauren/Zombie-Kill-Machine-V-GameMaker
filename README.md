@@ -37,18 +37,44 @@ Depois de receber autorização para mexer no repositório. Lembre-se de seguir 
 
 
 ---
-## :hourglass_flowing_sand: CONTROLE DE VERSIONAMENTO:
-```
+## 🏷️ Guia de Versões do Jogo (vA.B.C.D)
 
-Formato: v0.0.0.0
-v0.0.0.1 : Correções de bugs ou pequenos ajustes;
-v0.0.1.0 : Adição de algo novo;
-v0.1.0.0 : Grandes mudanças. Basicamente um bloco de adições compostas das adições do segundo ponto;
-É importante dar um nome a esse tipo de atualização. Exemplo: (v1.21 - Modo Multiplayer);
-v1.0.0.0 : Quase nunca acontece. Só se o jogo for refeitos ou se houver mudanças no formato de atualizações;
+Para não nos perdermos, vamos seguir a lógica `vMajor.Minor.Patch.Build`. Aqui está quando mudar cada número:
 
-```
+### `v 1 . 0 . 0 . 0` ➔ MAJOR (A Grande Mudança)
+**Mude este número quando:**
+* O jogo for lançado oficialmente (v1.0.0.0).
+* Houver uma mudança drástica que altera o jogo inteiro (ex: mudou a engine, refez toda a arte, Jogo 2.0).
+* *Dica: Enquanto estiver em desenvolvimento/protótipo, esse número fica em 0.*
 
+### `v 0 . 1 . 0 . 0` ➔ MINOR (Novas Funcionalidades)
+**Mude este número quando:**
+* Você adicionou algo novo e importante (ex: uma nova fase, um novo inimigo, sistema de inventário).
+* Uma mecânica nova foi implementada.
+* *Nota: Quando você muda esse número, os dois da direita (Patch e Build) voltam a zero.*
+
+### `v 0 . 0 . 1 . 0` ➔ PATCH (Correções de Bugs)
+**Mude este número quando:**
+* Você não criou nada novo, apenas consertou o que estava quebrado.
+* Ajustes de balanceamento (ex: o inimigo estava muito forte).
+* Pequenas melhorias visuais.
+* *Nota: Quando você muda esse número, o da direita (Build) volta a zero.*
+
+### `v 0 . 0 . 0 . 1` ➔ BUILD (Controle Interno)
+**Mude este número quando:**
+* Você fez pequenas alterações, testes ou commits do dia a dia.
+* Mudou um texto, trocou uma cor, ou está testando uma build específica para mandar para um amigo.
+* Muitas vezes, esse número apenas sobe sequencialmente a cada vez que você gera um executável do jogo.
+
+---
+
+### 📝 Exemplos Práticos
+
+1.  **v0.0.0.1**: Começamos o projeto hoje.
+2.  **v0.1.0.0**: O personagem agora anda e pula (Nova funcionalidade).
+3.  **v0.1.1.0**: O pulo estava bugado, consertamos (Correção).
+4.  **v0.2.0.0**: Criamos o Menu Inicial, adicionamos novos inimigos, corrigimos bugs (Pela regra o maior vence, ou seja, MINOR).
+6.  **v1.0.0.0**: O jogo está pronto e foi publicado na Steam!
 
 ---
 ## :construction_worker: MODO DESENVOLVEDOR:
@@ -63,6 +89,7 @@ Para ativar o modo_desenvolvedor vá em `Scripts / script_init` e defina a varia
 4. `Ctrl + C + M`: Ativar/desativar a visualização das caixas de colisão do mapa.
 5. `Ctrl + F`: Aumentar o FPS.
 6. `Ctrl + Alt + F`: Diminuir o FPS.
+7. `Ctrl + K`: Trocar modo de controle.
 
 Mais comandos em breve ...
 

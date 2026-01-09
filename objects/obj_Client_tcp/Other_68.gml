@@ -65,7 +65,7 @@ switch (_type_event) {
 				var _tiro_y = buffer_read(_buffer, buffer_u16);
 				var _tiro_dir = buffer_read(_buffer, buffer_u16);
 				
-				var _tiro_instance = instance_create_layer(_tiro_x, _tiro_y, "Tiros", obj_Tiro);
+				var _tiro_instance = instance_create_layer(_tiro_x, _tiro_y, "Projeteis", obj_Tiro);
 				_tiro_instance.direction = _tiro_dir;
 			
 				break;

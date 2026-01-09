@@ -10,8 +10,8 @@
   "name":"obj_Spaw_esqueleto",
   "overriddenProperties":[],
   "parent":{
-    "name":"Inimigos",
-    "path":"folders/Objetos/Personagens/Inimigos.yy",
+    "name":"Spawners",
+    "path":"folders/Objetos/Abstratos/Spawners.yy",
   },
   "parentObjectId":null,
   "persistent":false,

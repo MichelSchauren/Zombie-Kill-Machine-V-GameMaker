@@ -1,0 +1,4 @@
+v1.5.1.0
+
+- Machado do Miniboss do tamanho correto; [path] *
+- Machado do MiniBoss gruda na parede; [build] *

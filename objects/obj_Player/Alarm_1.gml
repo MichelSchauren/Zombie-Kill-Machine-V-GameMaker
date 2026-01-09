@@ -1,9 +1,10 @@
+// MORREU
 if (room == Multiplayer) {
 	// Reviver
-	morto = false;
+	estado = PL_ESTADOS.PARADO;
 	vida = global.Player_VIDA_TOTAL;
-	x = 1536;
-	y = 1536;
+	x = int64(random_range(1250, 1800));
+	y = int64(random_range(1450, 1540));
 	image_speed = 1;
 } else {
 	// Ir para a tela de gameover

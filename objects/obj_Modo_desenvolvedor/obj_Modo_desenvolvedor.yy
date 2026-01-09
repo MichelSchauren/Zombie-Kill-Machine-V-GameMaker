@@ -9,8 +9,8 @@
   "name":"obj_Modo_desenvolvedor",
   "overriddenProperties":[],
   "parent":{
-    "name":"Eventos da Room",
-    "path":"folders/Objetos/Eventos da Room.yy",
+    "name":"Abstratos",
+    "path":"folders/Objetos/Abstratos.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,5 +32,5 @@
   "solid":false,
   "spriteId":null,
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }
