@@ -144,6 +144,7 @@
     {"name":"inst_359131C9","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_6033B924","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_25F69CBC","path":"rooms/Summer_Farm/Summer_Farm.yy",},
+    {"name":"inst_73D640F2","path":"rooms/Summer_Farm/Summer_Farm.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -156,6 +157,7 @@
         {"$GMRInstance":"v4","%Name":"inst_7887E66D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7887E66D","objectId":{"name":"obj_Spaw_rapido","path":"objects/obj_Spaw_rapido/obj_Spaw_rapido.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-96.0,"y":2144.0,},
         {"$GMRInstance":"v4","%Name":"inst_25F69CBC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_25F69CBC","objectId":{"name":"obj_Spaw_miniboss","path":"objects/obj_Spaw_miniboss/obj_Spaw_miniboss.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2304.0,"y":-96.0,},
         {"$GMRInstance":"v4","%Name":"inst_69A063EA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_69A063EA","objectId":{"name":"obj_Camera","path":"objects/obj_Camera/obj_Camera.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":96.0,},
+        {"$GMRInstance":"v4","%Name":"inst_73D640F2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_73D640F2","objectId":{"name":"Objeto_Luz","path":"objects/Objeto_Luz/Objeto_Luz.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":5.0,"scaleY":5.0,"x":0.0,"y":0.0,},
       ],"layers":[],"name":"Abstratos","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Difientes_3","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Difientes_3","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":95,"SerialiseWidth":143,"TileCompressedData":[
           -83,-2147483648,11,306,307,308,309,310,311,312,313,314,315,316,-132,-2147483648,11,353,354,355,356,357,

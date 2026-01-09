@@ -57,7 +57,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.2.212",
+    "IDEVersion":"2024.14.2.213",
   },
   "name":"Zombie_Kill_Machine_V",
   "resources":[
@@ -109,7 +109,7 @@
     {"id":{"name":"obj_Texto_credits","path":"objects/obj_Texto_credits/obj_Texto_credits.yy",},},
     {"id":{"name":"obj_Tiro","path":"objects/obj_Tiro/obj_Tiro.yy",},},
     {"id":{"name":"obj_Voltar_menu","path":"objects/obj_Voltar_menu/obj_Voltar_menu.yy",},},
-    {"id":{"name":"TransicaoObject","path":"objects/TransicaoObject/TransicaoObject.yy",},},
+    {"id":{"name":"Objeto_Luz","path":"objects/Objeto_Luz/Objeto_Luz.yy",},},
     {"id":{"name":"Credits","path":"rooms/Credits/Credits.yy",},},
     {"id":{"name":"GameOver","path":"rooms/GameOver/GameOver.yy",},},
     {"id":{"name":"Gameplay","path":"rooms/Gameplay/Gameplay.yy",},},
@@ -185,7 +185,6 @@
     {"id":{"name":"spr_Touchpad_fundo","path":"sprites/spr_Touchpad_fundo/spr_Touchpad_fundo.yy",},},
     {"id":{"name":"spr_Touchpad_mira","path":"sprites/spr_Touchpad_mira/spr_Touchpad_mira.yy",},},
     {"id":{"name":"Sprite59","path":"sprites/Sprite59/Sprite59.yy",},},
-    {"id":{"name":"TransicaoSprite","path":"sprites/TransicaoSprite/TransicaoSprite.yy",},},
     {"id":{"name":"tl_Chao","path":"tilesets/tl_Chao/tl_Chao.yy",},},
     {"id":{"name":"tl_Difientes","path":"tilesets/tl_Difientes/tl_Difientes.yy",},},
     {"id":{"name":"tl_Estruturas","path":"tilesets/tl_Estruturas/tl_Estruturas.yy",},},
