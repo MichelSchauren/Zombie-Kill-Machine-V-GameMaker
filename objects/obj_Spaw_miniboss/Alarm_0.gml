@@ -1,1 +1,0 @@
-pode_spawnar = true;

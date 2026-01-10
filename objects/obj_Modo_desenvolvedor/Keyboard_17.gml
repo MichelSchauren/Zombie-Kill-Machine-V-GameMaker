@@ -41,4 +41,9 @@ if (global.Modo_desenvolvedor) {
 		
 		f_Resetar_controles();
 	}
+	
+	// Player imortal
+	if (keyboard_check(vk_shift) and keyboard_check_pressed(ord("P"))) {
+		global.Player_imortal = ! global.Player_imortal;
+	}
 }

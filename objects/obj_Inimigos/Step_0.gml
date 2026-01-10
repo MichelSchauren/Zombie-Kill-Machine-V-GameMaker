@@ -27,6 +27,7 @@ switch (estado) {
         if (image_index = image_number -1) {
             estado = INIMIGOS_ESTADOS.PERSEGUINDO;
 			sprite_index = spr_andando;
+			image_speed = 1;
 			image_index = 0;
         }
 		break;
@@ -37,5 +38,6 @@ if (spr_morrendo != noone and vida == 0 and estado != INIMIGOS_ESTADOS.MORRENDO 
 	estado = INIMIGOS_ESTADOS.MORRENDO;
 	sprite_index = spr_morrendo; // Mudar sprite
 	image_index = 0;
+	image_speed = 1;
 	speed = 0;
 }

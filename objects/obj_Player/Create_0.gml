@@ -5,6 +5,7 @@ mask_index = spr_colisao;
 
 pode_atirar = true;
 tpf = game_get_speed(gamespeed_fps) / global.Tiro_TPS;
+press = false;
 dir_tiro = 0;
 
 // ESTADOS
@@ -34,11 +35,3 @@ if (room == Multiplayer) {
 	buffer_write(_buffer, buffer_u16, y); // Cordenada Y do player
 	network_send_packet(obj_Client_tcp.socket_tcp, _buffer, buffer_tell(_buffer));
 }
-
-
-// CONTROLAR PLAYER
-mov_up = false;
-mov_left = false;
-mov_down = false;
-mov_rigth = false;
-press = false;
