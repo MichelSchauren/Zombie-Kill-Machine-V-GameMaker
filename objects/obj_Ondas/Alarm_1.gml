@@ -8,6 +8,7 @@ else
 	alarm[0] = global.Tempo_dia;
 	global.Onda_atual += 1; // Novo dia nova onda
 	global.Peso_orda += 2; // temporário
+	obj_Player.vida = global.Player_VIDA_TOTAL;
 	
 	spawnar_orda();
 	alarm[2] = global.Tempo_orda_noite;

@@ -146,6 +146,7 @@
     {"name":"inst_110AD936","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_70F9F43","path":"rooms/Summer_Farm/Summer_Farm.yy",},
     {"name":"inst_7FE674A1","path":"rooms/Summer_Farm/Summer_Farm.yy",},
+    {"name":"inst_2ECFC7D","path":"rooms/Summer_Farm/Summer_Farm.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -160,6 +161,7 @@
         {"$GMRInstance":"v4","%Name":"inst_110AD936","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_110AD936","objectId":{"name":"obj_Spaw","path":"objects/obj_Spaw/obj_Spaw.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2432.0,"y":2368.0,},
         {"$GMRInstance":"v4","%Name":"inst_70F9F43","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_70F9F43","objectId":{"name":"obj_Spaw","path":"objects/obj_Spaw/obj_Spaw.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3520.0,"y":1280.0,},
         {"$GMRInstance":"v4","%Name":"inst_7FE674A1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7FE674A1","objectId":{"name":"obj_Spaw","path":"objects/obj_Spaw/obj_Spaw.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2304.0,"y":-96.0,},
+        {"$GMRInstance":"v4","%Name":"inst_2ECFC7D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2ECFC7D","objectId":{"name":"obj_MiniBoss","path":"objects/obj_MiniBoss/obj_MiniBoss.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1696.0,"y":1312.0,},
       ],"layers":[],"name":"Abstratos","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Colisores","depth":100,"effectEnabled":true,"effectType":null,"gridX":24,"gridY":24,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_647E97F0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_647E97F0","objectId":{"name":"obj_Colisor_24","path":"objects/obj_Colisor_24/obj_Colisor_24.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":144.0,"y":1896.0,},
