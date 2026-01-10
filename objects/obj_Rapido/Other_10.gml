@@ -19,7 +19,8 @@ mp_potential_settings(90, 10, 8, false);
 
 atacar = function (dist_player) {
 	// Se estiver na ultima imagem da sprite
-    if (image_index = image_number -1) {
+    if (image_index >= image_number -1) {
+		image_index = image_number -1;
 		// Dar dash
 		estado = INIMIGOS_ESTADOS.DASHANDO;
 		image_speed = 0;

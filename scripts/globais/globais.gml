@@ -1,6 +1,9 @@
 // VARIAVEIS GLOBAIS
 
 
+// configurações gerais
+global.Mapa_atual = Summer_Farm;
+
 // modo desenvolvedor
 global.Modo_desenvolvedor = true;
 global.Spaw_inimigos = true;
@@ -8,10 +11,21 @@ global.Mostrar_colisoes_inimigos = false;
 global.Mostrar_colisoes_player = false;
 global.Controller_mode = 0; // 0:PC; 1:GamePad; 2:Mobile;
 global.second_control_mode = 1;
+global.Player_imortal = false;
 
-// configurações gerais
-global.Mapa_atual = Summer_Farm;
-global.onda = 1;
+// ondas
+global.Onda_atual = 0;
+global.Peso_orda = 0;
+global.Tempo_dia = game_get_speed(gamespeed_fps) * 60; //segundos
+global.Tempo_noite = game_get_speed(gamespeed_fps) * 30;
+global.Tempo_orda_dia = game_get_speed(gamespeed_fps) * 20;
+global.Tempo_orda_noite = game_get_speed(gamespeed_fps) * 10;
+global.Orda = ds_list_create();
+global.Pesos_orda = [ // [peso, inimigo, orda em que começa a aparecer]
+	[1, obj_Esqueleto, 1],
+	[3, obj_Rapido, 2],
+	[7, obj_MiniBoss, 5]
+];
 
 // player
 global.Player_name = "";
@@ -24,9 +38,6 @@ global.Player_VEL_ATIRANDO = 2.4;
 global.Tiro_VEL = 10;
 global.Tiro_TPS = 3; // Tiros por segundo
 global.Tiro_DANO = 8;
-
-// inimigos
-global.Inimigos_spaw_limit = 10;
 
 // esqueleto
 global.Esqueleto_ALCANCE_CORPO = 60;

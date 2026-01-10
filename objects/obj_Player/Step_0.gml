@@ -1,7 +1,9 @@
+var _buffer;
+
 // DEFINIR ESTADO ATUAL
 if (estado != noone) {
 	var _estado_passado = estado;
-	if (vida == 0) {
+	if (vida == 0 and !global.Player_imortal) {
 		estado = PL_ESTADOS.MORRENDO;
 	} else if (speed > 0) { // está se movendo
 		if (press) { // está atirando
@@ -82,7 +84,7 @@ if (estado = PL_ESTADOS.ATIRANDO or estado = PL_ESTADOS.ATIRANDO_ANDANDO) {
 		// Criar tiro
 		if (room == Multiplayer) {
 			// Avisar server de que um novo tiro foi criado
-			var _buffer = obj_Client_tcp.client_buffer;
+			_buffer = obj_Client_tcp.client_buffer;
 			buffer_seek(_buffer, buffer_seek_start, 0);
 			buffer_write(_buffer, buffer_u8, Events_client_server.tiro_player);
 			buffer_write(_buffer, buffer_u16, _x);
@@ -97,4 +99,21 @@ if (estado = PL_ESTADOS.ATIRANDO or estado = PL_ESTADOS.ATIRANDO_ANDANDO) {
 			_tiro.direction = dir_tiro;
 		}
 	}
+}
+
+
+// Se estiver no modo online
+if (room == Multiplayer) {
+	// Dizer ao servidor o estado atual do player
+	// x, y, vida, sprite, image_index.
+	_buffer = obj_Client_tcp.client_buffer;
+	buffer_seek(_buffer, buffer_seek_start, 0);
+	buffer_write(_buffer, buffer_u8, Events_client_server.mudar_player);
+	buffer_write(_buffer, buffer_u16, x);
+	buffer_write(_buffer, buffer_u16, y);
+	buffer_write(_buffer, buffer_u8, vida);
+	buffer_write(_buffer, buffer_u8, sprite_index);
+	buffer_write(_buffer, buffer_u8, image_index);
+	buffer_write(_buffer, buffer_f16, image_xscale);
+	network_send_packet(obj_Client_tcp.socket_tcp, _buffer, buffer_tell(_buffer));
 }

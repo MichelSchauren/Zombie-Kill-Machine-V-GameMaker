@@ -8,9 +8,9 @@ if (estado == INIMIGOS_ESTADOS.DASHANDO) {
 			obj_Player.vida = max(obj_Player.vida - dano, 0);	
 		}
 		
-		estado = INIMIGOS_ESTADOS.PERSEGUINDO;
-		sprite_index = spr_andando;
+		// Coldown para voltar a perseguir
+		alarm[1] = game_get_speed(gamespeed_fps); // 1 segundo
+		estado = noone;
 		image_index = 0;
-		image_speed = 1;
 	}
 }

@@ -12,7 +12,10 @@
     "name":"Projeteis",
     "path":"folders/Objetos/Projeteis.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_Projeteis",
+    "path":"objects/obj_Projeteis/obj_Projeteis.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
