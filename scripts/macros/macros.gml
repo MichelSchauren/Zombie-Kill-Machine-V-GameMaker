@@ -1,1 +1,0 @@
-#macro MOBILE (global.Controller_mode == 2)
