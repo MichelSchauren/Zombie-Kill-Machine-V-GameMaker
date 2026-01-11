@@ -31,7 +31,7 @@
   ],
   "name":"spr_MiniBoss_atirando",
   "nineSlice":null,
-  "origin":9,
+  "origin":4,
   "parent":{
     "name":"MiniBoss",
     "path":"folders/Sprites/Personagens/Inimigos/MiniBoss.yy",
@@ -108,7 +108,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":70,
-    "yorigin":105,
+    "yorigin":70,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

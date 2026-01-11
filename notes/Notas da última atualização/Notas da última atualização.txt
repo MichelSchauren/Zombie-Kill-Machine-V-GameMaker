@@ -1,13 +1,6 @@
-v1.6.0.0
+v1.6.1.3
 
-- MiniBoss maior; [build] *
-- Coldawn após o ataque do Rápido (a pedido do CAXISTA); [build] *
-- Opção do modo desenvolvedor (Player imortal); [build] *
-- Bug com no ataque dos inimigos corrigido; [path] *
-- Novo sistema de intercalação entre as camadas dos personagens e difientes; [minor] *
-- Sistema de Waves / Ondas / Ordas; [minor] *
-- Criação de um objeto separado para o HUD (obj_Hud), otimização e organização do código; [path] *
+- Detalhes adicionados no mapa Summer Farm; [build]
 
 - Adição de macros para organização do código; [build]
-- Reconstruido o mapa Summer Farm; [build]
-- Nova loginha no centro do mapa; [minor]
+- Nova loja no centro do mapa funcionando por completo; [minor]

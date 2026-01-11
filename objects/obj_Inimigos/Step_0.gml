@@ -24,7 +24,7 @@ switch (estado) {
 			_projetil.image_xscale = image_xscale;
         }
 		// Se estiver na ultima imagem da sprite
-        if (image_index = image_number -1) {
+        if (image_index >= image_number -1) {
             estado = INIMIGOS_ESTADOS.PERSEGUINDO;
 			sprite_index = spr_andando;
 			image_speed = 1;
