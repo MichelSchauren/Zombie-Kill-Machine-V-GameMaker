@@ -1,6 +1,7 @@
-v1.6.1.1
+v1.6.1.2
+
+- Mapa Summer Farm completamente reconstruido com objetos de estrutura; [build]
+- Loja no centro do mapa (ainda não funciona); [build]
 
 - Adição de macros para organização do código; [build]
-- Reconstruido o mapa Summer Farm; [build]
-
-- Nova loginha no centro do mapa; [minor]
+- Nova loja no centro do mapa funcionando por completo; [minor]

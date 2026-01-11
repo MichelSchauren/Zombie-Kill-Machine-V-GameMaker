@@ -4,7 +4,7 @@ y += lengthdir_y(global.Tiro_VEL, direction);
 
 // COLISÕES
 // colisão com paredes
-if (place_meeting(x, y, obj_Colisores)) {
+if (place_meeting(x, y, [obj_Colisores, obj_Estruturas])) {
 	instance_destroy();
 }
 

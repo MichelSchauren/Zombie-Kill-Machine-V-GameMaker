@@ -24,7 +24,7 @@ if (! parado) {
 
 // COLISÕES
 // colisão com paredes
-if (place_meeting(x, y, obj_Colisores)) {
+if (place_meeting(x, y, [obj_Colisores, obj_Estruturas])) {
 	parado = true;
 	image_speed = 0;
 }

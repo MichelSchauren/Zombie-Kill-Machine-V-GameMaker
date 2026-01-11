@@ -65,7 +65,7 @@ switch (estado) {
 // Mover
 if (estado == PL_ESTADOS.CORRENDO or estado = PL_ESTADOS.ATIRANDO_ANDANDO) {
 	// Mover caso não colida com as parede
-	move_and_collide(lengthdir_x(speed*vel, direction), lengthdir_y(speed*vel, direction), [obj_Colisores, obj_Colisor_player_24]);
+	move_and_collide(lengthdir_x(speed*vel, direction), lengthdir_y(speed*vel, direction), [obj_Estruturas, obj_Colisores, obj_Colisor_player_24]);
 	speed = 0; // Para não se mover no final do step
 }
 

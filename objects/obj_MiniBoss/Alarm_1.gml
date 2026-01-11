@@ -1,7 +1,7 @@
 if (estado != INIMIGOS_ESTADOS.MORRENDO and estado != noone) {
 	mask_index = sprite_index;
 	// Verifica se está colidindo antes de atirar o maxado (evita jogar maxado desnecessariamente)
-	if (!place_meeting(x, y, obj_Colisores)) {
+	if (!place_meeting(x, y, obj_Estruturas)) {
 		// Atirar maxado no player
 		estado = INIMIGOS_ESTADOS.ATIRANDO;
 		sprite_index = spr_MiniBoss_atirando;

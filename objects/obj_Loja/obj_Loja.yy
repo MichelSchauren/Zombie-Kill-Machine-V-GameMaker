@@ -6,10 +6,13 @@
   "name":"obj_Loja",
   "overriddenProperties":[],
   "parent":{
-    "name":"Construções",
-    "path":"folders/Objetos/Estruturas/Construções.yy",
+    "name":"Prédios",
+    "path":"folders/Objetos/Estruturas/Prédios.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_Estruturas",
+    "path":"objects/obj_Estruturas/obj_Estruturas.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
