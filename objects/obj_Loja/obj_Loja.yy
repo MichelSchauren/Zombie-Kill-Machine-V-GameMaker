@@ -1,16 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_DepthSorting",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_Loja",
+  "eventList":[],
   "managed":true,
-  "name":"obj_DepthSorting",
+  "name":"obj_Loja",
   "overriddenProperties":[],
   "parent":{
-    "name":"Abstratos",
-    "path":"folders/Objetos/Abstratos.yy",
+    "name":"Construções",
+    "path":"folders/Objetos/Estruturas/Construções.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_Loja",
+    "path":"sprites/spr_Loja/spr_Loja.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

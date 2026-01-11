@@ -1,8 +1,6 @@
-v1.6.0.0
+v1.6.1.1
 
-- Player recupera toda vida no início de uma nova onda; [build]
 - Adição de macros para organização do código; [build]
 - Reconstruido o mapa Summer Farm; [build]
-- Bugs com o MiniBoss corrigido; [path]
 
 - Nova loginha no centro do mapa; [minor]
