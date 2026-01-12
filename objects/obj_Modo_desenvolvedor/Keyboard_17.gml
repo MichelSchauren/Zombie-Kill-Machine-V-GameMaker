@@ -46,4 +46,9 @@ if (global.Modo_desenvolvedor) {
 	if (keyboard_check(vk_shift) and keyboard_check_pressed(ord("P"))) {
 		global.Player_imortal = ! global.Player_imortal;
 	}
+	
+	// Pausar ondas
+	if (keyboard_check_pressed(ord("T"))) {
+		obj_Ondas.pausar(!global.Tempo_pausado);
+	}
 }

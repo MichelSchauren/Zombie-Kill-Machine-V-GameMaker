@@ -1,9 +1,9 @@
 // Variáveis do Inimigo
-alcance_corpo = global.Esqueleto_ALCANCE_CORPO;
-vida_total = global.Esqueleto_VIDA_TOTAL;
+alcance_corpo = ESQUELETO_ALCANCE_CORPO;
+vida_total = ESQUELETO_VIDA_TOTAL;
 vida = vida_total;
-vel = global.Esqueleto_VEL;
-dano = global.Esqueleto_DANO;
+vel = ESQUELETO_VEL;
+dano = ESQUELETO_DANO;
 
 spr_colisao = spr_Esqueleto_mask_pes;
 spr_andando = spr_Esqueleto_andando;

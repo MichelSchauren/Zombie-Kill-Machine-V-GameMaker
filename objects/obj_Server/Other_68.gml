@@ -57,7 +57,7 @@ else {
 					var _nome = buffer_read(_buffer, buffer_string);
 					var _x = buffer_read(_buffer, buffer_u16);
 					var _y = buffer_read(_buffer, buffer_u16);
-					var _array_player = [_nome, _x, _y, global.Player_VIDA_TOTAL, spr_Player_parado, 0, 1];
+					var _array_player = [_nome, _x, _y, PLAYER_VIDA_TOTAL, spr_Player_parado, 0, 1];
 				
 					// servidor retorna a struct de todos os clientes menos esse <
 					if (struct_names_count(players_struct) > 0) {

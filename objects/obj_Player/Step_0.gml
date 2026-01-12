@@ -1,5 +1,3 @@
-var _buffer;
-
 // DEFINIR ESTADO ATUAL
 if (estado != noone) {
 	var _estado_passado = estado;
@@ -31,13 +29,13 @@ switch (estado) {
 		sprite_index = spr_Player_atirandomov;
 		if (dir_tiro < 90 or dir_tiro > 270) image_xscale = 1;
 		else image_xscale = -1;
-		vel = global.Player_VEL_ATIRANDO;
+		vel = PLAYER_VEL_ATIRANDO;
 		break;
 		
 	case PL_ESTADOS.CORRENDO:
 		sprite_index = spr_Player_correndo;
 		if (hspeed != 0) image_xscale = sign(hspeed);
-		vel = global.Player_VEL_CORRENDO;
+		vel = PLAYER_VEL_CORRENDO;
 		break;
 		
 	case PL_ESTADOS.ATIRANDO:
@@ -82,9 +80,9 @@ if (estado = PL_ESTADOS.ATIRANDO or estado = PL_ESTADOS.ATIRANDO_ANDANDO) {
 		else _x = x+28;
 		
 		// Criar tiro
-		if (room == Multiplayer) {
+		if (global.Multiplayer) {
 			// Avisar server de que um novo tiro foi criado
-			_buffer = obj_Client_tcp.client_buffer;
+			var _buffer = obj_Client_tcp.client_buffer;
 			buffer_seek(_buffer, buffer_seek_start, 0);
 			buffer_write(_buffer, buffer_u8, Events_client_server.tiro_player);
 			buffer_write(_buffer, buffer_u16, _x);
@@ -99,21 +97,4 @@ if (estado = PL_ESTADOS.ATIRANDO or estado = PL_ESTADOS.ATIRANDO_ANDANDO) {
 			_tiro.direction = dir_tiro;
 		}
 	}
-}
-
-
-// Se estiver no modo online
-if (room == Multiplayer) {
-	// Dizer ao servidor o estado atual do player
-	// x, y, vida, sprite, image_index.
-	_buffer = obj_Client_tcp.client_buffer;
-	buffer_seek(_buffer, buffer_seek_start, 0);
-	buffer_write(_buffer, buffer_u8, Events_client_server.mudar_player);
-	buffer_write(_buffer, buffer_u16, x);
-	buffer_write(_buffer, buffer_u16, y);
-	buffer_write(_buffer, buffer_u8, vida);
-	buffer_write(_buffer, buffer_u8, sprite_index);
-	buffer_write(_buffer, buffer_u8, image_index);
-	buffer_write(_buffer, buffer_f16, image_xscale);
-	network_send_packet(obj_Client_tcp.socket_tcp, _buffer, buffer_tell(_buffer));
 }

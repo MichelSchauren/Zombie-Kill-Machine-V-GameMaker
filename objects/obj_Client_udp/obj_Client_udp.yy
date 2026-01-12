@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Multiplayer",
-    "path":"folders/Objetos/Multiplayer.yy",
+    "path":"folders/Objetos/Abstratos/Multiplayer.yy",
   },
   "parentObjectId":null,
   "persistent":false,

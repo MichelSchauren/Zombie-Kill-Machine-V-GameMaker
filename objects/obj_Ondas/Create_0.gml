@@ -1,4 +1,7 @@
+// Resetar globais
 global.Onda_atual = 0;
+global.Peso_orda = 0;
+ds_list_clear(global.Orda);
 
 alarm[1] = 1; // Iniciar na transição de dia para noite
 
@@ -19,15 +22,16 @@ surface_reset_target();
 draw_set_colour(-1);
 
 
+// Spaw de inimigos
 pegar_pesos_reais = function (enemy, _) {
 	return (enemy[0] <= global.Peso_orda and enemy[2] <= global.Onda_atual) ;
 }
-pesos_orda_reais = array_filter(global.Pesos_orda, pegar_pesos_reais);
+pesos_orda_reais = array_filter(PESOS_ORDA, pegar_pesos_reais);
 
 spawnar_orda = function () {
 	if (global.Spaw_inimigos) {
 		var _peso = global.Peso_orda;
-		var _pesos_orda_reais = array_filter(global.Pesos_orda, pegar_pesos_reais);
+		var _pesos_orda_reais = array_filter(PESOS_ORDA, pegar_pesos_reais);
 	
 		while (_peso > 0) {
 			// sortear inimigo
@@ -42,5 +46,26 @@ spawnar_orda = function () {
 				array_delete(_pesos_orda_reais, _i, 1); // Para não sortear o mesmo inimigo novamente
 			}
 		}
+	}
+}
+
+
+// Pausar/Despausar tempo
+tempo_atual = ds_list_create();
+ds_list_add(tempo_atual, 0, 1, 0);
+
+pausar = function (pause) {
+	global.Tempo_pausado = pause;
+	
+	if (pause) {
+		// armazanar tempo atual
+		ds_list_insert(tempo_atual, 0, alarm_get(0));
+		ds_list_insert(tempo_atual, 1, alarm_get(1));
+		ds_list_insert(tempo_atual, 2, alarm_get(2));
+	} else {
+		// continuar ciclo das ondas apartir do tempo armazenado
+		alarm[0] = ds_list_find_value(tempo_atual, 0);
+		alarm[1] = ds_list_find_value(tempo_atual, 1);
+		alarm[2] = ds_list_find_value(tempo_atual, 2);
 	}
 }

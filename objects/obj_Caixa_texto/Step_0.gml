@@ -34,7 +34,7 @@ if (global.Controller_mode == 2) {
 
 if (selecionado) {
     // Adiciona o que foi digitado na string
-	if (string_length(keyboard_string) < max_caracteres) {
+	if (string_length(keyboard_string) <= max_caracteres) {
 		texto = keyboard_string;
 	}
 	 

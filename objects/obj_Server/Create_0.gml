@@ -10,9 +10,9 @@ players_struct = {}; // {socket_client: [nome, x, y, vida, sprite, image_index],
 socket_list = ds_list_create(); // Só pra iterar
 
 // Criar servidor principal (TCP)
-server_tcp = network_create_server(network_socket_tcp, global.porta_tcp, max_players);
+server_tcp = network_create_server(network_socket_tcp, PORTA_TCP, max_players);
 // Servidor de descoberta (UDP)
-server_udp = network_create_server(network_socket_udp, global.porta_udp, 1);
+server_udp = network_create_server(network_socket_udp, PORTA_UDP, 1);
 
 /* O servidor UDP serve somente para comunicar aqueles que querem entrar no servidor, 
 quando outro usuario clicar em buscar server esse servidor UDP irá dizer: Ei, estou aqui! Meu nome é tal,

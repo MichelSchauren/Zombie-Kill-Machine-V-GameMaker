@@ -12,65 +12,69 @@ global.Mostrar_colisoes_player = false;
 global.Controller_mode = 0; // 0:PC; 1:GamePad; 2:Mobile;
 global.second_control_mode = 1;
 global.Player_imortal = false;
+global.Tempo_pausado = false;
 
 // ondas
 global.Onda_atual = 0;
 global.Peso_orda = 0;
-global.Tempo_dia = game_get_speed(gamespeed_fps) * 60; //segundos
-global.Tempo_noite = game_get_speed(gamespeed_fps) * 30;
-global.Tempo_orda_dia = game_get_speed(gamespeed_fps) * 20;
-global.Tempo_orda_noite = game_get_speed(gamespeed_fps) * 10;
 global.Orda = ds_list_create();
-global.Pesos_orda = [ // [peso, inimigo, orda em que começa a aparecer]
-	[1, obj_Esqueleto, 1],
-	[3, obj_Rapido, 2],
-	[7, obj_MiniBoss, 5]
-];
+global.Mostrar_ondas = true;
+#macro TEMPO_DIA (game_get_speed(gamespeed_fps) * 60) //segundos
+#macro TEMPO_NOITE (game_get_speed(gamespeed_fps) * 30)
+#macro TEMPO_ORDA_DIA (game_get_speed(gamespeed_fps) * 20)
+#macro TEMPO_ORDA_NOITE (game_get_speed(gamespeed_fps) * 10)
+// [peso, inimigo, orda em que começa a aparecer]
+#macro PESOS_ORDA [ [1, obj_Esqueleto, 1], [3, obj_Rapido, 2], [7, obj_MiniBoss, 5] ]
 
 // player
 global.Player_name = "";
-global.Player_VIDA_TOTAL = 100;
-global.Player_vida = global.Player_VIDA_TOTAL;
-global.Player_VEL_CORRENDO = 3.4;
-global.Player_VEL_ATIRANDO = 2.4;
+global.Player_vida = 100;
+#macro PLAYER_VIDA_TOTAL 100
+#macro PLAYER_VEL_CORRENDO 3.4
+#macro PLAYER_VEL_ATIRANDO 2.4
 
 // tiro
-global.Tiro_VEL = 10;
-global.Tiro_TPS = 3; // Tiros por segundo
-global.Tiro_DANO = 8;
+#macro TIRO_VEL 10
+#macro TIRO_TPS 3 // Tiros por segundo
+#macro TIRO_DANO 8
 
 // esqueleto
-global.Esqueleto_ALCANCE_CORPO = 60;
-global.Esqueleto_VIDA_TOTAL = 50;
-global.Esqueleto_VEL = 1.8;
-global.Esqueleto_DANO = 18;
+#macro ESQUELETO_ALCANCE_CORPO 60
+#macro ESQUELETO_VIDA_TOTAL 50
+#macro ESQUELETO_VEL 1.8
+#macro ESQUELETO_DANO 18
 
 // rapido
-global.Rapido_ALCANCE_CORPO = 100;
-global.Rapido_VIDA_TOTAL = 40;
-global.Rapido_VEL = 3;
-global.Rapido_DASH_VEL = 7;
-global.Rapido_DANO = 16;
+#macro RAPIDO_ALCANCE_CORPO 100
+#macro RAPIDO_VIDA_TOTAL 40
+#macro RAPIDO_VEL 3
+#macro RAPIDO_DASH_VEL 7
+#macro RAPIDO_DANO 16
 
 // mini boss
-global.MiniBoss_ALCENCE_CORPO = 60;
-global.MiniBoss_ALCENCE_ATIRANDO = 360;
-global.MiniBoss_VIDA_TOTAL = 80;
-global.MiniBoss_VEL = 1.2;
-global.MiniBoss_DANO_CORPO = 20;
-global.Maxado_DANO = 25;
-global.Maxado_VEL = 8;
+#macro MINIBOSS_ALCENCE_CORPO 60
+#macro MINIBOSS_ALCENCE_ATIRANDO 360
+#macro MINIBOSS_VIDA_TOTAL 80
+#macro MINIBOSS_VEL 1.2
+#macro MINIBOSS_DANO_CORPO 20
+#macro MAXADO_DANO 25
+#macro MAXADO_VEL 8
 
 
 // MULTIPLAYER
-global.porta_tcp = 64193;
-global.porta_udp = 64194;
+#macro PORTA_TCP 64193
+#macro PORTA_UDP 64194
+global.Multiplayer = false;
 global.conect_server_ip = noone;
 global.input_server_nome = noone;
 global.input_server_jogadores = noone;
 global.server_nome = $"Sala{int64(random_range(10, 99))}";
 global.server_jogadores = 10;
 global.server_pvp = noone;
+
+global.Mostrar_chat = false;
+global.Chat_mensagens = ds_list_create();
+
 // Eventos multiplayer
 enum Events_client_server {
 	dados_player = 10, // cliente envia infos sobre seu player (nome, x, y) >

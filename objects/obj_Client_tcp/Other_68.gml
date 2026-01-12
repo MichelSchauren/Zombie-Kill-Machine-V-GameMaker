@@ -11,6 +11,46 @@ switch (_type_event) {
 			
 		// Oque será feito com os dados recebidos
 		switch (msg_id) {
+			case Events_server_client.atualizar_ping:
+				var _tempo_envio = buffer_read(_buffer, buffer_u32);
+				ping = current_time - _tempo_envio;
+				alarm[1] = fps*5;
+				break;
+		
+			case Events_server_client.mudar_outro:
+				var _socket_outro = buffer_read(_buffer, buffer_u8);				
+				var _outro = outros_struct[$ _socket_outro];				
+				_outro.x = buffer_read(_buffer, buffer_u16);
+				_outro.y = buffer_read(_buffer, buffer_u16);
+				_outro.vida =buffer_read(_buffer, buffer_u8);
+				_outro.sprite_index =buffer_read(_buffer, buffer_u8);
+				_outro.image_index = buffer_read(_buffer, buffer_u8);
+				_outro.image_xscale = buffer_read(_buffer, buffer_f16);
+			
+				break;
+		
+			case Events_server_client.novo_tiro:
+				var _tiro_x = buffer_read(_buffer, buffer_u16);
+				var _tiro_y = buffer_read(_buffer, buffer_u16);
+				var _tiro_dir = buffer_read(_buffer, buffer_u16);
+				
+				var _tiro_instance = instance_create_layer(_tiro_x, _tiro_y, "Projeteis", obj_Tiro);
+				_tiro_instance.direction = _tiro_dir;
+			
+				break;
+				
+			case Events_server_client.novo_chat:
+				var _nome = buffer_read(_buffer, buffer_string);
+				var _msg = buffer_read(_buffer, buffer_string);
+				ds_list_add(global.Chat_mensagens, [_nome, _msg]); // Adiciona a novo mensagem a lista de mensagens o chat
+	
+				// Caso haver mais de 10 mensagens no chat
+				if (ds_list_size(global.Chat_mensagens) > 10) {
+					ds_list_delete(global.Chat_mensagens, 0); // Deleta a 1º mensagem do chat
+				}
+				
+				break;		
+				
 			case Events_server_client.dados_outros:
 				//  { socket_client: [nome, x, y, vida, sprite, image_index] }
 				var _struct_json = buffer_read(_buffer, buffer_string);
@@ -47,40 +87,6 @@ switch (_type_event) {
 				outros_struct[$ _client_id] = _instance; // Adiciona-lo a struct
 				
 				break;
-		
-			case Events_server_client.mudar_outro:
-				var _socket_outro = buffer_read(_buffer, buffer_u8);				
-				var _outro = outros_struct[$ _socket_outro];				
-				_outro.x = buffer_read(_buffer, buffer_u16);
-				_outro.y = buffer_read(_buffer, buffer_u16);
-				_outro.vida =buffer_read(_buffer, buffer_u8);
-				_outro.sprite_index =buffer_read(_buffer, buffer_u8);
-				_outro.image_index = buffer_read(_buffer, buffer_u8);
-				_outro.image_xscale = buffer_read(_buffer, buffer_f16);
-			
-				break;
-		
-			case Events_server_client.novo_tiro:
-				var _tiro_x = buffer_read(_buffer, buffer_u16);
-				var _tiro_y = buffer_read(_buffer, buffer_u16);
-				var _tiro_dir = buffer_read(_buffer, buffer_u16);
-				
-				var _tiro_instance = instance_create_layer(_tiro_x, _tiro_y, "Projeteis", obj_Tiro);
-				_tiro_instance.direction = _tiro_dir;
-			
-				break;
-				
-			case Events_server_client.novo_chat:
-				var _nome = buffer_read(_buffer, buffer_string);
-				var _msg = buffer_read(_buffer, buffer_string);
-				ds_list_add(obj_Chat.mensagens, [_nome, _msg]); // Adiciona a novo mensagem a lista de mensagens o chat
-	
-				// Caso haver mais de 10 mensagens no chat
-				if (ds_list_size(obj_Chat.mensagens) > 10) {
-					ds_list_delete(obj_Chat.mensagens, 0); // Deleta a 1º mensagem do chat
-				}
-				
-				break;
 				
 			case Events_server_client.outro_desconectado:
 				// Remover instancia do cliente desconectado
@@ -88,12 +94,6 @@ switch (_type_event) {
 				instance_destroy(outros_struct[$ _outro_des_id]);
 				variable_struct_remove(outros_struct, _outro_des_id);
 				
-				break;
-				
-			case Events_server_client.atualizar_ping:
-				var _tempo_envio = buffer_read(_buffer, buffer_u32);
-				ping = current_time - _tempo_envio;
-				alarm[1] = fps*5;
 				break;
 				
 			case Events_server_client.server_desligado:
