@@ -1,12 +1,8 @@
-v1.6.2.0
-
-- Joysticks do Mobile sendo desenhados no Hud; [path]
-- BUG: peso das ordas não reinicia em uma nova partida; [path]
-- otimizações/organização com MACROS; [path]
-- Arrumar MULTIPLAYER; [path]
-- Modo_desenvolvedor: Sistema para pausar/despausar tempo (CTRL + T); [build]
-- Mostrar e desmostrar chat (TAB); [build]
+v1.6.2.2
 
 - Mobs spawnando no multiplayer; [build]
+- Novo objeto para definir a area de spaw dos jogadores no multiplayer; [build]
+- Bug: Spaw do player no multiplayer corrigido; [path]
 
+- Bug: Tiros funcionando no multiplayer; [path]
 - Nova loja no centro do mapa funcionando por completo; [minor]

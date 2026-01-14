@@ -26,4 +26,5 @@ try {
 }
 
 global.Multiplayer = true;
+global.Multiplayer_adm = true;
 room_goto(global.Mapa_atual);

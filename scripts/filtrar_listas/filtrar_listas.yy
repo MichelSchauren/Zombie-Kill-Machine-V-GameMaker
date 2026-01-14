@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"f_Escrever_chat",
+  "%Name":"filtrar_listas",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"f_Escrever_chat",
+  "name":"filtrar_listas",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

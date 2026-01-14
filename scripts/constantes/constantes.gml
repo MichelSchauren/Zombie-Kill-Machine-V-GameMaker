@@ -3,6 +3,7 @@
 
 // configurações gerais
 global.Mapa_atual = Summer_Farm;
+global.Spaw_mapa_pos = ds_list_create();
 
 // modo desenvolvedor
 global.Modo_desenvolvedor = true;
@@ -65,6 +66,7 @@ global.Player_vida = 100;
 #macro PORTA_TCP 64193
 #macro PORTA_UDP 64194
 global.Multiplayer = false;
+global.Multiplayer_adm = false;
 global.conect_server_ip = noone;
 global.input_server_nome = noone;
 global.input_server_jogadores = noone;
@@ -80,14 +82,17 @@ enum Events_client_server {
 	dados_player = 10, // cliente envia infos sobre seu player (nome, x, y) >
 	mudar_player, // sempre que o player do cliente tiver alguma alteração ele envia os dados ao servidor >
 	tiro_player, // sempre que o player do cliente der um TIRO, ele evia isso ao servidor >
-	enviar_chat, // player envia uma mensagem no chat
-	ver_ping // Cliente envia um pacote ao servidor apenas para verificar a latencia e atualizar o ping
+	enviar_chat, // player envia uma mensagem no chat >
+	ver_ping // Cliente envia um pacote ao servidor apenas para verificar a latencia e atualizar o ping >
 }
 enum Events_server_client {
 	dados_outros = 100, // servidor retorna uma lista de todos os clientes menos esse <
 	novo_cliente, // servidor informa a todos os outros clientes que um novo cliente entrou <<
 	mudar_outro, // o servidor recebe os dados e informa a todos os outros que tal cliente foi alterado <<
-	novo_tiro, // o servidor manda todos os clientes criar um tiro em tal posição <<
+	novo_projetil, // o servidor manda todos os clientes criar tal projetil em tal posição <<
+	novo_inimigo, // o servidor avisa os clientes que um inimigo apareceu <<
+	mudar_inimigo, // servidor atualiza a todos sobre os status do inimigo <<
+	atualizar_ondas, // enviar o numero da onda e o alpha da escuridao da noite <<
 	novo_chat, // o servidor avisa todos os clientes que há uma nova mensagem no chat <<
 	outro_desconectado, // o servidor avisa todos os clientes que tal cliente foi desconectado <<
 	atualizar_ping, // servidor devolve a msg ao cliente para ele calcular o ping <

@@ -9,6 +9,6 @@ with (obj_Player) {
 	buffer_write(_buffer, buffer_u8, vida);
 	buffer_write(_buffer, buffer_u8, sprite_index);
 	buffer_write(_buffer, buffer_u8, image_index);
-	buffer_write(_buffer, buffer_f16, image_xscale);
+	buffer_write(_buffer, buffer_s8, image_xscale);
 	network_send_packet(other.socket_tcp, _buffer, buffer_tell(_buffer));
 }

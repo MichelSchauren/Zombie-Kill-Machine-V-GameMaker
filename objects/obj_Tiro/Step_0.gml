@@ -9,7 +9,7 @@ if (place_meeting(x, y, [obj_Colisores, obj_Estruturas])) {
 }
 
 // colisão com inimigos
-with (obj_Inimigos) {
+with (obj_Inimigo) {
 	mask_index = sprite_index; // pega a colisão de toda a sprite
 	
 	if (place_meeting(x, y, other) and estado != noone) {
@@ -19,6 +19,18 @@ with (obj_Inimigos) {
 	}
 	
 	mask_index = spr_colisao; // volta para colisão padrão
+}
+
+if (global.Multiplayer) {
+	with (obj_Inimigo_server) {
+		mask_index = sprite_index; // pega a colisão de toda a sprite
+	
+		if (place_meeting(x, y, other)) {
+			instance_destroy(other);
+		}
+	
+		mask_index = spr_colisao; // volta para colisão padrão
+	}
 }
 
 if (pvp) {

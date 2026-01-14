@@ -17,14 +17,14 @@ estado = INIMIGOS_ESTADOS.PERSEGUINDO; // Estado inicial
 
 mp_potential_settings(90, 10, 8, false);
 
-atacar = function (dist_player) {
+atacar = function (dist_player, amigo) {
 	// Se estiver na ultima imagem da sprite
     if (image_index >= image_number -1) {
 		image_index = image_number -1;
 		// Dar dash
 		estado = INIMIGOS_ESTADOS.DASHANDO;
 		image_speed = 0;
-		dash_direction = point_direction(x, y, obj_Player.x, obj_Player.y);
+		dash_direction = point_direction(x, y, amigo.x, amigo.y);
 		// Virar a sprite na direção do dash
 		if (dash_direction > 90 and dash_direction < 270) {
 		    image_xscale = -1; // Vira para a esquerda

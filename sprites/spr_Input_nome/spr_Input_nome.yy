@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":3,
   "parent":{
-    "name":"Interface",
-    "path":"folders/Sprites/Interface.yy",
+    "name":"Texto",
+    "path":"folders/Sprites/Interface/Texto.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

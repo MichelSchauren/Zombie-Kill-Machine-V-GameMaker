@@ -1,6 +1,9 @@
-global.Multiplayer = false;
-global.Spaw_inimigos = true;
-global.Mostrar_ondas = true;
-global.Mostrar_chat = false;
+if (global.Multiplayer) {
+	global.Multiplayer = false;
+	global.Multiplayer_adm = false;
+	global.Mostrar_chat = false;
 
-global.Tempo_pausado = false;
+	global.Modo_desenvolvedor = modo_desenvolvedor;
+	global.Spaw_inimigos = spaw_inimigos;
+	global.Tempo_pausado = tempo_pausado;
+}
