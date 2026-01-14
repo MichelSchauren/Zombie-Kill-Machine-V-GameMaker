@@ -10,8 +10,8 @@
   "name":"obj_Texto_credits",
   "overriddenProperties":[],
   "parent":{
-    "name":"Interface",
-    "path":"folders/Objetos/Interface.yy",
+    "name":"Textos",
+    "path":"folders/Objetos/Interface/Textos.yy",
   },
   "parentObjectId":null,
   "persistent":false,

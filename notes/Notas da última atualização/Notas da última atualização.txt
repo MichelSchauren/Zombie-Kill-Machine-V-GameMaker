@@ -1,6 +1,12 @@
-v1.6.1.3
+v1.6.2.0
 
-- Detalhes adicionados no mapa Summer Farm; [build]
+- Joysticks do Mobile sendo desenhados no Hud; [path]
+- BUG: peso das ordas não reinicia em uma nova partida; [path]
+- otimizações/organização com MACROS; [path]
+- Arrumar MULTIPLAYER; [path]
+- Modo_desenvolvedor: Sistema para pausar/despausar tempo (CTRL + T); [build]
+- Mostrar e desmostrar chat (TAB); [build]
 
-- Adição de macros para organização do código; [build]
+- Mobs spawnando no multiplayer; [build]
+
 - Nova loja no centro do mapa funcionando por completo; [minor]

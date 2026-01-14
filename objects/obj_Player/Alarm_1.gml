@@ -1,8 +1,8 @@
 // MORREU
-if (room == Multiplayer) {
+if (global.Multiplayer) {
 	// Reviver
 	estado = PL_ESTADOS.PARADO;
-	vida = global.Player_VIDA_TOTAL;
+	vida = PLAYER_VIDA_TOTAL;
 	x = int64(random_range(1250, 1800));
 	y = int64(random_range(1450, 1540));
 	image_speed = 1;

@@ -1,11 +1,11 @@
 // Variáveis do Inimigo
-alcance_corpo = global.Rapido_ALCANCE_CORPO;
-vida_total = global.Rapido_VIDA_TOTAL;
+alcance_corpo = RAPIDO_ALCANCE_CORPO;
+vida_total = RAPIDO_VIDA_TOTAL;
 vida = vida_total;
-vel = global.Rapido_VEL;
-dash_vel = global.Rapido_DASH_VEL;
+vel = RAPIDO_VEL;
+dash_vel = RAPIDO_DASH_VEL;
 dash_direction = 0;
-dano = global.Rapido_DANO;
+dano = RAPIDO_DANO;
 
 spr_colisao = spr_Rapido_mask_pes;
 spr_andando = spr_Rapido_andando;
