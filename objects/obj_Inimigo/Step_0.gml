@@ -1,5 +1,6 @@
 // Calcular a distância até o jogador (obj_Player)
-var _dist_player = point_distance(x, y, obj_Player.x, obj_Player.y);
+var _amigo = instance_nearest(x, y, obj_Amigo);
+var _dist_player = point_distance(x, y, _amigo.x, _amigo.y);
 
 switch (estado) {
 	case INIMIGOS_ESTADOS.MORRENDO:
@@ -7,11 +8,11 @@ switch (estado) {
 		break;
 		
 	case INIMIGOS_ESTADOS.PERSEGUINDO:
-		perseguir(_dist_player);
+		perseguir(_dist_player, _amigo);
         break;
 
     case INIMIGOS_ESTADOS.ATACANDO:
-        atacar(_dist_player);
+        atacar(_dist_player, _amigo);
         break;
 		
 	case INIMIGOS_ESTADOS.ATIRANDO:
@@ -20,8 +21,10 @@ switch (estado) {
 			var _x = x + 40*image_xscale;
             // Criar instancia do projetil
             var _projetil = instance_create_layer(_x, y, "Projeteis", projetil);
-			_projetil.direction = point_direction(_x, y, obj_Player.x, obj_Player.y);
+			_projetil.direction = point_direction(_x, y, _amigo.x, _amigo.y);
 			_projetil.image_xscale = image_xscale;
+			// MULTIPLAYER
+			if (global.Multiplayer_adm) _projetil.server_criar_proj();
         }
 		// Se estiver na ultima imagem da sprite
         if (image_index >= image_number -1) {

@@ -16,27 +16,65 @@ switch (_type_event) {
 				ping = current_time - _tempo_envio;
 				alarm[1] = fps*5;
 				break;
+				
+			case Events_server_client.mudar_inimigo:
+				var _enemy_id = buffer_read(_buffer, buffer_string);
+				var _enemy = inimigos_struct[$ _enemy_id];
+				
+				with (_enemy) {
+					x = buffer_read(_buffer, buffer_u16);
+					y = buffer_read(_buffer, buffer_u16);
+					vida = buffer_read(_buffer, buffer_u8);
+					sprite_index = buffer_read(_buffer, buffer_u8);
+					image_index = buffer_read(_buffer, buffer_u8);
+					image_xscale = buffer_read(_buffer, buffer_s8);
+				}
+				
+				break;
 		
 			case Events_server_client.mudar_outro:
 				var _socket_outro = buffer_read(_buffer, buffer_u8);				
-				var _outro = outros_struct[$ _socket_outro];				
-				_outro.x = buffer_read(_buffer, buffer_u16);
-				_outro.y = buffer_read(_buffer, buffer_u16);
-				_outro.vida =buffer_read(_buffer, buffer_u8);
-				_outro.sprite_index =buffer_read(_buffer, buffer_u8);
-				_outro.image_index = buffer_read(_buffer, buffer_u8);
-				_outro.image_xscale = buffer_read(_buffer, buffer_f16);
+				var _outro = outros_struct[$ _socket_outro];
+				
+				with (_outro) {
+					x = buffer_read(_buffer, buffer_u16);
+					y = buffer_read(_buffer, buffer_u16);
+					vida = buffer_read(_buffer, buffer_u8);
+					sprite_index = buffer_read(_buffer, buffer_u8);
+					image_index = buffer_read(_buffer, buffer_u8);
+					image_xscale = buffer_read(_buffer, buffer_s8);
+				}
 			
 				break;
 		
-			case Events_server_client.novo_tiro:
-				var _tiro_x = buffer_read(_buffer, buffer_u16);
-				var _tiro_y = buffer_read(_buffer, buffer_u16);
-				var _tiro_dir = buffer_read(_buffer, buffer_u16);
+			case Events_server_client.novo_projetil:
+				var _proj_obj = buffer_read(_buffer, buffer_u16);
+				var _proj_x = buffer_read(_buffer, buffer_u16);
+				var _proj_y = buffer_read(_buffer, buffer_u16);
+				var _proj_dir = buffer_read(_buffer, buffer_u16);
 				
-				var _tiro_instance = instance_create_layer(_tiro_x, _tiro_y, "Projeteis", obj_Tiro);
-				_tiro_instance.direction = _tiro_dir;
+				var _proj_instance = instance_create_layer(_proj_x, _proj_y, "Projeteis", _proj_obj);
+				_proj_instance.direction = _proj_dir;
 			
+				break;
+				
+			case Events_server_client.novo_inimigo:
+				var _new_enemy_id = buffer_read(_buffer, buffer_string);
+				var _enemy_x = buffer_read(_buffer, buffer_u16);
+				var _enemy_y = buffer_read(_buffer, buffer_u16);
+				
+				var _new_enemy = instance_create_layer(_enemy_x, _enemy_y, "Personagens", obj_Inimigo_server);
+				inimigos_struct[$ _new_enemy_id] = _new_enemy;
+				
+				with (_new_enemy) {
+					inimigo_id = _new_enemy;
+					vida_total = buffer_read(_buffer, buffer_u8);
+					vida = vida_total;
+					spr_colisao = buffer_read(_buffer, buffer_u8);
+					spr_morrendo = buffer_read(_buffer, buffer_u8);
+					sprite_index = buffer_read(_buffer, buffer_u8);
+				}
+				
 				break;
 				
 			case Events_server_client.novo_chat:
@@ -64,11 +102,14 @@ switch (_type_event) {
 
 					// Criar instancia
 					var _instance = instance_create_layer(_values[1], _values[2], "Personagens", obj_Outro);
-					_instance.nome = _values[0];
-					_instance.vida = _values[3];
-					_instance.sprite_index = _values[4];
-					_instance.image_index = _values[5];
 					outros_struct[$ _key] = _instance; // Adiciona-lo a struct
+					
+					with (_instance) {
+						nome = _values[0];
+						vida = _values[3];
+						sprite_index = _values[4];
+						image_index = _values[5];
+					}
 				}
 				
 				break;
@@ -79,12 +120,15 @@ switch (_type_event) {
 				var _data = json_parse(buffer_read(_buffer, buffer_string));
 				
 				var _instance = instance_create_layer(_data[1], _data[2], "Personagens", obj_Outro);
-				_instance.nome = _data[0];
-				_instance.vida = _data[3];
-				_instance.sprite_index = _data[4];
-				_instance.image_index = _data[5];
-				_instance.image_xscale = _data[6];
 				outros_struct[$ _client_id] = _instance; // Adiciona-lo a struct
+				
+				with (_instance) {
+					nome = _data[0];
+					vida = _data[3];
+					sprite_index = _data[4];
+					image_index = _data[5];
+					image_xscale = _data[6];
+				}
 				
 				break;
 				

@@ -1,23 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_Inimigos",
+  "%Name":"obj_Spaw_inimigos",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_Inimigos",
+  "name":"obj_Spaw_inimigos",
   "overriddenProperties":[],
   "parent":{
-    "name":"Inimigos",
-    "path":"folders/Objetos/Personagens/Inimigos.yy",
+    "name":"Spaw",
+    "path":"folders/Objetos/Abstratos/Spaw.yy",
   },
-  "parentObjectId":{
-    "name":"obj_Personagens",
-    "path":"objects/obj_Personagens/obj_Personagens.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -35,7 +31,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_Spaw_inimigos",
+    "path":"sprites/spr_Spaw_inimigos/spr_Spaw_inimigos.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

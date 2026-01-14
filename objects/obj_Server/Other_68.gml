@@ -31,7 +31,7 @@ else {
 		case network_type_disconnect:
 			// Remove cliente do struct
 			if (struct_exists(players_struct, _socket)) {
-				f_Escrever_chat("Servidor", $"{players_struct[$ _socket][0]} desconectou!");
+				escrever_chat("Servidor", $"{players_struct[$ _socket][0]} desconectou!");
 				struct_remove(players_struct, _socket);
 			}
 			var _pos = ds_list_find_index(socket_list, _socket);
@@ -80,7 +80,7 @@ else {
 					players_struct[$ _socket_id] = _array_player;
 					// { socket_client: [nome, x, y, vida, sprite, image_index] }
 					
-					f_Escrever_chat("Servidor", $"[{_nome}] se conectou!");
+					escrever_chat("Servidor", $"[{_nome}] se conectou!");
 					
 					break;
 					
@@ -91,14 +91,11 @@ else {
 					players_struct[$ _socket_id][3] = buffer_read(_buffer, buffer_u8);
 					players_struct[$ _socket_id][4] = buffer_read(_buffer, buffer_u8);
 					players_struct[$ _socket_id][5] = buffer_read(_buffer, buffer_u8);
-					players_struct[$ _socket_id][6] = buffer_read(_buffer, buffer_f16);
+					players_struct[$ _socket_id][6] = buffer_read(_buffer, buffer_s8);
 					
 					// Mandar isso para os outros clientes
 					// filtrar pra não envia para esse socket tmb
-					var _list_outros = ds_list_create();
-					ds_list_copy(_list_outros, socket_list);
-					var _p = ds_list_find_index(_list_outros, _socket_id);
-					if (_p != -1) ds_list_delete(_list_outros, _p);
+					var _list_outros = f_filtrar_list_v(socket_list, _socket_id);
 					// Enviar
 					buffer_seek(server_buffer, buffer_seek_start, 0);
 					buffer_write(server_buffer, buffer_u8, Events_server_client.mudar_outro); // codigo
@@ -108,22 +105,27 @@ else {
 					buffer_write(server_buffer, buffer_u8, players_struct[$ _socket_id][3]);
 					buffer_write(server_buffer, buffer_u8, players_struct[$ _socket_id][4]);
 					buffer_write(server_buffer, buffer_u8, players_struct[$ _socket_id][5]);
-					buffer_write(server_buffer, buffer_f16, players_struct[$ _socket_id][6]);
+					buffer_write(server_buffer, buffer_s8, players_struct[$ _socket_id][6]);
 					f_network_send_all(_list_outros, server_buffer);
 					
 					break;
 					
 				case Events_client_server.tiro_player:
+					escrever_chat("Server", "Erro!");
+					// Ler informações do tiro solicitado
 					var _tiro_x = buffer_read(_buffer, buffer_u16);
 					var _tiro_y = buffer_read(_buffer, buffer_u16);
 					var _tiro_dir = buffer_read(_buffer, buffer_u16);
 					
+					// Escrever buffer do novo projetil (TIRO)
 					buffer_seek(server_buffer, buffer_seek_start, 0);
-					buffer_write(server_buffer, buffer_u8, Events_server_client.novo_tiro);
+					buffer_write(server_buffer, buffer_u8, Events_server_client.novo_projetil);
+					buffer_write(server_buffer, buffer_u16, obj_Tiro);
 					buffer_write(server_buffer, buffer_u16, _tiro_x);
 					buffer_write(server_buffer, buffer_u16, _tiro_y);
 					buffer_write(server_buffer, buffer_u16, _tiro_dir);
-					f_network_send_all(socket_list, server_buffer);
+					// Enviar buffer a todos
+					f_network_send_all(socket_list, _buffer);
 					
 					break;
 					

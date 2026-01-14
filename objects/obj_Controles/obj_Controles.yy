@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Controles",
-    "path":"folders/Objetos/Controles.yy",
+    "path":"folders/Objetos/Abstratos/Controles.yy",
   },
   "parentObjectId":null,
   "persistent":false,

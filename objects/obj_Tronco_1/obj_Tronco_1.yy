@@ -6,8 +6,8 @@
   "name":"obj_Tronco_1",
   "overriddenProperties":[],
   "parent":{
-    "name":"group1",
-    "path":"folders/Objetos/Estruturas/group1.yy",
+    "name":"Troncos e Pedras",
+    "path":"folders/Objetos/Estruturas/Troncos e Pedras.yy",
   },
   "parentObjectId":{
     "name":"obj_Estruturas",

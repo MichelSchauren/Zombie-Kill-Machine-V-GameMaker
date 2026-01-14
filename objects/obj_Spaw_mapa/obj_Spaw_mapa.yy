@@ -1,17 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_Spaw",
+  "%Name":"obj_Spaw_mapa",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_Spaw",
+  "name":"obj_Spaw_mapa",
   "overriddenProperties":[],
   "parent":{
-    "name":"Inimigos",
-    "path":"folders/Objetos/Personagens/Inimigos.yy",
+    "name":"Spaw",
+    "path":"folders/Objetos/Abstratos/Spaw.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,9 +30,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Spaw_esqueleto",
-    "path":"sprites/spr_Spaw_esqueleto/spr_Spaw_esqueleto.yy",
+    "name":"spr_Spaw_mapa",
+    "path":"sprites/spr_Spaw_mapa/spr_Spaw_mapa.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

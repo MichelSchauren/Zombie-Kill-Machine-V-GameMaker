@@ -57,6 +57,7 @@ switch (estado) {
 			image_index = image_number-1;
 			alarm[1] = game_get_speed(gamespeed_fps)*3; // // Ir para a tela de gameover depois de 3 segundos
 		}
+		
 		break;
 }
 
@@ -79,8 +80,16 @@ if (estado = PL_ESTADOS.ATIRANDO or estado = PL_ESTADOS.ATIRANDO_ANDANDO) {
 		if (image_xscale < 0) _x = x-28;
 		else _x = x+28;
 		
-		// Criar tiro
-		if (global.Multiplayer) {
+		
+		
+		// MULTIPLAYER
+		if (global.Multiplayer_adm) {
+			var _tiro = noone;
+			_tiro = instance_create_layer(_x, y+9, "Projeteis", obj_Tiro);
+			_tiro.direction = dir_tiro;
+			_tiro.server_criar_proj();
+			
+		} else if (global.Multiplayer) {
 			// Avisar server de que um novo tiro foi criado
 			var _buffer = obj_Client_tcp.client_buffer;
 			buffer_seek(_buffer, buffer_seek_start, 0);
@@ -89,7 +98,6 @@ if (estado = PL_ESTADOS.ATIRANDO or estado = PL_ESTADOS.ATIRANDO_ANDANDO) {
 			buffer_write(_buffer, buffer_u16, y+9);
 			buffer_write(_buffer, buffer_u16, dir_tiro);
 			network_send_packet(obj_Client_tcp.socket_tcp, _buffer, buffer_tell(_buffer));
-			
 		} else {
 			// Criar tiro normalmente
 			var _tiro = noone;

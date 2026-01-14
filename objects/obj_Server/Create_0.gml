@@ -19,3 +19,31 @@ quando outro usuario clicar em buscar server esse servidor UDP irá dizer: Ei, e
 o IP é tal, pode entrar se quiser.
 Já o TCP vai ser responsável pela comunicação durante o jogo mesmo, enviando todas os dados a todos os players
 sempre que alguém se mexer, ou atirar etc.*/
+
+criar_inimigo = function (inimigo) {
+	with (inimigo) {
+		var _buffer = other.server_buffer;
+		buffer_seek(_buffer, buffer_seek_start, 0);
+		buffer_write(_buffer, buffer_u8, Events_server_client.novo_inimigo);
+		buffer_write(_buffer, buffer_string, string(id));
+		buffer_write(_buffer, buffer_u16, x);
+		buffer_write(_buffer, buffer_u16, y);
+		buffer_write(_buffer, buffer_u8, vida_total);
+		buffer_write(_buffer, buffer_u8, spr_colisao);
+		buffer_write(_buffer, buffer_u8, spr_morrendo);
+		buffer_write(_buffer, buffer_u8, sprite_index);
+		
+		var _sockets = struct_get_names(obj_Client_tcp.outros_struct);
+		f_network_send_all(_sockets, _buffer);
+	}
+}
+
+escrever_chat = function (nome, msg) {
+	var _buffer = server_buffer;
+	
+	buffer_seek(server_buffer, buffer_seek_start, 0);
+	buffer_write(server_buffer, buffer_u8, Events_server_client.novo_chat);
+	buffer_write(server_buffer, buffer_string, nome);
+	buffer_write(server_buffer, buffer_string, msg);
+	f_network_send_all(socket_list, server_buffer);
+}

@@ -29,16 +29,15 @@ enum INIMIGOS_ESTADOS {
 estado = INIMIGOS_ESTADOS.PARADO; // Estado inicial
 
 // Funções
-perseguir = function (dist_player) {
+perseguir = function (dist_player, amigo) {
 	// Se estiver perto o suficiente, mudar para o estado de ataque
     if (dist_player <= alcance_corpo) {
         estado = INIMIGOS_ESTADOS.ATACANDO;
 		sprite_index = spr_atacando; // Mudar sprite para atacando
 		image_index = 0;
     } else {
-        // instance_nearest(); [anotação]
 		// Perseguir o jogador desviando de obstáculos (obj_Colisores e obj_Inimigos)
-		mp_potential_step(obj_Player.x, obj_Player.y, vel, false);
+		mp_potential_step(amigo.x, amigo.y, vel, false);
 			
 		// Virar a sprite na direção do movimento (opcional, para refletir horizontalmente)
 		direction = point_direction(xprevious, yprevious, x, y);
@@ -50,7 +49,7 @@ perseguir = function (dist_player) {
     }
 }
 
-atacar = function (dist_player) {
+atacar = function (dist_player, amigo) {
 	// Se estiver na ultima imagem da sprite
     if (image_index >= image_number -1) {
 		image_index = 0;
@@ -60,7 +59,7 @@ atacar = function (dist_player) {
 			sprite_index = spr_andando; // Mudar sprite para andando
 	    } else { // se não
 			// Diminuir a vida do player
-			obj_Player.vida = max(obj_Player.vida - dano, 0);
+			amigo.vida = max(amigo.vida - dano, 0);
 		}
     }
 }
@@ -75,3 +74,8 @@ morrer = function () {
 }
 
 event_user(0);
+
+// MULTIPLAYER
+if (global.Multiplayer and global.Multiplayer_adm) {
+	if (instance_exists(obj_Server)) obj_Server.criar_inimigo(self);
+}
