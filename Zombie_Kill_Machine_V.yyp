@@ -68,7 +68,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.2.212",
+    "IDEVersion":"2024.14.2.213",
   },
   "name":"Zombie_Kill_Machine_V",
   "resources":[
@@ -155,6 +155,7 @@
     {"id":{"name":"Credits","path":"rooms/Credits/Credits.yy",},},
     {"id":{"name":"GameOver","path":"rooms/GameOver/GameOver.yy",},},
     {"id":{"name":"Gameplay","path":"rooms/Gameplay/Gameplay.yy",},},
+    {"id":{"name":"Mapa_Principal","path":"rooms/Mapa_Principal/Mapa_Principal.yy",},},
     {"id":{"name":"Menu_Multiplayer","path":"rooms/Menu_Multiplayer/Menu_Multiplayer.yy",},},
     {"id":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
     {"id":{"name":"Multiplayer","path":"rooms/Multiplayer/Multiplayer.yy",},},
@@ -271,6 +272,7 @@
     {"roomId":{"name":"Menu_Multiplayer","path":"rooms/Menu_Multiplayer/Menu_Multiplayer.yy",},},
     {"roomId":{"name":"Multiplayer","path":"rooms/Multiplayer/Multiplayer.yy",},},
     {"roomId":{"name":"Summer_Farm","path":"rooms/Summer_Farm/Summer_Farm.yy",},},
+    {"roomId":{"name":"Mapa_Principal","path":"rooms/Mapa_Principal/Mapa_Principal.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
