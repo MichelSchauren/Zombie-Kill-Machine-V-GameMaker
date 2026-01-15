@@ -1,3 +1,4 @@
+client_id = noone;
 nome = "convidado";
 vida = PLAYER_VIDA_TOTAL;
 morto = false;
