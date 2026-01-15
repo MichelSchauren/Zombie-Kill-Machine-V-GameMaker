@@ -6,8 +6,8 @@
   "name":"obj_Cerca_2",
   "overriddenProperties":[],
   "parent":{
-    "name":"Zombie_Kill_Machine_V",
-    "path":"Zombie_Kill_Machine_V.yyp",
+    "name":"Cercas",
+    "path":"folders/Objetos/Estruturas/Cercas.yy",
   },
   "parentObjectId":{
     "name":"obj_Estruturas",
