@@ -1,8 +1,6 @@
-v1.6.2.2
-
-- Mobs spawnando no multiplayer; [build]
-- Novo objeto para definir a area de spaw dos jogadores no multiplayer; [build]
-- Bug: Spaw do player no multiplayer corrigido; [path]
+v1.6.3.0
 
 - Bug: Tiros funcionando no multiplayer; [path]
+- Inimigos conseguem dar dano aos convidados; [path]
+
 - Nova loja no centro do mapa funcionando por completo; [minor]

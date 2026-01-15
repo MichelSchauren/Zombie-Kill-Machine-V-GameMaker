@@ -2,7 +2,7 @@
 
 
 // configurações gerais
-global.Mapa_atual = Summer_Farm;
+global.Mapa_atual = Mapa_Principal;
 global.Spaw_mapa_pos = ds_list_create();
 
 // modo desenvolvedor
