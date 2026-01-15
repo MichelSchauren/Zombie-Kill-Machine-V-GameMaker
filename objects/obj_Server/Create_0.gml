@@ -38,9 +38,14 @@ criar_inimigo = function (inimigo) {
 	}
 }
 
+inimigo_deu_dano = function (socket, dano) {
+	buffer_seek(server_buffer, buffer_seek_start, 0);
+	buffer_write(server_buffer, buffer_u8, Events_server_client.dano_inimigo);
+	buffer_write(server_buffer, buffer_u16, dano);
+	network_send_packet(socket, server_buffer, buffer_get_size(server_buffer));
+}
+
 escrever_chat = function (nome, msg) {
-	var _buffer = server_buffer;
-	
 	buffer_seek(server_buffer, buffer_seek_start, 0);
 	buffer_write(server_buffer, buffer_u8, Events_server_client.novo_chat);
 	buffer_write(server_buffer, buffer_string, nome);

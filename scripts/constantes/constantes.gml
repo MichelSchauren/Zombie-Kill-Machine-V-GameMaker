@@ -92,6 +92,7 @@ enum Events_server_client {
 	novo_projetil, // o servidor manda todos os clientes criar tal projetil em tal posição <<
 	novo_inimigo, // o servidor avisa os clientes que um inimigo apareceu <<
 	mudar_inimigo, // servidor atualiza a todos sobre os status do inimigo <<
+	dano_inimigo, // Avisar a determinado cliente que seu player tomou um dano do inimigo <
 	atualizar_ondas, // enviar o numero da onda e o alpha da escuridao da noite <<
 	novo_chat, // o servidor avisa todos os clientes que há uma nova mensagem no chat <<
 	outro_desconectado, // o servidor avisa todos os clientes que tal cliente foi desconectado <<

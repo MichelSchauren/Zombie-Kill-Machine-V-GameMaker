@@ -1,7 +1,7 @@
 // desenhar a sprite
 draw_self()
 
-var _larg_vida = 80*(vida / vida_total);
+var _larg_vida = (80*vida) / vida_total;
 
 // fundo da vida
 draw_set_colour(c_red);

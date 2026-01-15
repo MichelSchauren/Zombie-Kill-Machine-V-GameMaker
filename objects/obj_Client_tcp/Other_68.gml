@@ -17,6 +17,12 @@ switch (_type_event) {
 				alarm[1] = fps*5;
 				break;
 				
+			case Events_server_client.atualizar_ondas:
+				global.Onda_atual = buffer_read(_buffer, buffer_u8);
+				obj_Ondas.alpha = buffer_read(_buffer, buffer_f16);
+				
+				break;
+				
 			case Events_server_client.mudar_inimigo:
 				var _enemy_id = buffer_read(_buffer, buffer_string);
 				var _enemy = inimigos_struct[$ _enemy_id];
@@ -77,6 +83,14 @@ switch (_type_event) {
 				
 				break;
 				
+			case Events_server_client.dano_inimigo:
+				var _dano = buffer_read(_buffer, buffer_u16);
+				with (obj_Player) {
+					vida = max(vida - _dano, 0);
+				}
+				
+				break;
+				
 			case Events_server_client.novo_chat:
 				var _nome = buffer_read(_buffer, buffer_string);
 				var _msg = buffer_read(_buffer, buffer_string);
@@ -121,6 +135,7 @@ switch (_type_event) {
 				
 				var _instance = instance_create_layer(_data[1], _data[2], "Personagens", obj_Outro);
 				outros_struct[$ _client_id] = _instance; // Adiciona-lo a struct
+				_instance.client_id = _client_id;
 				
 				with (_instance) {
 					nome = _data[0];

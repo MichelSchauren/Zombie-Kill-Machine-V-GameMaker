@@ -80,16 +80,8 @@ if (estado = PL_ESTADOS.ATIRANDO or estado = PL_ESTADOS.ATIRANDO_ANDANDO) {
 		if (image_xscale < 0) _x = x-28;
 		else _x = x+28;
 		
-		
-		
-		// MULTIPLAYER
-		if (global.Multiplayer_adm) {
-			var _tiro = noone;
-			_tiro = instance_create_layer(_x, y+9, "Projeteis", obj_Tiro);
-			_tiro.direction = dir_tiro;
-			_tiro.server_criar_proj();
-			
-		} else if (global.Multiplayer) {
+		// Atirar
+		if (global.Multiplayer) {
 			// Avisar server de que um novo tiro foi criado
 			var _buffer = obj_Client_tcp.client_buffer;
 			buffer_seek(_buffer, buffer_seek_start, 0);

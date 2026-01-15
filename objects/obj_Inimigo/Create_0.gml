@@ -58,8 +58,14 @@ atacar = function (dist_player, amigo) {
 	        estado = INIMIGOS_ESTADOS.PERSEGUINDO;
 			sprite_index = spr_andando; // Mudar sprite para andando
 	    } else { // se não
-			// Diminuir a vida do player
-			amigo.vida = max(amigo.vida - dano, 0);
+			with (amigo) {
+				if (object_index == obj_Player) {
+					// Diminuir a vida do player
+					vida = max(vida - other.dano, 0);
+				} else if (global.Multiplayer_adm) {
+					obj_Server.inimigo_deu_dano(client_id, other.dano);
+				}
+			}
 		}
     }
 }

@@ -58,6 +58,24 @@ else {
 					var _x = buffer_read(_buffer, buffer_u16);
 					var _y = buffer_read(_buffer, buffer_u16);
 					var _array_player = [_nome, _x, _y, PLAYER_VIDA_TOTAL, spr_Player_parado, 0, 1];
+					
+					// servidor informa o cliente sobre os inimigos já spawnados <
+					for (var i=0; i < instance_number(obj_Inimigo); i++) {
+						var _inimigo = instance_find(obj_Inimigo, i);
+						with (_inimigo) {
+							var _sbuff = other.server_buffer;
+							buffer_seek(_sbuff, buffer_seek_start, 0);
+							buffer_write(_sbuff, buffer_u8, Events_server_client.novo_inimigo);
+							buffer_write(_sbuff, buffer_string, string(id));
+							buffer_write(_sbuff, buffer_u16, x);
+							buffer_write(_sbuff, buffer_u16, y);
+							buffer_write(_sbuff, buffer_u8, vida_total);
+							buffer_write(_sbuff, buffer_u8, spr_colisao);
+							buffer_write(_sbuff, buffer_u8, spr_morrendo);
+							buffer_write(_sbuff, buffer_u8, sprite_index);
+							network_send_packet(_socket_id, _sbuff, buffer_get_size(_sbuff))
+						}
+					}
 				
 					// servidor retorna a struct de todos os clientes menos esse <
 					if (struct_names_count(players_struct) > 0) {
@@ -65,7 +83,7 @@ else {
 						buffer_seek(server_buffer, buffer_seek_start, 0);
 						buffer_write(server_buffer, buffer_u8, Events_server_client.dados_outros);
 						buffer_write(server_buffer, buffer_string, _struct_json);
-						network_send_packet(_socket_id, server_buffer, buffer_tell(server_buffer));
+						network_send_packet(_socket_id, server_buffer, buffer_get_size(server_buffer));
 					}
 					
 					// servidor informa a todos os outros clientes que um novo cliente entrou <<
@@ -111,7 +129,6 @@ else {
 					break;
 					
 				case Events_client_server.tiro_player:
-					escrever_chat("Server", "Erro!");
 					// Ler informações do tiro solicitado
 					var _tiro_x = buffer_read(_buffer, buffer_u16);
 					var _tiro_y = buffer_read(_buffer, buffer_u16);
@@ -125,7 +142,7 @@ else {
 					buffer_write(server_buffer, buffer_u16, _tiro_y);
 					buffer_write(server_buffer, buffer_u16, _tiro_dir);
 					// Enviar buffer a todos
-					f_network_send_all(socket_list, _buffer);
+					f_network_send_all(socket_list, server_buffer);
 					
 					break;
 					
