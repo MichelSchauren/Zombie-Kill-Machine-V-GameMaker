@@ -1,3 +1,4 @@
+// Ondas
 if (global.Mostrar_ondas) {
 	with (obj_Ondas) {
 		// Surface de claridade/escuridão
@@ -16,13 +17,14 @@ if (global.Mostrar_ondas) {
 
 		// Desenhar testo da onda
 		draw_set_color(c_white);
-		draw_set_font(font_Consolas);
+		draw_set_font(font_Consolas_20);
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_middle);
 		draw_text(20, 85, "Onda: " + string(global.Onda_atual));
 	}
 }
 
+// Player
 with (obj_Player) {
 	// Desenhar VIDA
 	var larg_vida = 640*(vida / PLAYER_VIDA_TOTAL);
@@ -41,7 +43,7 @@ with (obj_Player) {
 	draw_text(x - camera_get_view_x(view_camera[0]), y-50 - camera_get_view_y(view_camera[0]), global.Player_name);
 }
 
-// Hud MOBILE
+// Mobile
 if (global.Controller_mode == 2) {
 	if (global.second_control_mode == 0) {
 		with (obj_Controles) {
@@ -75,6 +77,25 @@ if (global.Controller_mode == 2) {
 	} 
 }
 
+// Moedas
+var _moedas_x = camera_get_view_width(view_camera[0]) -20;
+var _moedas_y = 20;
+// Fundo
+draw_set_colour(c_dkgray);
+draw_roundrect_ext(_moedas_x -160, _moedas_y, _moedas_x, _moedas_y +40, 20, 20, false);
+// Contorno
+draw_set_colour(c_white);
+draw_roundrect_ext(_moedas_x -160, _moedas_y, _moedas_x, _moedas_y +40, 20, 20, true);
+// Texto
+draw_set_colour(c_white);
+draw_set_font(font_Consolas_12);
+draw_set_halign(fa_left);
+draw_set_lighting(fa_center);
+draw_text(_moedas_x -150, _moedas_y + 20, string(global.Moedas));
+// sprite
+draw_sprite(spr_Moeda, 7, _moedas_x -30, _moedas_y +20);
+
+
 // Monstrar FPS
 if (global.Modo_desenvolvedor) { // No futuro criar opção para mostrar o FPS
 	// Mostrar fps
@@ -82,7 +103,9 @@ if (global.Modo_desenvolvedor) { // No futuro criar opção para mostrar o FPS
 	draw_set_font(font_Consolas_12);
 	draw_set_halign(fa_right);
 
-	draw_text(camera_get_view_width(view_camera[0]) -20, 20, $"FPS: {int64(fps)}");
+	var _fps_x = camera_get_view_width(view_camera[0]) -20;
+	var _fps_y = 80;
+	draw_text(_fps_x, _fps_y, $"FPS: {int64(fps)}");
 }
 
 // Mostrar PING
@@ -93,11 +116,13 @@ if (global.Multiplayer and instance_exists(obj_Client_tcp)) {
 		draw_set_font(font_Consolas_12);
 		draw_set_halign(fa_right);
 
-		draw_text(camera_get_view_width(view_camera[0]) -20, 40, $"Ping: {ping}");
+		var _ping_x = camera_get_view_width(view_camera[0]) -20;
+		var _ping_y = 100;
+		draw_text(_ping_x, _ping_y, $"Ping: {ping}");
 	}
 }
 
-// Mostrar chat
+// Chat
 if (global.Mostrar_chat) {
 	draw_set_colour(c_dkgray);
 	draw_set_alpha(.7);

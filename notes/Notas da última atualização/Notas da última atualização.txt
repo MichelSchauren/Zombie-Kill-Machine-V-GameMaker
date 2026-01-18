@@ -1,9 +1,6 @@
-v1.6.4.0
+v1.7.0.0
 
-- Tiros funcionando no multiplayer; [path]
-- Inimigos conseguem dar dano aos convidados; [path]
-- Server envia o estado atual das ondas aos convidados; [path]
-- Server envia aos convidados recem chegados os inimigos que já foram spawnados; [path]
-- Bug na vida dos inimigos corrigido; [path]
+- Novo sistema de coleta de moedas; [minor]
+- Alterações na forma de como as interfaces do menu são redimencionadas; [build]
 
 - Nova loja no centro do mapa funcionando por completo; [minor]

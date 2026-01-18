@@ -4,6 +4,7 @@
 // configurações gerais
 global.Mapa_atual = Mapa_Principal;
 global.Spaw_mapa_pos = ds_list_create();
+global.Moedas = 0;
 
 // modo desenvolvedor
 global.Modo_desenvolvedor = true;

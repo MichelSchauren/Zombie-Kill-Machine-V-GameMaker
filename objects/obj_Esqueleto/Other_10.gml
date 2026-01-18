@@ -1,4 +1,5 @@
 // Variáveis do Inimigo
+indice = 0;
 alcance_corpo = ESQUELETO_ALCANCE_CORPO;
 vida_total = ESQUELETO_VIDA_TOTAL;
 vida = vida_total;

@@ -1,4 +1,5 @@
 // Variáveis do Inimigo
+indice = 2;
 alcance_corpo = MINIBOSS_ALCENCE_CORPO;
 alcance_atirando = MINIBOSS_ALCENCE_ATIRANDO;
 vida_total = MINIBOSS_VIDA_TOTAL;

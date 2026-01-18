@@ -4,12 +4,12 @@ else _texto = global.Player_name;
 
 // Texto
 draw_set_color(c_black);
-draw_set_font(font_Consolas);
+draw_set_font(font_Consolas_20);
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
-draw_text(x + 20, y, _texto);
+draw_text(gui_x + 20, gui_y, _texto);
 
 // Cursor piscando se ativo
 if (selecionado and (current_time mod 1000) < 500) {
-    draw_text(x + 20 + string_width(_texto), y, "|");
+    draw_text(gui_x + 20 + string_width(_texto), gui_y, "|");
 }
