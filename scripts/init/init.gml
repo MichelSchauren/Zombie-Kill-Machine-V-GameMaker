@@ -1,3 +1,9 @@
+// DELIMITAR UM TAMANHO MÍNIMO PARA A JANELA DO JOGO
+window_set_min_width(640);
+window_set_min_height(360);
+
+
+// DEFINIR MODO DE CONTROLE
 if (os_type == os_windows) { // por padrão já é 0
 	global.Controller_mode = 0;
 	

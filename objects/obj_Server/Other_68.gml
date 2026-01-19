@@ -154,6 +154,16 @@ else {
 					network_send_packet(_socket_id, buff_ping, buffer_get_size(buff_ping));
 					
 					break;
+					
+				case Events_client_server.coletei_moeda:
+					var _id_coin = buffer_read(_buffer, buffer_string);
+					
+					buffer_seek(server_buffer, buffer_seek_start, 0);
+					buffer_write(server_buffer, buffer_u8, Events_server_client.moeda_coletada);
+					buffer_write(server_buffer, buffer_string, _id_coin);
+					f_network_send_all(socket_list, server_buffer);
+					
+					break;
 			}
 			
 			break;

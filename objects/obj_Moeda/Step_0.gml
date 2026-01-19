@@ -10,6 +10,11 @@ with (obj_Player) {
 	if (place_meeting(x, y, other)) {
 		global.Moedas += 1;
 		instance_destroy(other);
+		
+		// MULTIPLAYER
+		if (global.Multiplayer) {
+			if (instance_exists(obj_Client_tcp)) obj_Client_tcp.coletei_moeda(other.moeda_id);
+		}
 	}
 	mask_index = spr_colisao;
 }

@@ -52,8 +52,8 @@ redimencionar_tela = function () {
 	last_height = window_get_height();
 	
 	// Obter as dimensões atuais da janela
-	var _w = min (window_get_width(), 1620);
-	var _h = min (window_get_height(), 1080);
+	var _w = display_get_gui_width();
+	var _h = display_get_gui_height();
 		
 	var _x1 = max((room_width-_w)/2, 0);
 	var _y1 = max((room_height-_h)/2, 0);

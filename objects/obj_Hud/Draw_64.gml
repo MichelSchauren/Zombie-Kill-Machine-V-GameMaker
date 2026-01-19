@@ -27,13 +27,14 @@ if (global.Mostrar_ondas) {
 // Player
 with (obj_Player) {
 	// Desenhar VIDA
-	var larg_vida = 640*(vida / PLAYER_VIDA_TOTAL);
+	var _larg_barra = display_get_gui_width() / 2;
+	var _larg_vida = _larg_barra*(vida / PLAYER_VIDA_TOTAL);
 	// fundo da vida
 	draw_set_colour(c_red);
-	draw_rectangle(20, 20, 660, 68, false);
+	draw_rectangle(20, 20, _larg_barra+20, 68, false);
 	// vida
 	draw_set_colour(c_green);
-	draw_rectangle(20, 20, larg_vida+20, 68, false);
+	draw_rectangle(20, 20, _larg_vida+20, 68, false);
 
 	// Desenhar NOME
 	draw_set_color(c_black);

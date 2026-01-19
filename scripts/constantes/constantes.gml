@@ -45,6 +45,7 @@ global.Player_vida = 100;
 #macro ESQUELETO_VIDA_TOTAL 50
 #macro ESQUELETO_VEL 1.8
 #macro ESQUELETO_DANO 18
+#macro ESQUELETO_PESO_ORDA 1
 
 // rapido
 #macro RAPIDO_ALCANCE_CORPO 100
@@ -52,6 +53,7 @@ global.Player_vida = 100;
 #macro RAPIDO_VEL 3
 #macro RAPIDO_DASH_VEL 7
 #macro RAPIDO_DANO 16
+#macro RAPIDO_PESO_ORDA 3
 
 // mini boss
 #macro MINIBOSS_ALCENCE_CORPO 60
@@ -59,6 +61,7 @@ global.Player_vida = 100;
 #macro MINIBOSS_VIDA_TOTAL 80
 #macro MINIBOSS_VEL 1.2
 #macro MINIBOSS_DANO_CORPO 20
+#macro MINIBOSS_PESO_ORDA 7
 #macro MAXADO_DANO 25
 #macro MAXADO_VEL 8
 
@@ -83,6 +86,7 @@ enum Events_client_server {
 	dados_player = 10, // cliente envia infos sobre seu player (nome, x, y) >
 	mudar_player, // sempre que o player do cliente tiver alguma alteração ele envia os dados ao servidor >
 	tiro_player, // sempre que o player do cliente der um TIRO, ele evia isso ao servidor >
+	coletei_moeda, // avisar servidor de que seu player coletou tal moeda >
 	enviar_chat, // player envia uma mensagem no chat >
 	ver_ping // Cliente envia um pacote ao servidor apenas para verificar a latencia e atualizar o ping >
 }
@@ -92,6 +96,8 @@ enum Events_server_client {
 	mudar_outro, // o servidor recebe os dados e informa a todos os outros que tal cliente foi alterado <<
 	novo_projetil, // o servidor manda todos os clientes criar tal projetil em tal posição <<
 	novo_inimigo, // o servidor avisa os clientes que um inimigo apareceu <<
+	nova_moeda, // servidor avisa sobre o surgimento de uma nova moeda no mapa <<
+	moeda_coletada, // servidor avisa a todos que alguem coletou tal moeda <<
 	mudar_inimigo, // servidor atualiza a todos sobre os status do inimigo <<
 	dano_inimigo, // Avisar a determinado cliente que seu player tomou um dano do inimigo <
 	atualizar_ondas, // enviar o numero da onda e o alpha da escuridao da noite <<

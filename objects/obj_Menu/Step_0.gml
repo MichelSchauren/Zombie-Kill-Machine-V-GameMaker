@@ -15,6 +15,7 @@ for (var i=0; i < 3; i++) {
 
 // INPUT NOME
 with (input_nome) {
+	// mobile
 	if (global.Controller_mode == 2 and device_mouse_check_button_pressed(0, mb_left)) {
 		if (keyboard_check_pressed(ord("I"))) {
 			keyboard_virtual_show(kbv_type_default, kbv_autocapitalize_words, kbv_returnkey_done, false);
@@ -25,6 +26,7 @@ with (input_nome) {
 			selecionado = false;
 			keyboard_string = ""; // limpa o keyboard
 		}
+	// pc	
 	} else if (mouse_check_button_pressed(mb_left)) {
 		if (keyboard_check_pressed(ord("I"))) {
 			selecionado = true;

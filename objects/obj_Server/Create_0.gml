@@ -38,6 +38,20 @@ criar_inimigo = function (inimigo) {
 	}
 }
 
+criar_moeda = function (moeda) {
+	with (moeda) {
+		var _buffer = other.server_buffer;
+		buffer_seek(_buffer, buffer_seek_start, 0);
+		buffer_write(_buffer, buffer_u8, Events_server_client.nova_moeda);
+		buffer_write(_buffer, buffer_string, moeda_id);
+		buffer_write(_buffer, buffer_u16, x);
+		buffer_write(_buffer, buffer_u16, y+40);
+		
+		var _sockets = struct_get_names(obj_Client_tcp.outros_struct);
+		f_network_send_all(_sockets, _buffer);
+	}
+}
+
 inimigo_deu_dano = function (socket, dano) {
 	buffer_seek(server_buffer, buffer_seek_start, 0);
 	buffer_write(server_buffer, buffer_u8, Events_server_client.dano_inimigo);

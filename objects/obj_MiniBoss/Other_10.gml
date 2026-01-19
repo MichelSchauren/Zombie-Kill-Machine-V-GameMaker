@@ -1,11 +1,11 @@
 // Variáveis do Inimigo
-indice = 2;
 alcance_corpo = MINIBOSS_ALCENCE_CORPO;
 alcance_atirando = MINIBOSS_ALCENCE_ATIRANDO;
 vida_total = MINIBOSS_VIDA_TOTAL;
 vida = vida_total;
 vel = MINIBOSS_VEL;
 dano = MINIBOSS_DANO_CORPO;
+peso_orda = MINIBOSS_PESO_ORDA;
 
 spr_colisao = spr_MiniBoss_mask_pes;
 spr_andando = spr_MiniBoss_andando;

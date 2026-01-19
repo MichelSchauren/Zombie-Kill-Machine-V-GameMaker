@@ -28,6 +28,8 @@ outros_struct = {};
 inimigos_struct = {};
 // Uma Struct que terá os dados dos tiros
 tiros_struct = {};
+// Uma Struct que terá os dados das moedas
+moedas_struct = {};
 
 
 // PLAYER
@@ -45,4 +47,12 @@ with (obj_Player) {
 	buffer_write(_buffer, buffer_u16, x); // Cordenada X do player
 	buffer_write(_buffer, buffer_u16, y); // Cordenada Y do player
 	network_send_packet(other.socket_tcp, _buffer, buffer_tell(_buffer));
+}
+
+
+coletei_moeda = function (moeda_id) {
+	buffer_seek(client_buffer, buffer_seek_start, 0); // Ir para início do buffer
+	buffer_write(client_buffer, buffer_u8, Events_client_server.coletei_moeda);
+	buffer_write(client_buffer, buffer_string, moeda_id); // ID da moeda que coletei
+	network_send_packet(socket_tcp, client_buffer, buffer_tell(client_buffer));
 }

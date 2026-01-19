@@ -1,5 +1,5 @@
 // Variáveis do Inimigo
-indice = 0;
+peso_orda = 0;
 alcance_corpo = 0;
 alcance_atirando = 0;
 vida_total = 0;
@@ -79,8 +79,7 @@ morrer = function () {
 		alarm[0] = game_get_speed(gamespeed_fps)*3; // ativar alarme 0 depois de 3 segundos
 		
 		// Dropar moeda
-		var _quat = PESOS_ORDA[indice][0];
-		for (var i=0; i < _quat; i++) {
+		for (var i=0; i < peso_orda; i++) {
 			instance_create_layer(x, bbox_bottom, "Moedas", obj_Moeda);
 		}
 	}
