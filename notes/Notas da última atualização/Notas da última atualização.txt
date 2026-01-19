@@ -1,9 +1,8 @@
-v1.6.4.0
+v1.7.1.0
 
-- Tiros funcionando no multiplayer; [path]
-- Inimigos conseguem dar dano aos convidados; [path]
-- Server envia o estado atual das ondas aos convidados; [path]
-- Server envia aos convidados recem chegados os inimigos que já foram spawnados; [path]
-- Bug na vida dos inimigos corrigido; [path]
-
-- Nova loja no centro do mapa funcionando por completo; [minor]
+- Adicionar coleta de moedas no multiplayer; [path] **
+- orientação do celular forçada a ficar na horizontal; [path] **
+- bug com a pocição dos controles do mobile resolvido; [path] **
+- Avisos que usavam "show_message" agora usam "show_message_async" para funcionar no mobile; [path] **
+- Mudança na proporção do tamanho da barra de vida em diferentes telas; [path] **
+- Remoção de alguns objetos e sprites desnecessarios como botões do menu; [path] ** 

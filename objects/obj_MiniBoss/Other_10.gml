@@ -5,6 +5,7 @@ vida_total = MINIBOSS_VIDA_TOTAL;
 vida = vida_total;
 vel = MINIBOSS_VEL;
 dano = MINIBOSS_DANO_CORPO;
+peso_orda = MINIBOSS_PESO_ORDA;
 
 spr_colisao = spr_MiniBoss_mask_pes;
 spr_andando = spr_MiniBoss_andando;

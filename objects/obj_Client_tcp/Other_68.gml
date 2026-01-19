@@ -91,6 +91,29 @@ switch (_type_event) {
 				
 				break;
 				
+			case Events_server_client.nova_moeda:
+				var _new_coin_id = buffer_read(_buffer, buffer_string);
+				var _coin_x = buffer_read(_buffer, buffer_u16);
+				var _coin_y = buffer_read(_buffer, buffer_u16);
+				
+				var _new_coin = instance_create_layer(_coin_x, _coin_y, "Moedas", obj_Moeda);
+				moedas_struct[$ _new_coin_id] = _new_coin;
+				
+				with (_new_coin) {
+					moeda_id = _new_coin_id;
+				}
+				
+				break;
+				
+			case Events_server_client.moeda_coletada:
+				var _id_coin = buffer_read(_buffer, buffer_string);
+				var _coin = moedas_struct[$ _id_coin];
+
+				if (struct_exists(moedas_struct, _id_coin)) struct_remove(moedas_struct, _id_coin); // remover moeda da lista
+				if (instance_exists(_coin)) instance_destroy(_coin); // destruir instancia
+				
+				break;
+				
 			case Events_server_client.novo_chat:
 				var _nome = buffer_read(_buffer, buffer_string);
 				var _msg = buffer_read(_buffer, buffer_string);
@@ -156,7 +179,7 @@ switch (_type_event) {
 				break;
 				
 			case Events_server_client.server_desligado:
-				show_message("Desconectado! \nO servidor ao qual você estavá conectado está fora do ar.");
+				show_message_async("Desconectado! \nO servidor ao qual você estavá conectado está fora do ar.");
 				room_goto(Menu);
 				break;
 		}

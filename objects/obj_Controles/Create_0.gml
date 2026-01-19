@@ -9,10 +9,10 @@ ypress = 0;
 
 gamepad = 0;
 
-x_mobile_mover = min(window_get_width(), 1580) * 0.2;
-y_mobile_mover = min(window_get_height(), 720) * 0.8;
-x_mobile_atirar = min(window_get_width(), 1580) * 0.8;
-y_mobile_atirar = min(window_get_height(), 720) * 0.8;
+x_mobile_mover = display_get_gui_width() * 0.2;
+y_mobile_mover = display_get_gui_height() * 0.8;
+x_mobile_atirar = display_get_gui_width() * 0.8;
+y_mobile_atirar = display_get_gui_height() * 0.8;
 
 switch (global.Controller_mode) {
 	case 0: // PC / TECLADO

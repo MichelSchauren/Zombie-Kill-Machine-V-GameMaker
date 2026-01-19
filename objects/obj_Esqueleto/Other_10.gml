@@ -4,6 +4,7 @@ vida_total = ESQUELETO_VIDA_TOTAL;
 vida = vida_total;
 vel = ESQUELETO_VEL;
 dano = ESQUELETO_DANO;
+peso_orda = ESQUELETO_PESO_ORDA;
 
 spr_colisao = spr_Esqueleto_mask_pes;
 spr_andando = spr_Esqueleto_andando;

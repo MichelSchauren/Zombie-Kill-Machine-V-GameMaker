@@ -6,6 +6,7 @@ vel = RAPIDO_VEL;
 dash_vel = RAPIDO_DASH_VEL;
 dash_direction = 0;
 dano = RAPIDO_DANO;
+peso_orda = RAPIDO_PESO_ORDA;
 
 spr_colisao = spr_Rapido_mask_pes;
 spr_andando = spr_Rapido_andando;

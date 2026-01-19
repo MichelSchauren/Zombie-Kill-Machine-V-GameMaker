@@ -1,0 +1,80 @@
+// ELEMENTOS
+elementos = [ // {sprite, key, x, y, offsetX, offsetY, gui_x, gui_y}
+	{"sprite": spr_Botao_start, "key": vk_enter, "x": 890, "y": 64}, // Start
+	{"sprite": spr_Botao_options, "key": ord("O"), "x": 922, "y": 576}, // Opções
+	{"sprite": spr_Botao_credits, "key": ord("C"), "x": 922, "y": 768}, // Creditos
+	{"sprite": spr_Input_nome, "key": ord("I"), "x": 1242, "y": 448}, // Input Nome
+	{"sprite": noone, "key": noone, "x": 1408, "y": 1032}, // Texto da versão
+	{"sprite": spr_Texto_nome, "key": noone, "x": 932, "y": 400} // Nome
+];
+
+for (var i=0; i < array_length(elementos); i++) {
+	var _item = elementos[i];
+	with (_item) {
+		offsetX = x / room_width;
+		offsetY = y / room_height;
+		escalaX = 1;
+		escalaY = 1;
+		gui_x = display_get_gui_width() * offsetX;
+		gui_y = display_get_gui_height() * offsetY;
+		image = 0;
+		
+		if (sprite != noone and key != noone) {
+			vk_id = virtual_key_add(gui_x, gui_y, sprite_get_width(sprite)*escalaX, sprite_get_height(sprite)*escalaY, key);
+		}
+	}
+}
+
+reposicionar_itens = function () {
+	for (var i=0; i < array_length(elementos); i++) {
+		with (elementos[i]) {
+			escalaX = display_get_gui_width() / room_width;
+			escalaY = display_get_gui_height() / room_height;
+			gui_x = display_get_gui_width() * offsetX;
+			gui_y = display_get_gui_height() * offsetY;
+			x = camera_get_view_x(view_camera[0]) + gui_x;
+			y = camera_get_view_y(view_camera[0]) + gui_y;
+			
+			if (sprite != noone and key != noone) {
+				virtual_key_delete(vk_id);
+				vk_id = virtual_key_add(gui_x, gui_y, sprite_get_width(sprite)*escalaX, sprite_get_height(sprite)*escalaY, key);
+			}
+		}
+	}
+}
+
+
+// CAMERA
+last_width = window_get_width();
+last_height = window_get_height();
+
+redimencionar_tela = function () {
+	display_set_gui_size(window_get_width(), window_get_height()); // n me pergunte o pq disso
+	
+	last_width = window_get_width();
+	last_height = window_get_height();
+	
+	// Obter as dimensões atuais da janela
+	var _w = display_get_gui_width();
+	var _h = display_get_gui_height();
+		
+	var _x1 = max((room_width-_w)/2, 0);
+	var _y1 = max((room_height-_h)/2, 0);
+	
+	camera_set_view_size(view_camera[0], _w, _h);
+	surface_resize(application_surface, _w, _h);
+	camera_set_view_pos(view_camera[0], _x1, _y1);
+	
+	reposicionar_itens();
+}
+
+redimencionar_tela();
+
+
+// Input nome
+input_nome = elementos[3];
+with (input_nome) {
+	folder = $"Player{int64(random_range(10, 99))}";
+	selecionado = false;
+	max_caracteres = 13;
+}
