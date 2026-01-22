@@ -23,7 +23,7 @@
   ],
   "name":"spr_Input_nome",
   "nineSlice":null,
-  "origin":3,
+  "origin":5,
   "parent":{
     "name":"Texto",
     "path":"folders/Sprites/Interface/Texto.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":0,
+    "xorigin":294,
     "yorigin":45,
   },
   "swatchColours":null,

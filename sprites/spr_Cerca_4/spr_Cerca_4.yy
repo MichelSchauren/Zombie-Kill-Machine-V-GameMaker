@@ -26,7 +26,7 @@
   "origin":7,
   "parent":{
     "name":"Cercas",
-    "path":"folders/Sprites/Estrturaras/Cercas.yy",
+    "path":"folders/Sprites/Estruturas/Cercas.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

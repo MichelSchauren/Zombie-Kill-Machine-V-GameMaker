@@ -26,7 +26,7 @@
   "origin":7,
   "parent":{
     "name":"Prédios",
-    "path":"folders/Sprites/Estrturaras/Prédios.yy",
+    "path":"folders/Sprites/Estruturas/Prédios.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

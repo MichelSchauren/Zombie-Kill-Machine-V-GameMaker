@@ -1,11 +1,11 @@
 {
   "$GMSprite":"v2",
   "%Name":"spr_Cerca_5",
-  "bboxMode":1,
+  "bboxMode":2,
   "bbox_bottom":179,
   "bbox_left":0,
   "bbox_right":35,
-  "bbox_top":0,
+  "bbox_top":66,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -26,7 +26,7 @@
   "origin":7,
   "parent":{
     "name":"Cercas",
-    "path":"folders/Sprites/Estrturaras/Cercas.yy",
+    "path":"folders/Sprites/Estruturas/Cercas.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

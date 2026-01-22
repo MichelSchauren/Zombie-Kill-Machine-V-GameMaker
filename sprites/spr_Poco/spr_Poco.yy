@@ -26,7 +26,7 @@
   "origin":7,
   "parent":{
     "name":"Decorações",
-    "path":"folders/Sprites/Estrturaras/Decorações.yy",
+    "path":"folders/Sprites/Estruturas/Decorações.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

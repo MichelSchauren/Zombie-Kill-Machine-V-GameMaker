@@ -26,7 +26,7 @@
   "origin":7,
   "parent":{
     "name":"Troncos e Pedras",
-    "path":"folders/Sprites/Estrturaras/Troncos e Pedras.yy",
+    "path":"folders/Sprites/Estruturas/Troncos e Pedras.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
