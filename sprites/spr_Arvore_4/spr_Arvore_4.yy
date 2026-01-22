@@ -26,7 +26,7 @@
   "origin":7,
   "parent":{
     "name":"Árvores",
-    "path":"folders/Sprites/Estrturaras/Árvores.yy",
+    "path":"folders/Sprites/Estruturas/Árvores.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,26 +1,26 @@
 // ELEMENTOS
 elementos = [ // {sprite, key, x, y, offsetX, offsetY, gui_x, gui_y}
-	{"sprite": spr_Botao_start, "key": vk_enter, "x": 890, "y": 64}, // Start
-	{"sprite": spr_Botao_options, "key": ord("O"), "x": 922, "y": 576}, // Opções
-	{"sprite": spr_Botao_credits, "key": ord("C"), "x": 922, "y": 768}, // Creditos
-	{"sprite": spr_Input_nome, "key": ord("I"), "x": 1242, "y": 448}, // Input Nome
-	{"sprite": noone, "key": noone, "x": 1408, "y": 1032}, // Texto da versão
-	{"sprite": spr_Texto_nome, "key": noone, "x": 932, "y": 400} // Nome
+	{"sprite": spr_Botao_start, "key": vk_enter, "x": 1600, "y": 192}, // Start
+	{"sprite": spr_Botao_options, "key": ord("O"), "x": 1312, "y": 640}, // Opções
+	{"sprite": spr_Botao_credits, "key": ord("C"), "x": 1312, "y": 832}, // Creditos
+	{"sprite": spr_Input_nome, "key": ord("I"), "x": 1600, "y": 448}, // Input Nome
+	{"sprite": noone, "key": noone, "x": 1600, "y": 1056}, // Texto da versão
+	{"sprite": spr_Texto_nome, "key": noone, "x": 1300, "y": 448} // Nome
 ];
 
 for (var i=0; i < array_length(elementos); i++) {
-	var _item = elementos[i];
-	with (_item) {
+	with (elementos[i]) {
 		offsetX = x / room_width;
 		offsetY = y / room_height;
-		escalaX = 1;
-		escalaY = 1;
+		scale = 1;
 		gui_x = display_get_gui_width() * offsetX;
 		gui_y = display_get_gui_height() * offsetY;
-		image = 0;
 		
-		if (sprite != noone and key != noone) {
-			vk_id = virtual_key_add(gui_x, gui_y, sprite_get_width(sprite)*escalaX, sprite_get_height(sprite)*escalaY, key);
+		if (sprite != noone) {
+			gui_left = gui_x - sprite_get_xoffset(sprite)*scale;
+			gui_top = gui_y - sprite_get_yoffset(sprite)*scale;
+			image = 0;
+			if (key != noone) vk_id = virtual_key_add(gui_left, gui_top, sprite_get_width(sprite)*scale, sprite_get_height(sprite)*scale, key);
 		}
 	}
 }
@@ -28,16 +28,20 @@ for (var i=0; i < array_length(elementos); i++) {
 reposicionar_itens = function () {
 	for (var i=0; i < array_length(elementos); i++) {
 		with (elementos[i]) {
-			escalaX = display_get_gui_width() / room_width;
-			escalaY = display_get_gui_height() / room_height;
+			scale = min (display_get_gui_width() / room_width, display_get_gui_height() / room_height);
 			gui_x = display_get_gui_width() * offsetX;
 			gui_y = display_get_gui_height() * offsetY;
 			x = camera_get_view_x(view_camera[0]) + gui_x;
 			y = camera_get_view_y(view_camera[0]) + gui_y;
 			
-			if (sprite != noone and key != noone) {
-				virtual_key_delete(vk_id);
-				vk_id = virtual_key_add(gui_x, gui_y, sprite_get_width(sprite)*escalaX, sprite_get_height(sprite)*escalaY, key);
+			if (sprite != noone) {
+				gui_left = gui_x - sprite_get_xoffset(sprite)*scale;
+				gui_top = gui_y - sprite_get_yoffset(sprite)*scale;
+				image = 0;
+				if (key != noone) {
+					virtual_key_delete(vk_id);
+					vk_id = virtual_key_add(gui_left, gui_top, sprite_get_width(sprite)*scale, sprite_get_height(sprite)*scale, key);
+				}
 			}
 		}
 	}
@@ -61,9 +65,11 @@ redimencionar_tela = function () {
 	var _x1 = max((room_width-_w)/2, 0);
 	var _y1 = max((room_height-_h)/2, 0);
 	
-	camera_set_view_size(view_camera[0], _w, _h);
-	surface_resize(application_surface, _w, _h);
-	camera_set_view_pos(view_camera[0], _x1, _y1);
+	if (window_get_width() != 0 and window_get_height() != 0) {
+		camera_set_view_size(view_camera[0], _w, _h);
+		surface_resize(application_surface, _w, _h);
+		camera_set_view_pos(view_camera[0], _x1, _y1);
+	}
 	
 	reposicionar_itens();
 }

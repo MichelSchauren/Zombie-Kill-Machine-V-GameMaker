@@ -11,9 +11,11 @@ redimencionar_tela = function () {
 	var _w = display_get_gui_width();
 	var _h = display_get_gui_height();
 	
-	camera_set_view_size(view_camera[0], _w, _h);
-	surface_resize(application_surface, _w, _h);
-	camera_set_view_border(view_camera[0], _w/2, _h/2);
+	if (window_get_width() != 0 and window_get_height() != 0) {
+		camera_set_view_size(view_camera[0], _w, _h);
+		surface_resize(application_surface, _w, _h);
+		camera_set_view_border(view_camera[0], _w/2, _h/2);
+	}
 }
 
 redimencionar_tela();

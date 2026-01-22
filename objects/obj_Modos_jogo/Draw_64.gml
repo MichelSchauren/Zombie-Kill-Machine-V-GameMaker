@@ -12,6 +12,6 @@ draw_sprite_ext(_spr_fundo, 0, _gui_w / 2, _gui_h / 2, _scale, _scale, 0, c_whit
 // Desenhar items
 for (var i=0; i < array_length(elementos); i++) {
 	with (elementos[i]) {
-		if (sprite != noone) draw_sprite_ext(sprite, image, gui_x, gui_y, escalaX, escalaY, 0, -1, 1);
+		if (sprite != noone) draw_sprite_ext(sprite, image, gui_x, gui_y, scale, scale, 0, -1, 1);
 	}	
 }

@@ -1,6 +1,8 @@
-// DELIMITAR UM TAMANHO MÍNIMO PARA A JANELA DO JOGO
+// DELIMITAR UM TAMANHO DA JANELA DO JOGO
 window_set_min_width(640);
 window_set_min_height(360);
+window_set_size(960, 540);
+window_center();
 
 
 // DEFINIR MODO DE CONTROLE
