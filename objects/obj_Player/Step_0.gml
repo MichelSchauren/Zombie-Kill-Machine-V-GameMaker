@@ -1,7 +1,7 @@
 // DEFINIR ESTADO ATUAL
 if (estado != noone) {
 	var _estado_passado = estado;
-	if (vida == 0) {
+	if (vida == 0 and !global.Player_imortal) {
 		estado = PL_ESTADOS.MORRENDO;
 	} else if (speed > 0) { // está se movendo
 		if (press) { // está atirando
@@ -29,13 +29,13 @@ switch (estado) {
 		sprite_index = spr_Player_atirandomov;
 		if (dir_tiro < 90 or dir_tiro > 270) image_xscale = 1;
 		else image_xscale = -1;
-		vel = global.Player_VEL_ATIRANDO;
+		vel = PLAYER_VEL_ATIRANDO;
 		break;
 		
 	case PL_ESTADOS.CORRENDO:
 		sprite_index = spr_Player_correndo;
 		if (hspeed != 0) image_xscale = sign(hspeed);
-		vel = global.Player_VEL_CORRENDO;
+		vel = PLAYER_VEL_CORRENDO;
 		break;
 		
 	case PL_ESTADOS.ATIRANDO:
@@ -57,13 +57,14 @@ switch (estado) {
 			image_index = image_number-1;
 			alarm[1] = game_get_speed(gamespeed_fps)*3; // // Ir para a tela de gameover depois de 3 segundos
 		}
+		
 		break;
 }
 
 // Mover
 if (estado == PL_ESTADOS.CORRENDO or estado = PL_ESTADOS.ATIRANDO_ANDANDO) {
 	// Mover caso não colida com as parede
-	move_and_collide(lengthdir_x(speed*vel, direction), lengthdir_y(speed*vel, direction), [obj_Colisores, obj_Colisor_player_24]);
+	move_and_collide(lengthdir_x(speed*vel, direction), lengthdir_y(speed*vel, direction), [obj_Estruturas, obj_Colisores, obj_Colisor_player_24]);
 	speed = 0; // Para não se mover no final do step
 }
 
@@ -79,8 +80,8 @@ if (estado = PL_ESTADOS.ATIRANDO or estado = PL_ESTADOS.ATIRANDO_ANDANDO) {
 		if (image_xscale < 0) _x = x-28;
 		else _x = x+28;
 		
-		// Criar tiro
-		if (room == Multiplayer) {
+		// Atirar
+		if (global.Multiplayer) {
 			// Avisar server de que um novo tiro foi criado
 			var _buffer = obj_Client_tcp.client_buffer;
 			buffer_seek(_buffer, buffer_seek_start, 0);
@@ -89,7 +90,6 @@ if (estado = PL_ESTADOS.ATIRANDO or estado = PL_ESTADOS.ATIRANDO_ANDANDO) {
 			buffer_write(_buffer, buffer_u16, y+9);
 			buffer_write(_buffer, buffer_u16, dir_tiro);
 			network_send_packet(obj_Client_tcp.socket_tcp, _buffer, buffer_tell(_buffer));
-			
 		} else {
 			// Criar tiro normalmente
 			var _tiro = noone;

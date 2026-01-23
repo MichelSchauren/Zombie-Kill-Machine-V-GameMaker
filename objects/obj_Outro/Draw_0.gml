@@ -9,7 +9,7 @@ draw_text(x, y-65, nome);
 
 
 // Desenhar VIDA
-var larg_vida = 80*(vida / global.Player_VIDA_TOTAL);
+var larg_vida = 80*(vida / PLAYER_VIDA_TOTAL);
 // fundo
 draw_set_colour(c_red);
 draw_rectangle(x-40, y-44, x+40, y-34, false);

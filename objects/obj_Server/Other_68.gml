@@ -31,7 +31,7 @@ else {
 		case network_type_disconnect:
 			// Remove cliente do struct
 			if (struct_exists(players_struct, _socket)) {
-				f_Escrever_chat("Servidor", $"{players_struct[$ _socket][0]} desconectou!");
+				escrever_chat("Servidor", $"{players_struct[$ _socket][0]} desconectou!");
 				struct_remove(players_struct, _socket);
 			}
 			var _pos = ds_list_find_index(socket_list, _socket);
@@ -57,7 +57,25 @@ else {
 					var _nome = buffer_read(_buffer, buffer_string);
 					var _x = buffer_read(_buffer, buffer_u16);
 					var _y = buffer_read(_buffer, buffer_u16);
-					var _array_player = [_nome, _x, _y, global.Player_VIDA_TOTAL, spr_Player_parado, 0, 1];
+					var _array_player = [_nome, _x, _y, PLAYER_VIDA_TOTAL, spr_Player_parado, 0, 1];
+					
+					// servidor informa o cliente sobre os inimigos já spawnados <
+					for (var i=0; i < instance_number(obj_Inimigo); i++) {
+						var _inimigo = instance_find(obj_Inimigo, i);
+						with (_inimigo) {
+							var _sbuff = other.server_buffer;
+							buffer_seek(_sbuff, buffer_seek_start, 0);
+							buffer_write(_sbuff, buffer_u8, Events_server_client.novo_inimigo);
+							buffer_write(_sbuff, buffer_string, string(id));
+							buffer_write(_sbuff, buffer_u16, x);
+							buffer_write(_sbuff, buffer_u16, y);
+							buffer_write(_sbuff, buffer_u8, vida_total);
+							buffer_write(_sbuff, buffer_u8, spr_colisao);
+							buffer_write(_sbuff, buffer_u8, spr_morrendo);
+							buffer_write(_sbuff, buffer_u8, sprite_index);
+							network_send_packet(_socket_id, _sbuff, buffer_get_size(_sbuff))
+						}
+					}
 				
 					// servidor retorna a struct de todos os clientes menos esse <
 					if (struct_names_count(players_struct) > 0) {
@@ -65,7 +83,7 @@ else {
 						buffer_seek(server_buffer, buffer_seek_start, 0);
 						buffer_write(server_buffer, buffer_u8, Events_server_client.dados_outros);
 						buffer_write(server_buffer, buffer_string, _struct_json);
-						network_send_packet(_socket_id, server_buffer, buffer_tell(server_buffer));
+						network_send_packet(_socket_id, server_buffer, buffer_get_size(server_buffer));
 					}
 					
 					// servidor informa a todos os outros clientes que um novo cliente entrou <<
@@ -80,7 +98,7 @@ else {
 					players_struct[$ _socket_id] = _array_player;
 					// { socket_client: [nome, x, y, vida, sprite, image_index] }
 					
-					f_Escrever_chat("Servidor", $"[{_nome}] se conectou!");
+					escrever_chat("Servidor", $"[{_nome}] se conectou!");
 					
 					break;
 					
@@ -91,14 +109,11 @@ else {
 					players_struct[$ _socket_id][3] = buffer_read(_buffer, buffer_u8);
 					players_struct[$ _socket_id][4] = buffer_read(_buffer, buffer_u8);
 					players_struct[$ _socket_id][5] = buffer_read(_buffer, buffer_u8);
-					players_struct[$ _socket_id][6] = buffer_read(_buffer, buffer_f16);
+					players_struct[$ _socket_id][6] = buffer_read(_buffer, buffer_s8);
 					
 					// Mandar isso para os outros clientes
 					// filtrar pra não envia para esse socket tmb
-					var _list_outros = ds_list_create();
-					ds_list_copy(_list_outros, socket_list);
-					var _p = ds_list_find_index(_list_outros, _socket_id);
-					if (_p != -1) ds_list_delete(_list_outros, _p);
+					var _list_outros = f_filtrar_list_v(socket_list, _socket_id);
 					// Enviar
 					buffer_seek(server_buffer, buffer_seek_start, 0);
 					buffer_write(server_buffer, buffer_u8, Events_server_client.mudar_outro); // codigo
@@ -108,21 +123,25 @@ else {
 					buffer_write(server_buffer, buffer_u8, players_struct[$ _socket_id][3]);
 					buffer_write(server_buffer, buffer_u8, players_struct[$ _socket_id][4]);
 					buffer_write(server_buffer, buffer_u8, players_struct[$ _socket_id][5]);
-					buffer_write(server_buffer, buffer_f16, players_struct[$ _socket_id][6]);
+					buffer_write(server_buffer, buffer_s8, players_struct[$ _socket_id][6]);
 					f_network_send_all(_list_outros, server_buffer);
 					
 					break;
 					
 				case Events_client_server.tiro_player:
+					// Ler informações do tiro solicitado
 					var _tiro_x = buffer_read(_buffer, buffer_u16);
 					var _tiro_y = buffer_read(_buffer, buffer_u16);
 					var _tiro_dir = buffer_read(_buffer, buffer_u16);
 					
+					// Escrever buffer do novo projetil (TIRO)
 					buffer_seek(server_buffer, buffer_seek_start, 0);
-					buffer_write(server_buffer, buffer_u8, Events_server_client.novo_tiro);
+					buffer_write(server_buffer, buffer_u8, Events_server_client.novo_projetil);
+					buffer_write(server_buffer, buffer_u16, obj_Tiro);
 					buffer_write(server_buffer, buffer_u16, _tiro_x);
 					buffer_write(server_buffer, buffer_u16, _tiro_y);
 					buffer_write(server_buffer, buffer_u16, _tiro_dir);
+					// Enviar buffer a todos
 					f_network_send_all(socket_list, server_buffer);
 					
 					break;
@@ -133,6 +152,16 @@ else {
 					buffer_write(buff_ping, buffer_u8, Events_server_client.atualizar_ping);
 					buffer_write(buff_ping, buffer_u32, _current_time);
 					network_send_packet(_socket_id, buff_ping, buffer_get_size(buff_ping));
+					
+					break;
+					
+				case Events_client_server.coletei_moeda:
+					var _id_coin = buffer_read(_buffer, buffer_string);
+					
+					buffer_seek(server_buffer, buffer_seek_start, 0);
+					buffer_write(server_buffer, buffer_u8, Events_server_client.moeda_coletada);
+					buffer_write(server_buffer, buffer_string, _id_coin);
+					f_network_send_all(socket_list, server_buffer);
 					
 					break;
 			}

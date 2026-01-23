@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"filtrar_listas",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"filtrar_listas",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
