@@ -1,5 +1,3 @@
-v1.8.0.0
+v1.8.1.0
 
-- Agora é possível abrir a janela da loja e gastar suas moedas em alguns itens; [minor]
-- Mudança na forma como os botões do menu são redimencionados; [build]
-- Alteração na caixa de colisão das cercas verticais; [build]
+- Bug no menu multiplayer ao mostrar as salas corrigido; [path]
