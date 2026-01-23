@@ -28,3 +28,7 @@ try {
 global.Multiplayer = true;
 global.Multiplayer_adm = true;
 room_goto(global.Mapa_atual);
+
+keyboard_string = global.input_server_nome.texto;
+keyboard_virtual_show(kbv_type_default, kbv_returnkey_done, kbv_autocapitalize_none, false);
+global.campo_ativo = "nome";
