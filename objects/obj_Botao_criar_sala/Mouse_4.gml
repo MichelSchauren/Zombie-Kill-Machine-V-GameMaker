@@ -1,5 +1,5 @@
-var _nome = global.input_server_nome.folder;
-var _jogadores = global.input_server_jogadores.folder;
+var string _nome = global.input_server_nome.folder;
+var int _jogadores = global.input_server_jogadores.folder;
 
 try {
 	if (global.input_server_nome.texto != "") _nome = global.input_server_nome.texto;
@@ -28,7 +28,3 @@ try {
 global.Multiplayer = true;
 global.Multiplayer_adm = true;
 room_goto(global.Mapa_atual);
-
-keyboard_string = global.input_server_nome.texto;
-keyboard_virtual_show(kbv_type_default, kbv_returnkey_done, kbv_autocapitalize_none, false);
-global.campo_ativo = "nome";
