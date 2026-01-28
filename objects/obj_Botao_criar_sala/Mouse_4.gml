@@ -1,5 +1,5 @@
-var string _nome = global.input_server_nome.folder;
-var int _jogadores = global.input_server_jogadores.folder;
+var _nome = global.input_server_nome.folder;
+var _jogadores = global.input_server_jogadores.folder;
 
 try {
 	if (global.input_server_nome.texto != "") _nome = global.input_server_nome.texto;
