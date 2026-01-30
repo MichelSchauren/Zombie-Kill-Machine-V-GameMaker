@@ -44,7 +44,7 @@ with (input_nome) {
 		}
 	
 	    // Enter - Sair
-	    if (keyboard_check_pressed(vk_enter) or keyboard_check(vk_return)) {
+	    if (keyboard_check_pressed(vk_enter) or keyboard_check_pressed(vk_return)) {
 	        selecionado = false;
 			keyboard_string = ""; // limpa o keyboard
 		
