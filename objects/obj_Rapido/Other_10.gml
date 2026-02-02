@@ -1,12 +1,12 @@
 // Variáveis do Inimigo
-alcance_corpo = RAPIDO_ALCANCE_CORPO;
-vida_total = RAPIDO_VIDA_TOTAL;
+alcance_corpo = variable_struct_get(RAPIDO, "alcance");
+vida_total = variable_struct_get(RAPIDO, "vida");
 vida = vida_total;
-vel = RAPIDO_VEL;
-dash_vel = RAPIDO_DASH_VEL;
+vel = variable_struct_get(RAPIDO, "vel");
+dano = variable_struct_get(RAPIDO, "dano");
+peso_orda = variable_struct_get(RAPIDO, "peso");
+dash_vel = variable_struct_get(RAPIDO, "peso");
 dash_direction = 0;
-dano = RAPIDO_DANO;
-peso_orda = RAPIDO_PESO_ORDA;
 
 spr_colisao = spr_Rapido_mask_pes;
 spr_andando = spr_Rapido_andando;

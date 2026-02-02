@@ -1,11 +1,11 @@
 // Variáveis do Inimigo
-alcance_corpo = MINIBOSS_ALCENCE_CORPO;
-alcance_atirando = MINIBOSS_ALCENCE_ATIRANDO;
-vida_total = MINIBOSS_VIDA_TOTAL;
+alcance_corpo = variable_struct_get(MINIBOSS, "alcance");
+alcance_atirando = variable_struct_get(MINIBOSS, "alcance_atirando");
+vida_total = variable_struct_get(MINIBOSS, "vida");
 vida = vida_total;
-vel = MINIBOSS_VEL;
-dano = MINIBOSS_DANO_CORPO;
-peso_orda = MINIBOSS_PESO_ORDA;
+vel = variable_struct_get(MINIBOSS, "vel");
+dano = variable_struct_get(MINIBOSS, "dano");
+peso_orda = variable_struct_get(MINIBOSS, "peso");
 
 spr_colisao = spr_MiniBoss_mask_pes;
 spr_andando = spr_MiniBoss_andando;

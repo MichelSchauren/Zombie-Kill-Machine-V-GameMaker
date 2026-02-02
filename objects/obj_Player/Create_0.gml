@@ -4,7 +4,7 @@ spr_colisao = spr_Player_mask_pes;
 mask_index = spr_colisao;
 
 pode_atirar = true;
-tpf = game_get_speed(gamespeed_fps) / TIRO_TPS;
+tpf = game_get_speed(gamespeed_fps) / variable_struct_get(TIRO, "tps");
 press = false;
 dir_tiro = 0;
 

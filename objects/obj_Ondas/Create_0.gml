@@ -24,23 +24,23 @@ draw_set_colour(-1);
 
 // Spaw de inimigos
 pegar_pesos_reais = function (enemy, _) {
-	return (enemy[0] <= global.Peso_orda and enemy[2] <= global.Onda_atual) ;
+	return (enemy[$ "peso"] <= global.Peso_orda and enemy[$ "orda"] <= global.Onda_atual) ;
 }
-pesos_orda_reais = array_filter(PESOS_ORDA, pegar_pesos_reais);
+pesos_orda_reais = array_filter(INIMIGOS, pegar_pesos_reais);
 
 spawnar_orda = function () {
 	if (global.Spaw_inimigos) {
 		var _peso = global.Peso_orda;
-		var _pesos_orda_reais = array_filter(PESOS_ORDA, pegar_pesos_reais);
+		var _pesos_orda_reais = array_filter(INIMIGOS, pegar_pesos_reais);
 	
 		while (_peso > 0) {
 			// sortear inimigo
 			var _i = irandom_range(0, array_length(_pesos_orda_reais)-1);
-			var _peso_inimigo = _pesos_orda_reais[_i][0];
+			var _peso_inimigo = _pesos_orda_reais[_i][$ "peso"];
 		
 			if (_peso_inimigo <= _peso) { // se o inimigo sorteado tiver o peso mínimo
 				_peso -= _peso_inimigo;
-				var _inimigo = _pesos_orda_reais[_i][1];
+				var _inimigo = _pesos_orda_reais[_i][$ "obj"];
 				ds_list_add(global.Orda, _inimigo); // Adicionar inimigo a orda que será spawnada
 			} else {
 				array_delete(_pesos_orda_reais, _i, 1); // Para não sortear o mesmo inimigo novamente
