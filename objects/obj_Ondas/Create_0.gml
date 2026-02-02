@@ -69,3 +69,11 @@ pausar = function (pause) {
 		alarm[2] = ds_list_find_value(tempo_atual, 2);
 	}
 }
+
+// pular onda
+pular_onda = function () {
+	alpha = 0;
+	alarm[0] = 0;
+	alarm[1] = 1;
+	alarm[2] = 0;
+}

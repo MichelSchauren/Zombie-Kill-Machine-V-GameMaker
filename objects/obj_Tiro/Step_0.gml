@@ -1,6 +1,6 @@
 // Mover o tiro na direção do alvo
-x += lengthdir_x(variable_struct_get(TIRO, "vel"), direction);
-y += lengthdir_y(variable_struct_get(TIRO, "vel"), direction);
+x += lengthdir_x(variable_struct_get(TIRO, "vel")/fps, direction);
+y += lengthdir_y(variable_struct_get(TIRO, "vel")/fps, direction);
 
 // COLISÕES
 // colisão com paredes

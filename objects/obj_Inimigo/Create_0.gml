@@ -38,7 +38,7 @@ perseguir = function (dist_player, amigo) {
 		image_index = 0;
     } else {
 		// Perseguir o jogador desviando de obstáculos (obj_Colisores e obj_Inimigos)
-		mp_potential_step(amigo.x, amigo.y, vel, false);
+		mp_potential_step(amigo.x, amigo.y, vel/fps, false);
 			
 		// Virar a sprite na direção do movimento (opcional, para refletir horizontalmente)
 		direction = point_direction(xprevious, yprevious, x, y);

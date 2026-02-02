@@ -5,7 +5,7 @@ vida = vida_total;
 vel = variable_struct_get(RAPIDO, "vel");
 dano = variable_struct_get(RAPIDO, "dano");
 peso_orda = variable_struct_get(RAPIDO, "peso");
-dash_vel = variable_struct_get(RAPIDO, "peso");
+dash_vel = variable_struct_get(RAPIDO, "dash_vel");
 dash_direction = 0;
 
 spr_colisao = spr_Rapido_mask_pes;

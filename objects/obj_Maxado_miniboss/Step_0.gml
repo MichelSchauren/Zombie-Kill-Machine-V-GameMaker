@@ -1,7 +1,7 @@
 // Mover o tiro na direção do alvo
 if (! parado) {
-	x += lengthdir_x(variable_struct_get(MAXADO, "vel"), direction);
-	y += lengthdir_y(variable_struct_get(MAXADO, "vel"), direction);
+	x += lengthdir_x(variable_struct_get(MAXADO, "vel")/fps, direction);
+	y += lengthdir_y(variable_struct_get(MAXADO, "vel")/fps, direction);
 
 	// colisão com o player
 	with (obj_Player) {

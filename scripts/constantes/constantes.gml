@@ -20,22 +20,22 @@ global.Tempo_pausado = false;
 global.Player_name = "";
 global.Player_vida = 100;
 #macro PLAYER_VIDA_TOTAL 100
-#macro PLAYER_VEL_CORRENDO 3.2
-#macro PLAYER_VEL_ATIRANDO 2.2
+#macro PLAYER_VEL_CORRENDO 204
+#macro PLAYER_VEL_ATIRANDO 144
 
 // inimigos {"peso": peso de orda, "orda": orda em que começa a aparecer, "obj": objeto do inimigo,
 // "vel": velocidade, "dano": dano, "vida": vida total, "alcance": alcance corpo a corpo, ...}
-#macro ZOMBI {"peso": 1, "orda": 1, "obj": obj_Zombi, "vel": 1.8, "dano": 14, "vida": 32, "alcance": 54}
-#macro ZOMBIGIRL {"peso": 1, "orda": 2, "obj": obj_ZombiGirl, "vel": 1.7, "dano": 13, "vida": 38, "alcance": 52}
-#macro ESQUELETO {"peso": 3, "orda": 3, "obj": obj_Esqueleto, "vel": 1.5, "dano": 17, "vida": 50, "alcance": 58}
-#macro RAPIDO {"peso": 4, "orda": 4, "obj": obj_Rapido, "vel": 3, "dano": 15, "vida": 30, "alcance": 100, "dash_vel": 7}
-#macro MINIBOSS {"peso": 10, "orda": 5, "obj": obj_MiniBoss, "vel": 1.2, "dano": 24, "vida": 120, "alcance": 60, "alcance_atirando": 360}
+#macro ZOMBI {"peso": 1, "orda": 1, "obj": obj_Zombi, "vel": 108, "dano": 14, "vida": 32, "alcance": 54}
+#macro ZOMBIGIRL {"peso": 1, "orda": 2, "obj": obj_ZombiGirl, "vel": 102, "dano": 13, "vida": 38, "alcance": 52}
+#macro ESQUELETO {"peso": 3, "orda": 3, "obj": obj_Esqueleto, "vel": 90, "dano": 17, "vida": 50, "alcance": 58}
+#macro RAPIDO {"peso": 4, "orda": 4, "obj": obj_Rapido, "vel": 180, "dano": 15, "vida": 30, "alcance": 100, "dash_vel": 7}
+#macro MINIBOSS {"peso": 10, "orda": 5, "obj": obj_MiniBoss, "vel": 72, "dano": 24, "vida": 120, "alcance": 60, "alcance_atirando": 360}
 
 #macro INIMIGOS [ZOMBI, ZOMBIGIRL, ESQUELETO, RAPIDO, MINIBOSS]
 
 // projeteis {"vel", "dano", ...}
-#macro TIRO {"vel": 10, "dano": 8, "tps": 3}
-#macro MAXADO {"vel": 8, "dano": 28}
+#macro TIRO {"vel": 700, "dano": 8, "tps": 4}
+#macro MAXADO {"vel": 580, "dano": 28}
 
 // ondas
 global.Onda_atual = 0;
@@ -46,8 +46,7 @@ global.Mostrar_ondas = true;
 #macro TEMPO_NOITE (game_get_speed(gamespeed_fps) * 30)
 #macro TEMPO_ORDA_DIA (game_get_speed(gamespeed_fps) * 20)
 #macro TEMPO_ORDA_NOITE (game_get_speed(gamespeed_fps) * 10)
-// [peso, inimigo, orda em que começa a aparecer]
-#macro PESOS_ORDA [ [1, obj_Zombi, 1], [1, obj_ZombiGirl, 2], [3, obj_Esqueleto, 3], [4, obj_Rapido, 4], [10, obj_MiniBoss, 5] ]
+
 
 // MULTIPLAYER
 #macro PORTA_TCP 64193

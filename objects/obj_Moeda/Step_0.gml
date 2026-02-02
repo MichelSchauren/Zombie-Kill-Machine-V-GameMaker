@@ -1,6 +1,6 @@
 if (y < meta_y) { // Enquanto não estiver no chão
-	x += vel_x; // Movimento horizontal
-	y = min(y + vel_y, meta_y); // Movimento vertical
+	x += vel_x/fps; // Movimento horizontal
+	y = min(y + vel_y/fps, meta_y); // Movimento vertical
 	vel_y += gravidade;
 }
 

@@ -1,7 +1,5 @@
-v1.9.0.0
+v1.9.1.0
 
-- Novo inimigo (Zombi); [maior]
-- Novo inimigo (Zombie Girl); [maior]
-- Reajuste na força dos inimigos; [build]
-- Reajuste no peso de orda dos inimigos; [build]
-- Otimizações / Reorganização do código; [build]
+- Adicionado comando para pular onda no modo desenvolvedor; [build]
+- Comando para aumentar/diminuir FPS alterado; [build]
+- Mudança na forma como a velocidade das instancias se comportam em relação ao FPS; [path]
