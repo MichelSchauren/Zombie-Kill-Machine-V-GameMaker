@@ -1,5 +1,5 @@
-v1.9.1.0
+v1.9.2.0
 
-- Adicionado comando para pular onda no modo desenvolvedor; [build]
-- Comando para aumentar/diminuir FPS alterado; [build]
-- Mudança na forma como a velocidade das instancias se comportam em relação ao FPS; [path]
+- Bug na distorção da surface do GameOver corrigido; [path]
+- Alteração das sprites do Esqueleto tanque; [build]
+- Velocidade do tiro não altera mais ao mudar o FPS; [path]
