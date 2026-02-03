@@ -1,3 +1,5 @@
-v1.8.1.0
+v1.9.1.0
 
-- Bug no menu multiplayer ao mostrar as salas corrigido; [path]
+- Adicionado comando para pular onda no modo desenvolvedor; [build]
+- Comando para aumentar/diminuir FPS alterado; [build]
+- Mudança na forma como a velocidade das instancias se comportam em relação ao FPS; [path]

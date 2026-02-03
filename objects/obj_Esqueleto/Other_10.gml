@@ -1,10 +1,10 @@
 // Variáveis do Inimigo
-alcance_corpo = ESQUELETO_ALCANCE_CORPO;
-vida_total = ESQUELETO_VIDA_TOTAL;
+alcance_corpo = variable_struct_get(ESQUELETO, "alcance");
+vida_total = variable_struct_get(ESQUELETO, "vida");
 vida = vida_total;
-vel = ESQUELETO_VEL;
-dano = ESQUELETO_DANO;
-peso_orda = ESQUELETO_PESO_ORDA;
+vel = variable_struct_get(ESQUELETO, "vel");
+dano = variable_struct_get(ESQUELETO, "dano");
+peso_orda = variable_struct_get(ESQUELETO, "peso");
 
 spr_colisao = spr_Esqueleto_mask_pes;
 spr_andando = spr_Esqueleto_andando;

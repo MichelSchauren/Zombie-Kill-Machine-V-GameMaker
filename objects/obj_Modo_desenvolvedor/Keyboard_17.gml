@@ -1,5 +1,5 @@
 if (global.Modo_desenvolvedor) {	
-	// Spaw dos inimigos
+	// ativar/desativar o Spaw dos inimigos
 	if (keyboard_check_pressed(ord("E"))) {
 		global.Spaw_inimigos = !global.Spaw_inimigos; 
 	}
@@ -20,15 +20,6 @@ if (global.Modo_desenvolvedor) {
 			obj_Colisores.visible = ! obj_Colisores.visible;
 		}
 	}
-
-	// Controle do fps
-	if (keyboard_check_pressed(ord("F"))) {
-		if (keyboard_check(vk_alt)) {
-			game_set_speed(game_get_speed(gamespeed_fps) -1, gamespeed_fps);
-		} else {
-			game_set_speed(game_get_speed(gamespeed_fps) +1, gamespeed_fps);
-		}
-	}
 	
 	// Trocar modo de controle
 	if (keyboard_check_pressed(ord("K"))) {
@@ -47,8 +38,13 @@ if (global.Modo_desenvolvedor) {
 		global.Player_imortal = ! global.Player_imortal;
 	}
 	
-	// Pausar ondas
+	// Pausar/despausar ondas
 	if (keyboard_check_pressed(ord("T"))) {
 		obj_Ondas.pausar(!global.Tempo_pausado);
+	}
+	
+	// pular onda
+	if (keyboard_check_pressed(ord("O"))) {
+		obj_Ondas.pular_onda();	
 	}
 }

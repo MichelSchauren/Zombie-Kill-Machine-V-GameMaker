@@ -1,14 +1,14 @@
 // Mover o tiro na direção do alvo
 if (! parado) {
-	x += lengthdir_x(MAXADO_VEL, direction);
-	y += lengthdir_y(MAXADO_VEL, direction);
+	x += lengthdir_x(variable_struct_get(MAXADO, "vel")/fps, direction);
+	y += lengthdir_y(variable_struct_get(MAXADO, "vel")/fps, direction);
 
 	// colisão com o player
 	with (obj_Player) {
 		mask_index = sprite_index; // pega a colisão de toda a sprite
 		
 		if (place_meeting(x, y, other) and estado != noone) {
-			vida = max(vida - MAXADO_DANO, 0);
+			vida = max(vida - variable_struct_get(MAXADO, "dano"), 0);
 			instance_destroy(other);
 		}
 		

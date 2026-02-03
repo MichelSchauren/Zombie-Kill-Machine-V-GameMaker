@@ -1,9 +1,9 @@
 moeda_id = noone;
 depth = layer_get_depth("Estruturas") - y;
-vel_x = random_range(-1, 1);
+vel_x = random_range(-60, 60);
 meta_y = y -20;
-vel_y = -4;
-gravidade = .15;
+vel_y = -280;
+gravidade = 9.8; // gravidade da terra (9.807 m/s) :)
 y -= 40;
 
 // Alarme para destruir moeda
