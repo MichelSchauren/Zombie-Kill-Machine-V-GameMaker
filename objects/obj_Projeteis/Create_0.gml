@@ -13,4 +13,6 @@ server_criar_proj = function () {
 	f_network_send_all(_sockets, _buffer);
 }
 
+alarm[0] = 1;
+
 event_user(0);

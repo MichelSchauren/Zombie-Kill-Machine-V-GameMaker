@@ -16,6 +16,27 @@ global.second_control_mode = 1;
 global.Player_imortal = false;
 global.Tempo_pausado = false;
 
+// player
+global.Player_name = "";
+global.Player_vida = 100;
+#macro PLAYER_VIDA_TOTAL 100
+#macro PLAYER_VEL_CORRENDO 204
+#macro PLAYER_VEL_ATIRANDO 144
+
+// inimigos {"peso": peso de orda, "orda": orda em que começa a aparecer, "obj": objeto do inimigo,
+// "vel": velocidade, "dano": dano, "vida": vida total, "alcance": alcance corpo a corpo, ...}
+#macro ZOMBI {"peso": 1, "orda": 1, "obj": obj_Zombi, "vel": 108, "dano": 14, "vida": 32, "alcance": 54}
+#macro ZOMBIGIRL {"peso": 1, "orda": 2, "obj": obj_ZombiGirl, "vel": 102, "dano": 13, "vida": 38, "alcance": 52}
+#macro ESQUELETO {"peso": 3, "orda": 3, "obj": obj_Esqueleto, "vel": 90, "dano": 17, "vida": 50, "alcance": 58}
+#macro RAPIDO {"peso": 4, "orda": 4, "obj": obj_Rapido, "vel": 180, "dano": 15, "vida": 30, "alcance": 100, "dash_vel": 7}
+#macro MINIBOSS {"peso": 10, "orda": 5, "obj": obj_MiniBoss, "vel": 72, "dano": 24, "vida": 120, "alcance": 60, "alcance_atirando": 360}
+
+#macro INIMIGOS [ZOMBI, ZOMBIGIRL, ESQUELETO, RAPIDO, MINIBOSS]
+
+// projeteis {"vel", "dano", ...}
+#macro TIRO {"vel": 700, "dano": 8, "tps": 4}
+#macro MAXADO {"vel": 580, "dano": 28}
+
 // ondas
 global.Onda_atual = 0;
 global.Peso_orda = 0;
@@ -25,45 +46,6 @@ global.Mostrar_ondas = true;
 #macro TEMPO_NOITE (game_get_speed(gamespeed_fps) * 30)
 #macro TEMPO_ORDA_DIA (game_get_speed(gamespeed_fps) * 20)
 #macro TEMPO_ORDA_NOITE (game_get_speed(gamespeed_fps) * 10)
-// [peso, inimigo, orda em que começa a aparecer]
-#macro PESOS_ORDA [ [1, obj_Esqueleto, 1], [3, obj_Rapido, 2], [7, obj_MiniBoss, 5] ]
-
-// player
-global.Player_name = "";
-global.Player_vida = 100;
-#macro PLAYER_VIDA_TOTAL 100
-#macro PLAYER_VEL_CORRENDO 3.4
-#macro PLAYER_VEL_ATIRANDO 2.4
-
-// tiro
-#macro TIRO_VEL 10
-#macro TIRO_TPS 3 // Tiros por segundo
-#macro TIRO_DANO 8
-
-// esqueleto
-#macro ESQUELETO_ALCANCE_CORPO 60
-#macro ESQUELETO_VIDA_TOTAL 50
-#macro ESQUELETO_VEL 1.8
-#macro ESQUELETO_DANO 18
-#macro ESQUELETO_PESO_ORDA 1
-
-// rapido
-#macro RAPIDO_ALCANCE_CORPO 100
-#macro RAPIDO_VIDA_TOTAL 40
-#macro RAPIDO_VEL 3
-#macro RAPIDO_DASH_VEL 7
-#macro RAPIDO_DANO 16
-#macro RAPIDO_PESO_ORDA 3
-
-// mini boss
-#macro MINIBOSS_ALCENCE_CORPO 60
-#macro MINIBOSS_ALCENCE_ATIRANDO 360
-#macro MINIBOSS_VIDA_TOTAL 80
-#macro MINIBOSS_VEL 1.2
-#macro MINIBOSS_DANO_CORPO 20
-#macro MINIBOSS_PESO_ORDA 7
-#macro MAXADO_DANO 25
-#macro MAXADO_VEL 8
 
 
 // MULTIPLAYER

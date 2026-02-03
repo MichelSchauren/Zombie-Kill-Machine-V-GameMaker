@@ -1,6 +1,6 @@
 // Mover o tiro na direção do alvo
-x += lengthdir_x(TIRO_VEL, direction);
-y += lengthdir_y(TIRO_VEL, direction);
+x += lengthdir_x(variable_struct_get(TIRO, "vel")/fps, direction);
+y += lengthdir_y(variable_struct_get(TIRO, "vel")/fps, direction);
 
 // COLISÕES
 // colisão com paredes
@@ -14,7 +14,7 @@ with (obj_Inimigo) {
 	
 	if (place_meeting(x, y, other) and estado != noone) {
 		// Tira vida do inimigo quando colidir com ele
-		vida = max(vida - TIRO_DANO, 0);
+		vida = max(vida - variable_struct_get(TIRO, "dano"), 0);
 		instance_destroy(other);
 	}
 	
@@ -39,7 +39,7 @@ if (pvp) {
 		mask_index = sprite_index; // pega a colisão de toda a sprite
 		
 		if (place_meeting(x, y, other) and estado != noone) {
-			vida = max(vida - TIRO_DANO, 0);
+			vida = max(vida - variable_struct_get(TIRO, "dano"), 0);
 			instance_destroy(other);
 		}
 		
