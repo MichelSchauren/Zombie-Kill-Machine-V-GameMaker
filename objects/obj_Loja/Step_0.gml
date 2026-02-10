@@ -1,3 +1,4 @@
+// Mostrando interface
 if (show) {
 	for (var i=0; i < array_length(vendas); i++) {
 		with (vendas[i]) {

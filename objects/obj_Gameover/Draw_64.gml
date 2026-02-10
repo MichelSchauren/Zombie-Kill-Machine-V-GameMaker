@@ -1,7 +1,14 @@
+display_set_gui_size(window_get_width(), window_get_height());
+
 // Desenhar fundo
 var _spr_fundo = spr_Fundo_gameover;
 var _gui_w = display_get_gui_width();
 var _gui_h = display_get_gui_height();
+
+if (_gui_w + _gui_h > 0) {
+	camera_set_view_size(view_camera[0], _gui_w, _gui_h);
+	surface_resize(application_surface, _gui_w, _gui_h);
+}
 
 var _scale_x = _gui_w / sprite_get_width(_spr_fundo);
 var _scale_y = _gui_h / sprite_get_height(_spr_fundo);

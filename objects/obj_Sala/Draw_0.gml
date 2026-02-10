@@ -9,4 +9,4 @@ draw_text(x +8, y +10, $"{numero} | {nome}");
 draw_set_halign(fa_right);
 var pvp_str;
 if (pvp) pvp_str = "PVP"; else pvp_str = "";
-draw_text(bbox_right -8, y +10, $"{pvp_str} | {jogadores}");
+draw_text(bbox_right -8, y +10, $"{pvp_str} | {versao} | {jogadores}");

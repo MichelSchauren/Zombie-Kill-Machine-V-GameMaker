@@ -1,5 +1,7 @@
-v1.9.1.0
+v1.10.0.0
 
-- Adicionado comando para pular onda no modo desenvolvedor; [build]
-- Comando para aumentar/diminuir FPS alterado; [build]
-- Mudança na forma como a velocidade das instancias se comportam em relação ao FPS; [path]
+- Novo sistema de torres de defesa; [maior]
+- Nova torre de defesa (torre arqueira); [maior]
+- Agora jogadores só podem jogar juntos se estiverem na mesma versão; [path]
+
+- Suporte para as torres de defesa no modo multiplayer; [path]

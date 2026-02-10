@@ -6,6 +6,7 @@ if (async_load[? "type"] == network_type_data) {
     var _nome_server = buffer_read(_buffer, buffer_string); // Nome do servidor
     var _jogadores = buffer_read(_buffer, buffer_string); // Quant. de jogadores
 	var _pvp = buffer_read(_buffer, buffer_u8); // PVP ativo?
+	var _versao =  buffer_read(_buffer, buffer_string); // Versão do servidor
 	
 	// Mostrar sala no Menu_Local
 	var _salas = instance_find(obj_Salas, 0);
@@ -21,6 +22,7 @@ if (async_load[? "type"] == network_type_data) {
 		_sala.jogadores = _jogadores; // string
 		_sala.ip = _ip; // string
 		_sala.pvp = _pvp; // bool
+		if (_versao != "") _sala.versao = _versao; // string
 	
 		ds_list_add(_salas.ips, _ip);
 	}		
