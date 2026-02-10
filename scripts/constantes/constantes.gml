@@ -36,6 +36,7 @@ global.Player_vida = 100;
 // projeteis {"vel", "dano", ...}
 #macro TIRO {"vel": 700, "dano": 8, "tps": 4}
 #macro MAXADO {"vel": 580, "dano": 28}
+#macro FLEXA {"vel": 660, "dano": 10}
 
 // ondas
 global.Onda_atual = 0;

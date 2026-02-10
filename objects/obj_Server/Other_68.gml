@@ -17,6 +17,7 @@ if (_socket_id == server_udp) {
         buffer_write(_response, buffer_string, nome); // Nome do servidor
         buffer_write(_response, buffer_string, $"{ds_list_size(socket_list)}/{max_players}"); // Quant. de jogadores
 		buffer_write(_response, buffer_u8, global.server_pvp); // PVP ativo?
+		buffer_write(_response, buffer_string, GM_version); // Versão do servidor
         
         // Envia a resposta diretamente ao IP/porta do cliente (via UDP)
         network_send_udp(server_udp, _client_ip, _client_port, _response, buffer_get_size(_response));

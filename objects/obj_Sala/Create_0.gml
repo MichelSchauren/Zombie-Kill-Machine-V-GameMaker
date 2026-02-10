@@ -3,3 +3,4 @@ nome = "";
 jogadores = "0/0";
 pvp = false;
 ip = noone;
+versao = "#.#.#.#";

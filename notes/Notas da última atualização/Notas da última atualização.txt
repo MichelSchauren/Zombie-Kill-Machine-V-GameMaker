@@ -1,5 +1,7 @@
-v1.9.2.0
+v1.10.0.0
 
-- Bug na distorção da surface do GameOver corrigido; [path]
-- Alteração das sprites do Esqueleto tanque; [build]
-- Velocidade do tiro não altera mais ao mudar o FPS; [path]
+- Novo sistema de torres de defesa; [maior]
+- Nova torre de defesa (torre arqueira); [maior]
+- Agora jogadores só podem jogar juntos se estiverem na mesma versão; [path]
+
+- Suporte para as torres de defesa no modo multiplayer; [path]
