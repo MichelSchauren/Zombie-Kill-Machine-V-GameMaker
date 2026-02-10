@@ -43,7 +43,7 @@
   "option_ios_splashscreen_background_colour":255,
   "option_ios_team_id":"",
   "option_ios_texture_page":"2048x2048",
-  "option_ios_version":"1.7.1",
+  "option_ios_version":"1.10.0",
   "resourceType":"GMiOSOptions",
   "resourceVersion":"2.0",
 }

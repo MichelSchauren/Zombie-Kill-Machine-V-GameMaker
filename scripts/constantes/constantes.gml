@@ -27,15 +27,16 @@ global.Player_vida = 100;
 // "vel": velocidade, "dano": dano, "vida": vida total, "alcance": alcance corpo a corpo, ...}
 #macro ZOMBI {"peso": 1, "orda": 1, "obj": obj_Zombi, "vel": 108, "dano": 14, "vida": 32, "alcance": 54}
 #macro ZOMBIGIRL {"peso": 1, "orda": 2, "obj": obj_ZombiGirl, "vel": 102, "dano": 13, "vida": 38, "alcance": 52}
-#macro ESQUELETO {"peso": 3, "orda": 3, "obj": obj_Esqueleto, "vel": 90, "dano": 17, "vida": 50, "alcance": 58}
+#macro TANQUE {"peso": 3, "orda": 3, "obj": obj_Tanque, "vel": 90, "dano": 17, "vida": 50, "alcance": 58}
 #macro RAPIDO {"peso": 4, "orda": 4, "obj": obj_Rapido, "vel": 180, "dano": 15, "vida": 30, "alcance": 100, "dash_vel": 7}
 #macro MINIBOSS {"peso": 10, "orda": 5, "obj": obj_MiniBoss, "vel": 72, "dano": 24, "vida": 120, "alcance": 60, "alcance_atirando": 360}
 
-#macro INIMIGOS [ZOMBI, ZOMBIGIRL, ESQUELETO, RAPIDO, MINIBOSS]
+#macro INIMIGOS [ZOMBI, ZOMBIGIRL, TANQUE, RAPIDO, MINIBOSS]
 
 // projeteis {"vel", "dano", ...}
 #macro TIRO {"vel": 700, "dano": 8, "tps": 4}
 #macro MAXADO {"vel": 580, "dano": 28}
+#macro FLEXA {"vel": 660, "dano": 10}
 
 // ondas
 global.Onda_atual = 0;

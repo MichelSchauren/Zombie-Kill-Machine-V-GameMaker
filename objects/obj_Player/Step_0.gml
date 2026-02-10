@@ -72,6 +72,7 @@ if (estado == PL_ESTADOS.CORRENDO or estado = PL_ESTADOS.ATIRANDO_ANDANDO) {
 if (estado = PL_ESTADOS.ATIRANDO or estado = PL_ESTADOS.ATIRANDO_ANDANDO) {
 	if (pode_atirar) {
 		// resetar time do tiro
+		if (global.Modo_desenvolvedor) tpf = game_get_speed(gamespeed_fps) / variable_struct_get(TIRO, "tps");
 		alarm[0] = tpf;
 		pode_atirar = false;
 		
@@ -79,6 +80,7 @@ if (estado = PL_ESTADOS.ATIRANDO or estado = PL_ESTADOS.ATIRANDO_ANDANDO) {
 		var _x;
 		if (image_xscale < 0) _x = x-28;
 		else _x = x+28;
+		var _y = y+9;
 		
 		// Atirar
 		if (global.Multiplayer) {
@@ -87,7 +89,7 @@ if (estado = PL_ESTADOS.ATIRANDO or estado = PL_ESTADOS.ATIRANDO_ANDANDO) {
 			buffer_seek(_buffer, buffer_seek_start, 0);
 			buffer_write(_buffer, buffer_u8, Events_client_server.tiro_player);
 			buffer_write(_buffer, buffer_u16, _x);
-			buffer_write(_buffer, buffer_u16, y+9);
+			buffer_write(_buffer, buffer_u16, _y);
 			buffer_write(_buffer, buffer_u16, dir_tiro);
 			network_send_packet(obj_Client_tcp.socket_tcp, _buffer, buffer_tell(_buffer));
 		} else {
