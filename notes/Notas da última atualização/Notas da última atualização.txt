@@ -1,7 +1,9 @@
-v1.10.0.0
+v1.10.0.1
 
-- Novo sistema de torres de defesa; [maior]
-- Nova torre de defesa (torre arqueira); [maior]
-- Agora jogadores só podem jogar juntos se estiverem na mesma versão; [path]
+- Animação suave nos botões do menu; [build]
 
+- Novas sprites para o arqueiro da torre; [build]
+- Nova música de fundo; [maior]
+- Novos leveis para a torre arqueira (5 levels); [maior]
 - Suporte para as torres de defesa no modo multiplayer; [path]
+

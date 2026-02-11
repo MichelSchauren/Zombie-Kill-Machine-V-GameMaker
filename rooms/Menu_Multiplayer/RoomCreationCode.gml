@@ -7,6 +7,6 @@ global.input_server_jogadores.max_caracteres = 2;
 
 show_message_async(
 @"Nesta versão o Modo Multiplayer pode conter bugs ou não funcionar corretamente.
-Nossa equipe está trabalhando constantemente para resolver todos os problemas, 
+Nossa equipe está trabalhando constantemente para resolver todos os problemas,
 sempre com o objetivo de proporcionar uma melhor experiência ao público. 
 Pedimos desculpas por qualquer transtorno.");
