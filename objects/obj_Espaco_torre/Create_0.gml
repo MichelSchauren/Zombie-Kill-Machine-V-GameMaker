@@ -6,7 +6,7 @@ gui_x = 0;
 gui_y = 0;
 
 torres = [ // {sprite, image, custo}
-	{"sprite": spr_Select_torre_arqueira, "image": 0, "custo": 10, "fclick": 0, "x1": 0, "y1": 0},
+	{"sprite": spr_Select_torre_arqueira, "image": 0, "custo": 0, "fclick": 0, "x1": 0, "y1": 0},
 ]
 
 redimencionar = function () {

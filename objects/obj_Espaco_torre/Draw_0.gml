@@ -9,9 +9,9 @@ if (!show) {
 		draw_set_halign(fa_center);
 		
 		if (global.Controller_mode == 2) { // Mobile
-			draw_text(x, y-40, "Clique aqui!");
+			draw_text(x, y, "Clique aqui!");
 		} else {
-			draw_text(x, y-40, "Pressione F");
+			draw_text(x, y, "Pressione F");
 		}
 	}
 }

@@ -3,13 +3,14 @@
   "%Name":"obj_Torre_arqueira",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":5,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_Torre_arqueira",
   "overriddenProperties":[],
   "parent":{
     "name":"Torres",
-    "path":"folders/Objetos/Estruturas/Torres.yy",
+    "path":"folders/Objetos/Torres.yy",
   },
   "parentObjectId":{
     "name":"obj_Estruturas",

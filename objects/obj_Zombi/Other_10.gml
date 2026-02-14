@@ -1,10 +1,10 @@
 // Variáveis do Inimigo
-alcance_corpo = variable_struct_get(ZOMBI, "alcance");
-vida_total = variable_struct_get(ZOMBI, "vida");
+alcance_corpo = ZOMBI.alcance;
+vida_total = ZOMBI.vida;
 vida = vida_total;
-vel = variable_struct_get(ZOMBI, "vel");
-dano = variable_struct_get(ZOMBI, "dano");
-peso_orda = variable_struct_get(ZOMBI, "peso");
+vel = ZOMBI.vel;
+dano = ZOMBI.dano;
+peso_orda = ZOMBI.peso;
 
 spr_colisao = spr_Zombi_mask_pes;
 spr_andando = spr_Zombi_andando;

@@ -34,9 +34,17 @@ global.Player_vida = 100;
 #macro INIMIGOS [ZOMBI, ZOMBIGIRL, TANQUE, RAPIDO, MINIBOSS]
 
 // projeteis {"vel", "dano", ...}
-#macro TIRO {"vel": 700, "dano": 8, "tps": 4}
+#macro TIRO {"vel": 720, "dano": 8, "tps": 4}
 #macro MAXADO {"vel": 580, "dano": 28}
-#macro FLEXA {"vel": 660, "dano": 10}
+
+// torres
+#macro TORRE_ARQUEIRA [ \
+	{vida: 500, altura: 130, alcance: 500, vel: 660, dano: 6, tx: 1}, \
+	{vida: 600, altura: 170, alcance: 650, vel: 670, dano: 7, tx: 1.2}, \
+	{vida: 700, altura: 200, alcance: 800, vel: 680, dano: 8, tx: 1.4}, \
+	{vida: 800, altura: 240, alcance: 1050, vel: 690, dano: 9, tx: 1.6}, \
+	{vida: 900, altura: 260, alcance: 1200, vel: 700, dano: 10, tx: 1.8} \
+]
 
 // ondas
 global.Onda_atual = 0;

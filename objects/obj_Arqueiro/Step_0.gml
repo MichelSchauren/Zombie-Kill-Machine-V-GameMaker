@@ -1,13 +1,13 @@
 // Calcular a distância até o inimigo mais próximo
 var _inimigo = noone;
-var _dist_player = alcance+1;
+var _dist_enemy = vars.alcance+1;
 
 for (var i = 0; i < instance_number(obj_Inimigo); i++) {
 	var _enemy = instance_find(obj_Inimigo, i);
-	var _dist = point_distance(x, y, _enemy.x, _enemy.y);
+	var _dist = point_distance(x, y, _enemy.x, _enemy.bbox_bottom);
 	
-	if ((_dist < _dist_player) and _enemy.vida > 0) { // Apenas inimigos vivos
-		_dist_player = _dist;
+	if ((_dist < _dist_enemy) and _enemy.vida > 0) { // Apenas inimigos vivos
+		_dist_enemy = _dist;
 		_inimigo = _enemy;
 	}
 }
@@ -16,12 +16,12 @@ switch (estado) {
 	case ARQ_ESTADOS.VIGIANDO:
 		// Se há algum inimigo perto -> atirar nele
 		if (_inimigo) {
-			image_speed = 1;
+			image_speed = vars.tx;
 			
 			if (image_index >= image_number-1) {
 				// começar a atirar
 				estado = ARQ_ESTADOS.ATIRANDO;
-				image_speed = 1;
+				image_speed = vars.tx;
 				sprite_index = spr_Arqueiro1_atirando;
 				image_index = 0;
 			}
@@ -42,15 +42,16 @@ switch (estado) {
 				var _dir = point_direction(x, y_real, _inimigo.x, _inimigo.y);
 				var _x = x + lengthdir_x(108, _dir);
 				var _y = y_real + lengthdir_y(108, _dir);
-				var _dist = point_distance(_x, _y, _inimigo.x, _inimigo.y);
+				// distancia que tenta prever a posição do inimigo
+				var _dist = point_distance(_x, _y, _inimigo.x + lengthdir_x((_inimigo.vel/fps)*(_dist_enemy/18), _inimigo.direction), _inimigo.bbox_bottom + lengthdir_y((_inimigo.vel/fps)*(_dist_enemy/18), _inimigo.direction));
 				var _grav = 0.5;
-				var _t = _dist / (variable_struct_get(FLEXA, "vel")/fps);
-				var _vz_init = (altura - (_grav * (_t*_t)) /2) / _t;
+				var _t = _dist / (vars.vel/fps);
+				var _vz_init = (vars.altura - (_grav * (_t*_t)) /2) / _t;
 
-				var _params = {"y_real": _y, "vel_z": _vz_init, "gravidade": _grav};
-				var _flecha = instance_create_layer(_x, _y-altura-50, "Projeteis", obj_Flecha, _params);
+				var _params = {"y_real": _y, "vel_z": _vz_init, "gravidade": _grav, "level": level};
+				var _flecha = instance_create_layer(_x, _y-vars.altura-50, "Projeteis", obj_Flecha, _params);
 				_flecha.direction = _dir;
-				_flecha.target = _inimigo;
+				//_flecha.target = _inimigo;
 				
 				image_index = 0;
 			}

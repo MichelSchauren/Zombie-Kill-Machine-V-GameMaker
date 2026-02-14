@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Torres",
-    "path":"folders/Objetos/Estruturas/Torres.yy",
+    "path":"folders/Objetos/Torres.yy",
   },
   "parentObjectId":null,
   "persistent":false,

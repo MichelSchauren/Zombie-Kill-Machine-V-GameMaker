@@ -1,6 +1,6 @@
 v1.10.0.1
 
-- Animação suave nos botões do menu; [build]
+- Arqueiro com mais facilidade para acertar as flechas; [build]
 
 - Novas sprites para o arqueiro da torre; [build]
 - Nova música de fundo; [maior]
