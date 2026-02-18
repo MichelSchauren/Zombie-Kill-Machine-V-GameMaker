@@ -81,7 +81,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.2.212",
+    "IDEVersion":"2024.14.2.213",
   },
   "name":"Zombie_Kill_Machine_V",
   "resources":[
@@ -295,6 +295,7 @@
     {"id":{"name":"spr_ZombiGirl_mask_pes","path":"sprites/spr_ZombiGirl_mask_pes/spr_ZombiGirl_mask_pes.yy",},},
     {"id":{"name":"spr_ZombiGirl_morrendo","path":"sprites/spr_ZombiGirl_morrendo/spr_ZombiGirl_morrendo.yy",},},
     {"id":{"name":"spr_ZombiGirl_parado","path":"sprites/spr_ZombiGirl_parado/spr_ZombiGirl_parado.yy",},},
+    {"id":{"name":"Sprite109","path":"sprites/Sprite109/Sprite109.yy",},},
     {"id":{"name":"teste","path":"sprites/teste/teste.yy",},},
     {"id":{"name":"tl_Chao","path":"tilesets/tl_Chao/tl_Chao.yy",},},
     {"id":{"name":"tl_Detalhes","path":"tilesets/tl_Detalhes/tl_Detalhes.yy",},},
