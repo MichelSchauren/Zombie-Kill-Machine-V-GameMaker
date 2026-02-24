@@ -34,11 +34,12 @@ perseguir = function (dist_player, amigo) {
 	// Se estiver perto o suficiente, mudar para o estado de ataque
     if (dist_player <= alcance_corpo) {
         estado = INIMIGOS_ESTADOS.ATACANDO;
+		v = 0;
 		sprite_index = spr_atacando; // Mudar sprite para atacando
 		image_index = 0;
     } else {
 		// Perseguir o jogador desviando de obstáculos (obj_Colisores e obj_Inimigos)
-		mp_potential_step(amigo.x, amigo.y, vel/fps, false);
+		mp_potential_step(amigo.x, amigo.y, v/fps, false);
 			
 		// Virar a sprite na direção do movimento (opcional, para refletir horizontalmente)
 		direction = point_direction(xprevious, yprevious, x, y);
@@ -57,6 +58,7 @@ atacar = function (dist_player, amigo) {
 		// Se o player já não estiver mais no alcance, voltar a perseguir
 	    if (dist_player > alcance_corpo) {
 	        estado = INIMIGOS_ESTADOS.PERSEGUINDO;
+			v = vel;
 			sprite_index = spr_andando; // Mudar sprite para andando
 	    } else { // se não
 			with (amigo) {
@@ -86,6 +88,8 @@ morrer = function () {
 }
 
 event_user(0);
+
+v = vel;
 
 // MULTIPLAYER
 if (global.Multiplayer and global.Multiplayer_adm) {

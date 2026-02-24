@@ -1,11 +1,11 @@
 // Variáveis do Inimigo
-alcance_corpo = variable_struct_get(RAPIDO, "alcance");
-vida_total = variable_struct_get(RAPIDO, "vida");
+alcance_corpo = RAPIDO.alcance;
+vida_total = RAPIDO.vida;
 vida = vida_total;
-vel = variable_struct_get(RAPIDO, "vel");
-dano = variable_struct_get(RAPIDO, "dano");
-peso_orda = variable_struct_get(RAPIDO, "peso");
-dash_vel = variable_struct_get(RAPIDO, "dash_vel");
+vel = RAPIDO.vel;
+dano = RAPIDO.dano;
+peso_orda = RAPIDO.peso;
+dash_vel = RAPIDO.dash_vel;
 dash_direction = 0;
 
 spr_colisao = spr_Rapido_mask_pes;
@@ -24,6 +24,7 @@ atacar = function (dist_player, amigo) {
 		image_index = image_number -1;
 		// Dar dash
 		estado = INIMIGOS_ESTADOS.DASHANDO;
+		v = dash_vel;
 		image_speed = 0;
 		dash_direction = point_direction(x, y, amigo.x, amigo.y);
 		// Virar a sprite na direção do dash

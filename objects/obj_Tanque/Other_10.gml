@@ -1,10 +1,10 @@
 // Variáveis do Inimigo
-alcance_corpo = variable_struct_get(TANQUE, "alcance");
-vida_total = variable_struct_get(TANQUE, "vida");
+alcance_corpo = TANQUE.alcance;
+vida_total = TANQUE.vida;
 vida = vida_total;
-vel = variable_struct_get(TANQUE, "vel");
-dano = variable_struct_get(TANQUE, "dano");
-peso_orda = variable_struct_get(TANQUE, "peso");
+vel = TANQUE.vel;
+dano =TANQUE.dano;
+peso_orda = TANQUE.peso;
 
 spr_colisao = spr_Tanque_mask_pes;
 spr_andando = spr_Tanque_andando;

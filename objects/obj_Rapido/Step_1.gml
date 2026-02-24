@@ -1,6 +1,6 @@
 if (estado == INIMIGOS_ESTADOS.DASHANDO) {
-	var _movx = lengthdir_x(dash_vel, dash_direction);
-	var _movy = lengthdir_y(dash_vel, dash_direction);
+	var _movx = lengthdir_x(v/fps, dash_direction);
+	var _movy = lengthdir_y(v/fps, dash_direction);
 	var _colididos = move_and_collide(_movx, _movy, [obj_Player, obj_Outro, obj_Colisores, obj_Estruturas]);
 	
 	if (array_length(_colididos) > 0) {

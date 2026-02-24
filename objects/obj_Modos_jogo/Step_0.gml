@@ -8,7 +8,11 @@ for (var i=0; i < 2; i++) {
 		var x2 = gui_left + sprite_get_width(sprite)*scale;
 		var y2 = gui_top + sprite_get_height(sprite)*scale;
 		if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), gui_left, gui_top, x2, y2)) {
-			image = 1;
-		} else image = 0;
+			image_scale = lerp(image_scale, scale*1.1, 0.2);
+			rot = lerp(rot, -10, 0.2);
+		} else {
+			image_scale = lerp(image_scale, scale, 0.3);
+			rot = lerp(rot, 0, 0.2);
+		}
 	}
 }

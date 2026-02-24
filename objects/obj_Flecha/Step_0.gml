@@ -1,7 +1,7 @@
 if (! parado) {
 	// Mover a flexa na direção do alvo
-	x +=  lengthdir_x(variable_struct_get(FLEXA, "vel")/fps, direction);
-	y_real += lengthdir_y(variable_struct_get(FLEXA, "vel")/fps, direction);
+	x +=  lengthdir_x(vel/fps, direction);
+	y_real += lengthdir_y(vel/fps, direction);
 	z = min(z + vel_z, 0);
 	y = y_real + z;
 	
@@ -11,17 +11,17 @@ if (! parado) {
 	
 	// flexa teleguiada
 	if (instance_exists(target)) {
-		direction = point_direction(x, y_real, target.x, target.y);
-		if (point_distance(x, y_real, target.x, target.y) < 10) target = noone;
+		direction = point_direction(x, y_real, target.x, target.bbox_bottom);
+		if (point_distance(x, y_real, target.x, target.y) < 80) target = noone;
 	}
 
 	// colisão com inimigos
 	with (obj_Inimigo) {
 		mask_index = sprite_index; // pega a colisão de toda a sprite
 	
-		if (place_meeting(x, y, other) and -other.z <= sprite_height) {
+		if (place_meeting(x, y, other) and -other.z <= bbox_bottom-bbox_top) {
 			// Tira vida do inimigo quando colidir com ele
-			vida = max(vida - variable_struct_get(FLEXA, "dano"), 0);
+			vida = max(vida - other.dano, 0);
 			instance_destroy(other);
 		}
 
@@ -36,7 +36,7 @@ if (! parado) {
 	// colisão com estruturas
 	var _colid_estr = instance_place(x, y_real, obj_Estruturas);
 	if (_colid_estr) with (_colid_estr) {
-		if (-other.z <= min(sprite_height, 80)) {
+		if (-other.z <= min(bbox_bottom-bbox_top, 80)) {
 			other.parado = true;
 			other.image_speed = 0;
 		}

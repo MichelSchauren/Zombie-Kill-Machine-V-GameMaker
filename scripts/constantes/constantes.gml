@@ -28,15 +28,23 @@ global.Player_vida = 100;
 #macro ZOMBI {"peso": 1, "orda": 1, "obj": obj_Zombi, "vel": 108, "dano": 14, "vida": 32, "alcance": 54}
 #macro ZOMBIGIRL {"peso": 1, "orda": 2, "obj": obj_ZombiGirl, "vel": 102, "dano": 13, "vida": 38, "alcance": 52}
 #macro TANQUE {"peso": 3, "orda": 3, "obj": obj_Tanque, "vel": 90, "dano": 17, "vida": 50, "alcance": 58}
-#macro RAPIDO {"peso": 4, "orda": 4, "obj": obj_Rapido, "vel": 180, "dano": 15, "vida": 30, "alcance": 100, "dash_vel": 7}
+#macro RAPIDO {"peso": 4, "orda": 4, "obj": obj_Rapido, "vel": 180, "dano": 15, "vida": 30, "alcance": 100, "dash_vel": 420}
 #macro MINIBOSS {"peso": 10, "orda": 5, "obj": obj_MiniBoss, "vel": 72, "dano": 24, "vida": 120, "alcance": 60, "alcance_atirando": 360}
 
 #macro INIMIGOS [ZOMBI, ZOMBIGIRL, TANQUE, RAPIDO, MINIBOSS]
 
 // projeteis {"vel", "dano", ...}
-#macro TIRO {"vel": 700, "dano": 8, "tps": 4}
+#macro TIRO {"vel": 720, "dano": 8, "tps": 4}
 #macro MAXADO {"vel": 580, "dano": 28}
-#macro FLEXA {"vel": 660, "dano": 10}
+
+// torres
+#macro TORRE_ARQUEIRA [ \
+	{vida: 500, altura: 130, alcance: 500, vel: 660, dano: 6, tx: 1, preco: 5}, \
+	{vida: 600, altura: 170, alcance: 650, vel: 670, dano: 7, tx: 1.2, preco: 8}, \
+	{vida: 700, altura: 200, alcance: 800, vel: 680, dano: 8, tx: 1.4, preco: 12}, \
+	{vida: 800, altura: 240, alcance: 1050, vel: 690, dano: 9, tx: 1.6, preco: 18}, \
+	{vida: 900, altura: 260, alcance: 1200, vel: 700, dano: 10, tx: 1.8, preco: 25} \
+]
 
 // ondas
 global.Onda_atual = 0;

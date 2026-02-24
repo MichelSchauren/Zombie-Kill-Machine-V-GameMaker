@@ -1,6 +1,6 @@
 // ELEMENTOS
 elementos = [ // {sprite, key, x, y, offsetX, offsetY, gui_x, gui_y}
-	{"sprite": spr_Botao_start, "key": vk_enter, "x": 1600, "y": 192}, // Start
+	{"sprite": spr_Botao_start, "key": vk_enter, "x": 1560, "y": 192}, // Start
 	{"sprite": spr_Botao_options, "key": ord("O"), "x": 1312, "y": 640}, // Opções
 	{"sprite": spr_Botao_credits, "key": ord("C"), "x": 1312, "y": 832}, // Creditos
 	{"sprite": spr_Input_nome, "key": ord("I"), "x": 1600, "y": 448}, // Input Nome
@@ -13,6 +13,7 @@ for (var i=0; i < array_length(elementos); i++) {
 		offsetX = x / room_width;
 		offsetY = y / room_height;
 		scale = 1;
+		image_scale = scale;
 		gui_x = display_get_gui_width() * offsetX;
 		gui_y = display_get_gui_height() * offsetY;
 		
@@ -29,6 +30,7 @@ reposicionar_itens = function () {
 	for (var i=0; i < array_length(elementos); i++) {
 		with (elementos[i]) {
 			scale = min (display_get_gui_width() / room_width, display_get_gui_height() / room_height);
+			image_scale = scale;
 			gui_x = display_get_gui_width() * offsetX;
 			gui_y = display_get_gui_height() * offsetY;
 			x = camera_get_view_x(view_camera[0]) + gui_x;

@@ -1,10 +1,10 @@
 // Variáveis do Inimigo
-alcance_corpo = variable_struct_get(ZOMBIGIRL, "alcance");
-vida_total = variable_struct_get(ZOMBIGIRL, "vida");
+alcance_corpo = ZOMBIGIRL.alcance;
+vida_total = ZOMBIGIRL.vida;
 vida = vida_total;
-vel = variable_struct_get(ZOMBIGIRL, "vel");
-dano = variable_struct_get(ZOMBIGIRL, "dano");
-peso_orda = variable_struct_get(ZOMBIGIRL, "peso");
+vel = ZOMBIGIRL.vel;
+dano =ZOMBIGIRL.dano;
+peso_orda = ZOMBIGIRL.peso;
 
 spr_colisao = spr_ZombiGirl_mask_pes;
 spr_andando = spr_ZombiGirl_andando;

@@ -6,7 +6,6 @@ if (window_get_width() != last_width or window_get_height() != last_height) {
 	
 	if (instance_exists(obj_Loja)) obj_Loja.redimencionar(); // Redimencionar loja
 	// Redimencionar espaço de torre
-	with (obj_Espaco_torre) {
-		redimencionar();
-	}
+	with (obj_Espaco_torre) {redimencionar();}
+	with (obj_Torre_arqueira) {redimencionar();}
 }

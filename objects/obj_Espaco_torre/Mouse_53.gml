@@ -3,15 +3,13 @@ if (show) {
 	 for (var i=0; i < array_length(torres); i++) {
 		with (torres[i]) {
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), x1, y1, x2, y2)) {
-				fclick = 40; // tempo de click do botão
+				fclick = 10; // tempo de click do botão
 			
 				if (global.Moedas >= custo) { // comprou!
 					global.Moedas -= custo;
-					other.show = false;
-					obj_Player.estado = PL_ESTADOS.PARADO;
-					
-					instance_destroy(other);
-					instance_create_layer(other.x, other.y, "Estruturas", obj_Torre_arqueira);
+					image = 1;
+				} else {
+					image = 2;
 				}
 			}
 		}

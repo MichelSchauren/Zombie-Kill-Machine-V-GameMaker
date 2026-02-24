@@ -63,7 +63,7 @@
     },
     "name":"spr_Arqueiro1_parado",
     "playback":1,
-    "playbackSpeed":13.0,
+    "playbackSpeed":24.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
