@@ -24,6 +24,7 @@ atacar = function (dist_player, amigo) {
 		image_index = image_number -1;
 		// Dar dash
 		estado = INIMIGOS_ESTADOS.DASHANDO;
+		v = dash_vel;
 		image_speed = 0;
 		dash_direction = point_direction(x, y, amigo.x, amigo.y);
 		// Virar a sprite na direção do dash

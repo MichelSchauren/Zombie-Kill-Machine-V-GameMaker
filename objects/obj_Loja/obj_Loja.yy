@@ -13,8 +13,8 @@
   "name":"obj_Loja",
   "overriddenProperties":[],
   "parent":{
-    "name":"Prédios",
-    "path":"folders/Objetos/Estruturas/Prédios.yy",
+    "name":"Torres",
+    "path":"folders/Objetos/Torres.yy",
   },
   "parentObjectId":{
     "name":"obj_Estruturas",

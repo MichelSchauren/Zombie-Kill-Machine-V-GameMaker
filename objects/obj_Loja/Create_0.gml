@@ -26,8 +26,8 @@ redimencionar = function () {
 		with (vendas[i]) {
 			x1 = other.gui_x + (40 + c * 128) * other.scale;
 			y1 = other.gui_y + (60 + l * 77) * other.scale;
-			x2 = x1 + sprite_get_width(sprite)*other.scale;
-			y2 = y1 + sprite_get_height(sprite)*other.scale;
+			x2 = x1 + sprite_get_width(sprite)* other.scale;
+			y2 = y1 + sprite_get_height(sprite)* other.scale;
 		}
 		
 		if ((i+1) mod _colunas == 0 and i != 0) {

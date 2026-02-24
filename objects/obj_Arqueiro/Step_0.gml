@@ -22,7 +22,7 @@ switch (estado) {
 				// começar a atirar
 				estado = ARQ_ESTADOS.ATIRANDO;
 				image_speed = vars.tx;
-				sprite_index = spr_Arqueiro1_atirando;
+				sprite_index = spr_atirando;
 				image_index = 0;
 			}
 		} else {
@@ -36,14 +36,14 @@ switch (estado) {
 			image_xscale = sign(_inimigo.x - x);
 			
 			// atirar
-			if (image_index >= image_number-1) {
+			if (image_index >= image_number-2) {
 				
 				// -((_dist*_grav)/(2*variable_struct_get(FLEXA, "vel")/fps) - _grav/2)
 				var _dir = point_direction(x, y_real, _inimigo.x, _inimigo.y);
 				var _x = x + lengthdir_x(108, _dir);
 				var _y = y_real + lengthdir_y(108, _dir);
 				// distancia que tenta prever a posição do inimigo
-				var _dist = point_distance(_x, _y, _inimigo.x + lengthdir_x((_inimigo.vel/fps)*(_dist_enemy/18), _inimigo.direction), _inimigo.bbox_bottom + lengthdir_y((_inimigo.vel/fps)*(_dist_enemy/18), _inimigo.direction));
+				var _dist = point_distance(_x, _y, _inimigo.x + lengthdir_x((_inimigo.v/fps)*(_dist_enemy/10), _inimigo.direction), _inimigo.bbox_bottom + lengthdir_y((_inimigo.v/fps)*(_dist_enemy/10), _inimigo.direction));
 				var _grav = 0.5;
 				var _t = _dist / (vars.vel/fps);
 				var _vz_init = (vars.altura - (_grav * (_t*_t)) /2) / _t;
@@ -51,14 +51,14 @@ switch (estado) {
 				var _params = {"y_real": _y, "vel_z": _vz_init, "gravidade": _grav, "level": level};
 				var _flecha = instance_create_layer(_x, _y-vars.altura-50, "Projeteis", obj_Flecha, _params);
 				_flecha.direction = _dir;
-				//_flecha.target = _inimigo;
+				_flecha.target = _inimigo;
 				
 				image_index = 0;
 			}
 		} else {
 			// mudar para o estado de vigia
 			estado = ARQ_ESTADOS.VIGIANDO;
-			sprite_index = spr_Arqueiro1_parado;
+			sprite_index = spr_parado;
 			image_speed = 0;
 			image_index = 0;
 		}

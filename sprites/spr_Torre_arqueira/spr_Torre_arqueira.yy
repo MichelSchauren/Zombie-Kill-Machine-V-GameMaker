@@ -63,7 +63,7 @@
     },
     "name":"spr_Torre_arqueira",
     "playback":1,
-    "playbackSpeed":200.0,
+    "playbackSpeed":0.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",

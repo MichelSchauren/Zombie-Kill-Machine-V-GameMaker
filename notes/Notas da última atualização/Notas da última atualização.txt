@@ -1,9 +1,11 @@
-v1.10.0.1
+v1.10.1.0
 
-- Arqueiro com mais facilidade para acertar as flechas; [build]
+- Novos leveis para o arqueiro da torre; [build]
+- Sprite do capitólio; [build]
+- Forma como o arqueiro calcula o lançamento da flexa alterado; [build]
+- Bug no dash do Inimigo Rápido corrigido; [path]
+- Sistema e interface para evoluir as torres de defesa; [build]
 
-- Novas sprites para o arqueiro da torre; [build]
 - Nova música de fundo; [maior]
-- Novos leveis para a torre arqueira (5 levels); [maior]
 - Suporte para as torres de defesa no modo multiplayer; [path]
 
