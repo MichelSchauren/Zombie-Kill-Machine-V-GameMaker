@@ -1,9 +1,7 @@
-v1.11.0.0
+v1.11.0.1
 
-- Novo sistema de efeitos sonoros e música; [maior]
-- Nova música de fundo no menu principal; [maior]
-- Nova música de fundo na gameplay; [maior]
-- Novos sons e efeitos sonoros (disparo, zombie, UI click); [maior]
+- Som de flecha tocado apenas quando o player estiver próximo da torre; [build]
+- Alterações no volume de alguns audios; [build]
 
 - Suporte para as torres de defesa no modo multiplayer; [path]
 
