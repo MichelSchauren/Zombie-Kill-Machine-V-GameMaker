@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"efect_Tiro",
+  "%Name":"sfx_UI_click_2",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":0.82455784,
   "exportDir":"",
-  "name":"efect_Tiro",
+  "name":"sfx_UI_click_2",
   "parent":{
     "name":"Efeitos",
     "path":"folders/Sons/Efeitos.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"",
-  "volume":1.0,
+  "soundFile":"sfx_UI_click_2.wav",
+  "volume":0.2,
 }

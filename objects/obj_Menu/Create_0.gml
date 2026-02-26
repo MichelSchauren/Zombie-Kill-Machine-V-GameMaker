@@ -86,3 +86,8 @@ with (input_nome) {
 	selecionado = false;
 	max_caracteres = 13;
 }
+
+
+// Tocar música
+audio_stop_all(); // pausar outros sons
+obj_SND.menu_music.play = true; // tocar

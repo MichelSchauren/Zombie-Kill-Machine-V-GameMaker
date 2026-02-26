@@ -5,6 +5,7 @@ if (show) {
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), x1, y1, x2, y2) and funcao and fclick < 0) {
 				fclick = 10; // tempo de click do botão
 				image = 1;
+				obj_SND.UI_click2_sfx.play = true;
 			}
 		}
 	}

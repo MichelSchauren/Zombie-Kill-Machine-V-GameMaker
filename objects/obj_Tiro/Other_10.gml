@@ -1,0 +1,1 @@
+obj_SND.disparo_sfx.play = true; // som

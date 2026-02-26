@@ -16,6 +16,11 @@ global.second_control_mode = 1;
 global.Player_imortal = false;
 global.Tempo_pausado = false;
 
+global.VOL_SFX = 1;
+global.VOL_MUSIC = 1;
+global.VOL_MASTER = 1;
+global.MUTED = false;
+
 // player
 global.Player_name = "";
 global.Player_vida = 100;
