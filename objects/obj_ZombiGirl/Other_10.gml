@@ -12,6 +12,8 @@ spr_atacando = spr_ZombiGirl_atacando;
 spr_morrendo = spr_ZombiGirl_morrendo;
 mask_index = spr_colisao;
 
+pode_som = true;
+
 // Estados do Inimigo (use enums para melhor organização)
 estado = INIMIGOS_ESTADOS.PERSEGUINDO; // Estado inicial
 

@@ -12,6 +12,8 @@ spr_atacando = spr_Zombi_atacando;
 spr_morrendo = spr_Zombi_morrendo;
 mask_index = spr_colisao;
 
+pode_som = true;
+
 // Estados do Inimigo (use enums para melhor organização)
 estado = INIMIGOS_ESTADOS.PERSEGUINDO; // Estado inicial
 

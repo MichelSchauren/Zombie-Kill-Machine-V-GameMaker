@@ -8,6 +8,7 @@ if (show) {
 				if (global.Moedas >= custo) { // comprou!
 					global.Moedas -= custo;
 					image = 1;
+					obj_SND.UI_click2_sfx.play = true;
 				} else {
 					image = 2;
 				}

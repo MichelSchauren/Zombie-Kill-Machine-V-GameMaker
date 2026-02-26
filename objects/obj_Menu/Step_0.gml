@@ -8,6 +8,7 @@ for (var i=0; i < 3; i++) {
 		var x2 = gui_left + sprite_get_width(sprite)*scale;
 		var y2 = gui_top + sprite_get_height(sprite)*scale;
 		if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), gui_left, gui_top, x2, y2)) {
+			if (image_scale == scale and scale > 0) obj_SND.UI_click1_sfx.play = true; // gambiarra
 			image_scale = lerp(image_scale, scale*1.2, 0.2);
 		} else {
 			image_scale = lerp(image_scale, scale, 0.3);

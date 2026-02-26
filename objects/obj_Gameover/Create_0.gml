@@ -65,3 +65,7 @@ redimencionar_tela = function () {
 }
 
 redimencionar_tela();
+
+// som
+audio_stop_all();
+obj_SND.failed_sfx.play = true;
