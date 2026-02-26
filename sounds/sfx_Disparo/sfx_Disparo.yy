@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"sfx_Disparo.mp3",
-  "volume":0.1,
+  "volume":0.15,
 }
