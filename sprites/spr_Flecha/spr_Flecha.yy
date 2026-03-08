@@ -30,7 +30,7 @@
   "origin":5,
   "parent":{
     "name":"Flexas",
-    "path":"folders/Sprites/Personagens/Ajudantes/Flexas.yy",
+    "path":"folders/Sprites/Personagens/Arqueiro/Flexas.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

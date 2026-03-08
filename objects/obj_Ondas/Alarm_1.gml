@@ -9,7 +9,11 @@ if (!global.Tempo_pausado) {
 		alarm[0] = TEMPO_DIA;
 		global.Onda_atual += 1; // Novo dia nova onda
 		global.Peso_orda += 2; // temporário
-		obj_Player.vida = PLAYER_VIDA_TOTAL;
+		obj_Player.vida = PLAYER_VIDA_TOTAL; // player com vida cheia
+		with (obj_Torre_arqueira) { // torres com vida cheia
+			if (global.Multiplayer_adm) obj_Server.atualizar_vida_torre(indice, vars.vida);
+			else vida = vars.vida;
+		}
 	
 		spawnar_orda();
 		alarm[2] = TEMPO_ORDA_DIA;

@@ -31,7 +31,7 @@
   "origin":7,
   "parent":{
     "name":"Arqueiro level 3",
-    "path":"folders/Sprites/Personagens/Ajudantes/Arqueiro level 3.yy",
+    "path":"folders/Sprites/Personagens/Arqueiro/Arqueiro level 3.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

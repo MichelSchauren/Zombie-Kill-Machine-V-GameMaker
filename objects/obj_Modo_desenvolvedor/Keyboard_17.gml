@@ -47,4 +47,9 @@ if (global.Modo_desenvolvedor) {
 	if (keyboard_check_pressed(ord("O"))) {
 		obj_Ondas.pular_onda();	
 	}
+	
+	// receber +1000 moedas
+	if (keyboard_check_pressed(vk_multiply)) {
+		global.Moedas += 1000;
+	}
 }

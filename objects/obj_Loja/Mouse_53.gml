@@ -24,7 +24,7 @@ if (show) {
 		obj_Player.estado = PL_ESTADOS.PARADO;
 	}
 
-} else { 
+} else if (global.Controller_mode == 2) { // Mobile 
 	var _dist_player = point_distance(x, y, obj_Player.x, obj_Player.y);
 	
 	if (_dist_player <= alcance and collision_point(mouse_x, mouse_y, self, false, false)) {

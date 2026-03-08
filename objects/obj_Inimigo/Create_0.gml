@@ -30,16 +30,18 @@ enum INIMIGOS_ESTADOS {
 estado = INIMIGOS_ESTADOS.PARADO; // Estado inicial
 
 // Funções
-perseguir = function (dist_player, amigo) {
+perseguir = function (dist_pers, perseguindo) {
+	if (!instance_exists(perseguindo)) return;
+	
 	// Se estiver perto o suficiente, mudar para o estado de ataque
-    if (dist_player <= alcance_corpo) {
+    if (dist_pers <= alcance_corpo) {
         estado = INIMIGOS_ESTADOS.ATACANDO;
 		v = 0;
 		sprite_index = spr_atacando; // Mudar sprite para atacando
 		image_index = 0;
     } else {
 		// Perseguir o jogador desviando de obstáculos (obj_Colisores e obj_Inimigos)
-		mp_potential_step(amigo.x, amigo.y, v/fps, false);
+		mp_potential_step(perseguindo.x, perseguindo.y, v/fps, false);
 			
 		// Virar a sprite na direção do movimento (opcional, para refletir horizontalmente)
 		direction = point_direction(xprevious, yprevious, x, y);
@@ -51,22 +53,31 @@ perseguir = function (dist_player, amigo) {
     }
 }
 
-atacar = function (dist_player, amigo) {
+atacar = function (dist_pers, perseguindo) {
+	if (!instance_exists(perseguindo)) return;
+	
 	// Se estiver na ultima imagem da sprite
     if (image_index >= image_number -1) {
 		image_index = 0;
 		// Se o player já não estiver mais no alcance, voltar a perseguir
-	    if (dist_player > alcance_corpo) {
+	    if (dist_pers > alcance_corpo) {
 	        estado = INIMIGOS_ESTADOS.PERSEGUINDO;
 			v = vel;
 			sprite_index = spr_andando; // Mudar sprite para andando
 	    } else { // se não
-			with (amigo) {
-				if (object_index == obj_Player) {
-					// Diminuir a vida do player
+			with (perseguindo) {
+				if (global.Multiplayer_adm) {
+					if (object_index == obj_Outro) {
+						obj_Server.inimigo_deu_dano(client_id, other.dano);
+					
+					} else if (object_index == obj_Torre_arqueira) {
+						var _new_vida = max(vida - other.dano, 0);
+						obj_Server.atualizar_vida_torre(indice, _new_vida);
+					}
+					
+				} else {
+					// Diminuir a vida de qm estou perseguindo (player, torres)
 					vida = max(vida - other.dano, 0);
-				} else if (global.Multiplayer_adm) {
-					obj_Server.inimigo_deu_dano(client_id, other.dano);
 				}
 			}
 		}

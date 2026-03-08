@@ -82,21 +82,9 @@ if (estado = PL_ESTADOS.ATIRANDO or estado = PL_ESTADOS.ATIRANDO_ANDANDO) {
 		else _x = x+28;
 		var _y = y+9;
 		
+		var _params = {direction: dir_tiro};
+		
 		// Atirar
-		if (global.Multiplayer) {
-			// Avisar server de que um novo tiro foi criado
-			var _buffer = obj_Client_tcp.client_buffer;
-			buffer_seek(_buffer, buffer_seek_start, 0);
-			buffer_write(_buffer, buffer_u8, Events_client_server.tiro_player);
-			buffer_write(_buffer, buffer_u16, _x);
-			buffer_write(_buffer, buffer_u16, _y);
-			buffer_write(_buffer, buffer_u16, dir_tiro);
-			network_send_packet(obj_Client_tcp.socket_tcp, _buffer, buffer_tell(_buffer));
-		} else {
-			// Criar tiro normalmente
-			var _tiro = noone;
-			_tiro = instance_create_layer(_x, y+9, "Projeteis", obj_Tiro);
-			_tiro.direction = dir_tiro;
-		}
+		f_criar_projetil(_x, _y, obj_Tiro, _params);
 	}
 }

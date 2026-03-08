@@ -16,8 +16,8 @@
     "path":"folders/Objetos/Personagens/Amigos.yy",
   },
   "parentObjectId":{
-    "name":"obj_Amigo",
-    "path":"objects/obj_Amigo/obj_Amigo.yy",
+    "name":"obj_Personagens",
+    "path":"objects/obj_Personagens/obj_Personagens.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

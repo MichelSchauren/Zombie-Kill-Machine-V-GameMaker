@@ -129,19 +129,14 @@ else {
 					
 					break;
 					
-				case Events_client_server.tiro_player:
-					// Ler informações do tiro solicitado
-					var _tiro_x = buffer_read(_buffer, buffer_u16);
-					var _tiro_y = buffer_read(_buffer, buffer_u16);
-					var _tiro_dir = buffer_read(_buffer, buffer_u16);
-					
-					// Escrever buffer do novo projetil (TIRO)
+				case Events_client_server.atirei_proj:
+					// Repassar dados para os clientes do novo projetil
 					buffer_seek(server_buffer, buffer_seek_start, 0);
 					buffer_write(server_buffer, buffer_u8, Events_server_client.novo_projetil);
-					buffer_write(server_buffer, buffer_u16, obj_Tiro);
-					buffer_write(server_buffer, buffer_u16, _tiro_x);
-					buffer_write(server_buffer, buffer_u16, _tiro_y);
-					buffer_write(server_buffer, buffer_u16, _tiro_dir);
+					buffer_write(server_buffer, buffer_u16, buffer_read(_buffer, buffer_u16)); // objeto
+					buffer_write(server_buffer, buffer_u16, buffer_read(_buffer, buffer_u16)); // x
+					buffer_write(server_buffer, buffer_u16, buffer_read(_buffer, buffer_u16)); // y
+					buffer_write(server_buffer, buffer_string, buffer_read(_buffer, buffer_string)); // params
 					// Enviar buffer a todos
 					f_network_send_all(socket_list, server_buffer);
 					
@@ -162,6 +157,30 @@ else {
 					buffer_seek(server_buffer, buffer_seek_start, 0);
 					buffer_write(server_buffer, buffer_u8, Events_server_client.moeda_coletada);
 					buffer_write(server_buffer, buffer_string, _id_coin);
+					f_network_send_all(socket_list, server_buffer);
+					
+					break;
+					
+				case Events_client_server.construi_torre:
+					var _itorre = buffer_read(_buffer, buffer_u8);
+					var _iespaco = buffer_read(_buffer, buffer_u8);
+				
+					// Reenviar infos para todos os clientes
+					buffer_seek(server_buffer, buffer_seek_start, 0);
+					buffer_write(server_buffer, buffer_u8, Events_server_client.nova_torre);
+					buffer_write(server_buffer, buffer_u8, _itorre); // indice torre
+					buffer_write(server_buffer, buffer_u8, _iespaco); // indice espaço
+					f_network_send_all(socket_list, server_buffer);
+					
+					break;
+					
+				case Events_client_server.evolui_torre:
+					// Reenviar infos para todos os clientes
+					buffer_seek(server_buffer, buffer_seek_start, 0);
+					buffer_write(server_buffer, buffer_u8, Events_server_client.torre_evoluida);
+					buffer_write(server_buffer, buffer_u8, buffer_read(_buffer, buffer_u8)); // indice torre
+					buffer_write(server_buffer, buffer_u8, buffer_read(_buffer, buffer_u8)); // qual evoluir
+					buffer_write(server_buffer, buffer_u8, buffer_read(_buffer, buffer_u8)); // level
 					f_network_send_all(socket_list, server_buffer);
 					
 					break;

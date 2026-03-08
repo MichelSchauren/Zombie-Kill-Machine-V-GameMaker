@@ -12,3 +12,18 @@ if (show) {
 		}
 	}
 }
+
+if (vida == 0) {
+	if (!destruindo) {
+		destruindo = true;
+		sprite_index = sprs_destruindo[level];
+		image_index = 0;
+		instance_destroy(arqueiro);
+		
+	} else if (image_index >= image_number-1) {
+		// Refazer espaço para construção
+		var _instance = instance_create_layer(x, y, "Estruturas", obj_Espaco_torre, {indice: indice});
+		ds_list_insert(global.Torres_list, indice, _instance);
+		instance_destroy();
+	}
+}

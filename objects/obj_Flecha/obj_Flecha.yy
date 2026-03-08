@@ -37,6 +37,8 @@
     {"$GMObjectProperty":"v2","%Name":"vel_z","filters":[],"listItems":[],"multiselect":false,"name":"vel_z","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"gravidade","filters":[],"listItems":[],"multiselect":false,"name":"gravidade","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"9.8","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"level","filters":[],"listItems":[],"multiselect":false,"name":"level","rangeEnabled":true,"rangeMax":5.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"direction","filters":[],"listItems":[],"multiselect":false,"name":"direction","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"target","filters":[],"listItems":[],"multiselect":false,"name":"target","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":1,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

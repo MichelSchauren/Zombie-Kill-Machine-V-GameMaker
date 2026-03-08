@@ -59,6 +59,14 @@ inimigo_deu_dano = function (socket, dano) {
 	network_send_packet(socket, server_buffer, buffer_get_size(server_buffer));
 }
 
+atualizar_vida_torre = function (torre, vida) {
+	buffer_seek(server_buffer, buffer_seek_start, 0);
+	buffer_write(server_buffer, buffer_u8, Events_server_client.torre_vida);
+	buffer_write(server_buffer, buffer_u8, torre); // indice de identificação da torre
+	buffer_write(server_buffer, buffer_u16, vida); // nova vida da torre
+	f_network_send_all(socket_list, server_buffer);
+}
+
 escrever_chat = function (nome, msg) {
 	buffer_seek(server_buffer, buffer_seek_start, 0);
 	buffer_write(server_buffer, buffer_u8, Events_server_client.novo_chat);

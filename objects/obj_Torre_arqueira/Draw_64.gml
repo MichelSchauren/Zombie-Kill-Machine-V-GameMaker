@@ -9,6 +9,12 @@ if (show) {
 		}
 	}
 	
+	// Torre
+	draw_sprite_ext(spr_Torre_arqueira_folder, level, gui_x +144*scale, gui_y +172*scale, scale, scale, 0, -1, 1);
+	
+	// Arqueiro
+	if (instance_exists(arqueiro)) draw_sprite_ext(spr_Arqueiro_folder, arqueiro.level, gui_x +391*scale, gui_y +172*scale, scale, scale, 0, -1, 1);
+	
 	// textos
 	draw_set_font(font_Consolas_20);
 	draw_set_halign(fa_center);

@@ -6,8 +6,15 @@ gui_x = 0;
 gui_y = 0;
 
 torres = [ // {sprite, image, custo}
-	{"sprite": spr_Select_torre_arqueira, "image": 0, "custo": 10, "fclick": 0, "x1": 0, "y1": 0},
+	{sprite: spr_Select_torre_arqueira, obj: obj_Torre_arqueira, image: 0, custo: 10, fclick: 0, x1: 0, y1: 0},
 ]
+
+construir_torre = function (itorre) {
+	// Construir torre de defesa
+	var _instance = instance_create_layer(x, y, "Estruturas", torres[itorre].obj, {indice: indice});
+	ds_list_insert(global.Torres_list, indice, _instance);
+	instance_destroy();
+}
 
 redimencionar = function () {
 	scale = min(display_get_gui_width()/960, display_get_gui_height()/540);
@@ -33,3 +40,10 @@ redimencionar = function () {
 	}
 }
 redimencionar();
+
+if (indice == -1) {
+	ds_list_add(global.Torres_list, self);
+	indice = ds_list_find_index(global.Torres_list, self);
+} else {
+	ds_list_insert(global.Torres_list, indice, self);
+}
