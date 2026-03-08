@@ -30,11 +30,11 @@ global.Player_vida = 100;
 
 // inimigos {"peso": peso de orda, "orda": orda em que começa a aparecer, "obj": objeto do inimigo,
 // "vel": velocidade, "dano": dano, "vida": vida total, "alcance": alcance corpo a corpo, ...}
-#macro ZOMBI {"peso": 1, "orda": 1, "obj": obj_Zombi, "vel": 108, "dano": 14, "vida": 32, "alcance": 54}
-#macro ZOMBIGIRL {"peso": 1, "orda": 2, "obj": obj_ZombiGirl, "vel": 102, "dano": 13, "vida": 38, "alcance": 52}
-#macro TANQUE {"peso": 3, "orda": 3, "obj": obj_Tanque, "vel": 90, "dano": 17, "vida": 50, "alcance": 58}
-#macro RAPIDO {"peso": 4, "orda": 4, "obj": obj_Rapido, "vel": 180, "dano": 15, "vida": 30, "alcance": 100, "dash_vel": 420}
-#macro MINIBOSS {"peso": 10, "orda": 5, "obj": obj_MiniBoss, "vel": 72, "dano": 24, "vida": 120, "alcance": 60, "alcance_atirando": 360}
+#macro ZOMBI {"peso": 1, "orda": 1, "obj": obj_Zombi, "vel": 108, "dano": 14, "vida": 32, "alcance": 5}
+#macro ZOMBIGIRL {"peso": 1, "orda": 2, "obj": obj_ZombiGirl, "vel": 102, "dano": 13, "vida": 38, "alcance": 5}
+#macro TANQUE {"peso": 3, "orda": 3, "obj": obj_Tanque, "vel": 90, "dano": 17, "vida": 50, "alcance": 6}
+#macro RAPIDO {"peso": 4, "orda": 4, "obj": obj_Rapido, "vel": 180, "dano": 15, "vida": 30, "alcance": 10, "dash_vel": 420}
+#macro MINIBOSS {"peso": 10, "orda": 5, "obj": obj_MiniBoss, "vel": 72, "dano": 24, "vida": 120, "alcance": 6, "alcance_atirando": 360}
 
 #macro INIMIGOS [ZOMBI, ZOMBIGIRL, TANQUE, RAPIDO, MINIBOSS]
 
@@ -50,6 +50,8 @@ global.Player_vida = 100;
 	{vida: 800, altura: 240, alcance: 1050, vel: 690, dano: 9, tx: 1.6, preco: 18}, \
 	{vida: 900, altura: 260, alcance: 1200, vel: 700, dano: 10, tx: 1.8, preco: 25} \
 ]
+// lista de torres
+global.Torres_list = ds_list_create();
 
 // ondas
 global.Onda_atual = 0;
@@ -81,7 +83,9 @@ global.Chat_mensagens = ds_list_create();
 enum Events_client_server {
 	dados_player = 10, // cliente envia infos sobre seu player (nome, x, y) >
 	mudar_player, // sempre que o player do cliente tiver alguma alteração ele envia os dados ao servidor >
-	tiro_player, // sempre que o player do cliente der um TIRO, ele evia isso ao servidor >
+	atirei_proj, // cliente solicita ao servidor a criação de um projetil >
+	construi_torre, // avisar servidor sobre a construção de uma nova torre de defesa >
+	evolui_torre, // avisar servidor de que uma torre aumentou de level >
 	coletei_moeda, // avisar servidor de que seu player coletou tal moeda >
 	enviar_chat, // player envia uma mensagem no chat >
 	ver_ping // Cliente envia um pacote ao servidor apenas para verificar a latencia e atualizar o ping >
@@ -93,6 +97,9 @@ enum Events_server_client {
 	novo_projetil, // o servidor manda todos os clientes criar tal projetil em tal posição <<
 	novo_inimigo, // o servidor avisa os clientes que um inimigo apareceu <<
 	nova_moeda, // servidor avisa sobre o surgimento de uma nova moeda no mapa <<
+	nova_torre, // servidor avisa sobre a construção de uma torre de defesa <<
+	torre_evoluida, // servidor avisa de que tal torre evoluiu <<
+	torre_vida, // atualizar vida da torre <<
 	moeda_coletada, // servidor avisa a todos que alguem coletou tal moeda <<
 	mudar_inimigo, // servidor atualiza a todos sobre os status do inimigo <<
 	dano_inimigo, // Avisar a determinado cliente que seu player tomou um dano do inimigo <

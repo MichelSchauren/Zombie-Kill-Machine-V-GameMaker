@@ -38,6 +38,14 @@ switch (global.Controller_mode) {
 				press = (abs(_gp_axisrh) > 0.2 or abs(_gp_axisrv) > 0.2);
 				dir_tiro = point_direction(x, y+9, x + _gp_axisrh, y+9 + _gp_axisrv);
 			}
+			
+			// Teclar F ao apertar X no controle
+			if (gamepad_button_check_pressed(gamepad, gp_face3)) {
+			    keyboard_key_press(ord("F"));
+			}
+			if (gamepad_button_check_released(gamepad, gp_face3)) {
+			    keyboard_key_release(ord("F"));
+			}
 		}
 		break;
 

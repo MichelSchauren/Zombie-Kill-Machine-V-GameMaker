@@ -29,8 +29,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Torres",
-    "path":"folders/Sprites/Torres.yy",
+    "name":"Torre Arqueira",
+    "path":"folders/Sprites/Torres/Torre Arqueira.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

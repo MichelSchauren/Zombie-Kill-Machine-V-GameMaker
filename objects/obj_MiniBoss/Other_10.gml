@@ -13,7 +13,7 @@ spr_atacando = spr_MiniBoss_atacando;
 spr_morrendo = spr_MiniBoss_morrendo;
 mask_index = spr_colisao;
 
-projetil = obj_Maxado_miniboss;
+projetil_instance = obj_Maxado_miniboss;
 projetil_image_index = 6;
 
 // Estados do Inimigo (use enums para melhor organização)

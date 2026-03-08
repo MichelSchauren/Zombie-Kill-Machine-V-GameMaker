@@ -1,7 +1,10 @@
-v1.11.0.1
+v1.11.1.0
 
-- Som de flecha tocado apenas quando o player estiver próximo da torre; [build]
-- Alterações no volume de alguns audios; [build]
-
+- Sons funcionando corretamente no modo mobile; [path]
 - Suporte para as torres de defesa no modo multiplayer; [path]
-
+- Outros pequenos bugs corrigidos; [path]
+- Sistema de vida da torre; [build]
+- Mais espaço para construir torres; [build]
+- Comando para pegar moedas no modo desenvolvedor; [build]
+- Opção para abrir a interface das loja e torres no GamePad
+- Animação da torre sendo destruida; [build]

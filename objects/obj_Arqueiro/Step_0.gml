@@ -1,9 +1,12 @@
 // Calcular a distância até o inimigo mais próximo
 var _inimigo = noone;
-var _dist_enemy = vars.alcance+1;
+var _dist_enemy = alcance+1;
 
-for (var i = 0; i < instance_number(obj_Inimigo); i++) {
-	var _enemy = instance_find(obj_Inimigo, i);
+for (var i = 0; i < instance_number(obj_Inimigo)+instance_number(obj_Inimigo_server); i++) {
+	var _enemy = noone;
+	if (global.Multiplayer and !global.Multiplayer_adm) _enemy = instance_find(obj_Inimigo_server, i);
+	else _enemy = instance_find(obj_Inimigo, i);
+	
 	var _dist = point_distance(x, y, _enemy.x, _enemy.bbox_bottom);
 	
 	if ((_dist < _dist_enemy) and _enemy.vida > 0) { // Apenas inimigos vivos
@@ -36,24 +39,24 @@ switch (estado) {
 			image_xscale = sign(_inimigo.x - x);
 			
 			// atirar
-			if (image_index >= image_number-2) {
+			if (!global.Multiplayer or global.Multiplayer_adm) {
+				if (image_index >= image_number-2) {
 				
-				// -((_dist*_grav)/(2*variable_struct_get(FLEXA, "vel")/fps) - _grav/2)
-				var _dir = point_direction(x, y_real, _inimigo.x, _inimigo.y);
-				var _x = x + lengthdir_x(108, _dir);
-				var _y = y_real + lengthdir_y(108, _dir);
-				// distancia que tenta prever a posição do inimigo
-				var _dist = point_distance(_x, _y, _inimigo.x + lengthdir_x((_inimigo.v/fps)*(_dist_enemy/10), _inimigo.direction), _inimigo.bbox_bottom + lengthdir_y((_inimigo.v/fps)*(_dist_enemy/10), _inimigo.direction));
-				var _grav = 0.5;
-				var _t = _dist / (vars.vel/fps);
-				var _vz_init = (vars.altura - (_grav * (_t*_t)) /2) / _t;
+					// -((_dist*_grav)/(2*variable_struct_get(FLEXA, "vel")/fps) - _grav/2)
+					var _dir = point_direction(x, y_real, _inimigo.x, _inimigo.y);
+					var _x = x + lengthdir_x(108, _dir);
+					var _y = y_real + lengthdir_y(108, _dir);
+					// distancia que tenta prever a posição do inimigo
+					var _dist = point_distance(_x, _y, _inimigo.x + lengthdir_x((_inimigo.v/fps)*(_dist_enemy/10), _inimigo.direction), _inimigo.bbox_bottom + lengthdir_y((_inimigo.v/fps)*(_dist_enemy/10), _inimigo.direction));
+					var _grav = 0.5;
+					var _t = _dist / (vars.vel/fps);
+					var _vz_init = (vars.altura - (_grav * (_t*_t)) /2) / _t;
 
-				var _params = {"y_real": _y, "vel_z": _vz_init, "gravidade": _grav, "level": level};
-				var _flecha = instance_create_layer(_x, _y-vars.altura-50, "Projeteis", obj_Flecha, _params);
-				_flecha.direction = _dir;
-				_flecha.target = _inimigo;
-				
-				image_index = 0;
+					var _params = {y_real: _y, vel_z: _vz_init, gravidade: _grav, level: level, direction: _dir, target: _inimigo};
+					f_criar_projetil(_x, _y-vars.altura-50, obj_Flecha, _params);
+					
+					image_index = 0;
+				}
 			}
 		} else {
 			// mudar para o estado de vigia

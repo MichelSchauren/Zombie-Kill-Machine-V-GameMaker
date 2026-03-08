@@ -9,7 +9,7 @@ if (show) {
 			}
 		}
 	}
-} else { 
+} else if (global.Controller_mode == 2) { 
 	var _dist_player = point_distance(x, y, obj_Player.x, obj_Player.y);
 	
 	if (_dist_player <= dist_interface and collision_point(mouse_x, mouse_y, self, false, false)) {

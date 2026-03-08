@@ -27,7 +27,7 @@
   "origin":0,
   "parent":{
     "name":"Interface Torre Arqueira",
-    "path":"folders/Sprites/Torres/Interface Torre Arqueira.yy",
+    "path":"folders/Sprites/Torres/Torre Arqueira/Interface Torre Arqueira.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

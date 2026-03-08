@@ -8,10 +8,16 @@ if (!show) {
 		draw_set_font(font_Consolas_12);
 		draw_set_halign(fa_center);
 		
-		if (global.Controller_mode == 2) { // Mobile
-			draw_text(x, y-40, "Clique aqui!");
-		} else {
-			draw_text(x, y-40, "Pressione F");
-		}	
+		switch (global.Controller_mode) {
+			case 0:
+				draw_text(x, y-40, "Pressione F");
+				break
+			case 1:
+				draw_text(x, y-40, "Pressione X");
+				break;
+			case 2:
+				draw_text(x, y-40, "Clique aqui!");
+				break;
+		}
 	}
 }

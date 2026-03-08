@@ -57,10 +57,9 @@ switch (_type_event) {
 				var _proj_obj = buffer_read(_buffer, buffer_u16);
 				var _proj_x = buffer_read(_buffer, buffer_u16);
 				var _proj_y = buffer_read(_buffer, buffer_u16);
-				var _proj_dir = buffer_read(_buffer, buffer_u16);
+				var _proj_params = json_parse(buffer_read(_buffer, buffer_string));
 				
-				var _proj_instance = instance_create_layer(_proj_x, _proj_y, "Projeteis", _proj_obj);
-				_proj_instance.direction = _proj_dir;
+				instance_create_layer(_proj_x, _proj_y, "Projeteis", _proj_obj, _proj_params);
 			
 				break;
 				
@@ -112,6 +111,43 @@ switch (_type_event) {
 				if (struct_exists(moedas_struct, _id_coin)) struct_remove(moedas_struct, _id_coin); // remover moeda da lista
 				if (instance_exists(_coin)) instance_destroy(_coin); // destruir instancia
 				
+				break;
+				
+			case Events_server_client.nova_torre:
+				var _itorre = buffer_read(_buffer, buffer_u8);
+				var _iespaco = buffer_read(_buffer, buffer_u8);
+				
+				var _espaco = global.Torres_list[| _iespaco];
+				if (_espaco.object_index == obj_Espaco_torre) {
+					_espaco.construir_torre(_itorre);
+				}
+				
+				break;
+				
+			case Events_server_client.torre_evoluida:
+				var _itorre_ev = buffer_read(_buffer, buffer_u8);
+				var _ev = buffer_read(_buffer, buffer_u8);
+				var _level_ev = buffer_read(_buffer, buffer_u8);
+				
+				var _torre_ev = global.Torres_list[| _itorre_ev];
+				switch (_ev) {
+					case 0:
+						_torre_ev.evoluir(_level_ev);
+						break;
+					case 1:
+						_torre_ev.arqueiro.evoluir(_level_ev);
+						break;
+				}
+				
+				break;
+				
+			case Events_server_client.torre_vida:
+				var _itorre_vid = buffer_read(_buffer, buffer_u8);
+				var _torre_vida = buffer_read(_buffer, buffer_u16);
+				
+				var _torre_vid = global.Torres_list[| _itorre_vid];
+				_torre_vid.vida = _torre_vida;
+			
 				break;
 				
 			case Events_server_client.novo_chat:

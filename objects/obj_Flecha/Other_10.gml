@@ -1,5 +1,4 @@
 z = y - y_real;
-target = noone;
 vel = struct_get(TORRE_ARQUEIRA[level], "vel");
 dano = struct_get(TORRE_ARQUEIRA[level], "dano");
 image_index = level;
